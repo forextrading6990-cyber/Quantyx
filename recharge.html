@@ -1,0 +1,1773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantyx - Recharge</title>
+    <link rel="manifest" href="recharge-manifest.json">
+    <link rel="icon" type="image/png" href="quantyx.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a0033 0%, #330066 100%);
+            min-height: 100vh;
+            color: #fff;
+            padding-bottom: 70px;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            background: rgba(26, 0, 51, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+            z-index: 100;
+        }
+
+        .back-btn {
+            width: 35px;
+            height: 35px;
+            background: rgba(0, 255, 255, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+        }
+
+        .back-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: #00ffff;
+        }
+
+        .header-title {
+            font-size: 18px;
+            font-weight: 700;
+            flex: 1;
+        }
+
+        .notification-btn {
+            width: 35px;
+            height: 35px;
+            background: rgba(0, 255, 255, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+            position: relative;
+        }
+
+        .notification-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: #00ffff;
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #ff5722;
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            min-width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 4px;
+        }
+
+        .notification-badge:empty,
+        .notification-badge.hidden {
+            display: none;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .crypto-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .crypto-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 18px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            border: 1px solid rgba(0, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .crypto-item:hover {
+            background: rgba(0, 255, 255, 0.1);
+            transform: translateX(5px);
+        }
+
+        .crypto-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .crypto-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .crypto-name {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .arrow-icon {
+            width: 20px;
+            height: 20px;
+            fill: #888;
+        }
+
+        .deposit-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 15px;
+            opacity: 0;
+            transition: opacity 0.3s ease, background 0.3s ease;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .deposit-modal.show {
+            display: flex;
+            animation: fadeIn 0.3s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                background: rgba(0, 0, 0, 0);
+            }
+            to {
+                opacity: 1;
+                background: rgba(0, 0, 0, 0.95);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #1a0033, #330066);
+            border-radius: 20px;
+            padding: 20px;
+            width: 100%;
+            max-width: 380px;
+            max-height: 90vh;
+            overflow-y: auto;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            transform: scale(0.9);
+            opacity: 0;
+        }
+
+        .deposit-modal.show .modal-content {
+            animation: slideUp 0.3s ease forwards;
+            animation-delay: 0.1s;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .modal-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #00ffff;
+        }
+
+        .close-btn {
+            width: 30px;
+            height: 30px;
+            background: rgba(255, 0, 0, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background: rgba(255, 0, 0, 0.4);
+            transform: rotate(90deg);
+        }
+
+        .close-btn svg {
+            width: 16px;
+            height: 16px;
+            fill: #ff6666;
+        }
+
+        .qr-container {
+            background: #fff;
+            padding: 15px;
+            border-radius: 12px;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .qr-image {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+        }
+
+        .address-box {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 12px;
+            margin: 15px 0;
+        }
+
+        .address-label {
+            font-size: 13px;
+            color: #00ffff;
+            margin-bottom: 8px;
+        }
+
+        .address-text {
+            font-size: 14px;
+            word-break: break-all;
+            margin-bottom: 10px;
+        }
+
+        .copy-address-btn {
+            width: 100%;
+            padding: 10px;
+            background: linear-gradient(135deg, #00ffff, #0099ff);
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .copy-address-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+        }
+
+        .recharge-complete-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #FF6B35, #ff5722);
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .recharge-complete-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .notice-box {
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            border-radius: 10px;
+            padding: 12px;
+            font-size: 12px;
+            color: #ffaa66;
+            margin-top: 12px;
+            line-height: 1.5;
+        }
+
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 0, 51, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(0, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            z-index: 100;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .nav-item svg {
+            width: 24px;
+            height: 24px;
+            fill: #888;
+            margin-bottom: 5px;
+        }
+
+        .nav-item.active svg {
+            fill: #00ffff;
+        }
+
+        .nav-label {
+            font-size: 11px;
+            color: #888;
+        }
+
+        .nav-item.active .nav-label {
+            color: #00ffff;
+        }
+
+        .toast {
+            position: fixed;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-100px);
+            background: linear-gradient(135deg, #00ffff, #0099ff);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 255, 255, 0.3);
+            z-index: 3000;
+            opacity: 0;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .permission-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #FF6B35, #ff5722);
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            z-index: 9999;
+            display: none;
+        }
+
+        .permission-banner.show {
+            display: block;
+        }
+
+        .permission-banner button {
+            background: white;
+            color: #ff5722;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-left: 15px;
+        }
+
+        .notifications-page {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #1a0033 0%, #330066 100%);
+            z-index: 2000;
+            overflow-y: auto;
+        }
+
+        .notifications-page.show {
+            display: block;
+        }
+
+        .notifications-header {
+            position: sticky;
+            top: 0;
+            background: rgba(26, 0, 51, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+            z-index: 100;
+        }
+
+        .notifications-container {
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            padding-bottom: 30px;
+        }
+
+        .notification-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .notification-card {
+            background: #1a1a2e;
+            border-radius: 16px;
+            padding: 20px;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            position: relative;
+        }
+
+        .view-notifications-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 20px;
+            color: #00ffff;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 12px;
+            margin-left: 10px;
+            transition: all 0.2s ease;
+        }
+
+        .view-notifications-btn:hover {
+            background: rgba(0, 255, 255, 0.2);
+        }
+
+        .view-notifications-btn svg {
+            width: 14px;
+            height: 14px;
+            fill: #00ffff;
+        }
+
+        .notification-card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 12px;
+        }
+
+        .notification-card-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #330066, #1a0033);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .notification-card-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .notification-card-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: #00ffff;
+        }
+
+        .notification-card-info {
+            flex: 1;
+        }
+
+        .notification-card-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .notification-card-title.detected {
+            color: #00ffff;
+        }
+
+        .notification-card-title.success {
+            color: #10b981;
+        }
+
+        .notification-card-title.cancel {
+            color: #ef4444;
+        }
+
+        .notification-card-time {
+            font-size: 13px;
+            color: #00ffff;
+        }
+
+        .notification-card-body {
+            font-size: 14px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .notification-timer-display {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #00ffff, #0099ff);
+            border-radius: 25px;
+            font-size: 14px;
+            color: #fff;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        .notification-timer-display svg {
+            width: 16px;
+            height: 16px;
+            fill: #fff;
+        }
+
+        .notification-timer-display.expired {
+            background: linear-gradient(135deg, #666, #444);
+        }
+
+        .dismiss-notification-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 24px;
+            height: 24px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s ease;
+        }
+
+        .dismiss-notification-btn:hover {
+            background: rgba(255, 0, 0, 0.3);
+        }
+
+        .dismiss-notification-btn svg {
+            width: 12px;
+            height: 12px;
+            fill: #999;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .empty-state svg {
+            width: 80px;
+            height: 80px;
+            fill: rgba(255, 255, 255, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .empty-state p {
+            font-size: 16px;
+        }
+
+        .clear-all-btn {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 0, 0, 0.1);
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            border-radius: 12px;
+            color: #ff6666;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .clear-all-btn:hover {
+            background: rgba(255, 0, 0, 0.2);
+        }
+
+        /* Review Popup Styles */
+        .review-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0);
+            z-index: 2500;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            opacity: 0;
+            transition: opacity 0.3s ease, background 0.3s ease;
+        }
+
+        .review-popup.show {
+            display: flex;
+            animation: fadeIn 0.3s ease forwards;
+        }
+
+        .review-popup-content {
+            background: linear-gradient(135deg, #1a0033, #330066);
+            border-radius: 20px;
+            padding: 30px 25px;
+            width: 100%;
+            max-width: 360px;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            transform: scale(0.9);
+            opacity: 0;
+            text-align: center;
+        }
+
+        .review-popup.show .review-popup-content {
+            animation: slideUp 0.3s ease forwards;
+            animation-delay: 0.1s;
+        }
+
+        .review-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #00ffff, #0099ff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .review-icon svg {
+            width: 45px;
+            height: 45px;
+            fill: #fff;
+        }
+
+        .review-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #00ffff;
+            margin-bottom: 15px;
+        }
+
+        .review-message {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .review-buttons {
+            display: flex;
+            gap: 12px;
+            flex-direction: column;
+        }
+
+        .review-account-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #00ffff, #0099ff);
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .review-account-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 255, 0.4);
+        }
+
+        .review-cancel-btn {
+            width: 100%;
+            padding: 14px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .review-cancel-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Telegram Floating Button Styles */
+        .floating-telegram {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: #29a9eb;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(41, 169, 235, 0.4);
+            transition: all 0.3s ease;
+            animation: floatPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes floatPulse {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .floating-telegram:hover {
+            transform: scale(1.1);
+        }
+
+        .floating-telegram svg {
+            width: 28px;
+            height: 28px;
+            fill: #fff;
+        }
+
+        .telegram-popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 3000;
+            backdrop-filter: blur(5px);
+        }
+
+        .telegram-popup-overlay.show {
+            display: flex;
+        }
+
+        .telegram-popup-content {
+            background: #fff;
+            color: #333;
+            border-radius: 20px;
+            padding: 25px;
+            width: 90%;
+            max-width: 350px;
+            position: relative;
+            animation: popupSlideUp 0.3s ease-out;
+        }
+
+        @keyframes popupSlideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .telegram-popup-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .telegram-popup-header h3 {
+            color: #000;
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .telegram-popup-desc {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .telegram-option {
+            display: flex;
+            align-items: center;
+            background: #f5f7fa;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .telegram-option:hover {
+            background: #eef2f6;
+        }
+
+        .telegram-icon-large {
+            width: 40px;
+            height: 40px;
+            background: #29a9eb;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+
+        .telegram-icon-large svg {
+            width: 24px;
+            height: 24px;
+            fill: #fff;
+        }
+
+        .telegram-text {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .telegram-title {
+            font-weight: 600;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .telegram-arrow {
+            font-size: 20px;
+            color: #999;
+        }
+
+        .close-telegram-popup-btn {
+            color: #333;
+            font-size: 28px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="permission-banner" id="permissionBanner">
+        Enable notifications to receive recharge alerts
+        <button onclick="requestNotificationPermission()">Enable</button>
+    </div>
+
+    <div class="header">
+        <button class="back-btn" onclick="handleBackButton()">
+            <svg viewBox="0 0 24 24">
+                <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+            </svg>
+        </button>
+        <div class="header-title">Recharge Select</div>
+        <button class="notification-btn" onclick="showNotificationsPage()">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+            </svg>
+            <span class="notification-badge" id="notificationBadge"></span>
+        </button>
+    </div>
+
+    <div class="container">
+        <div class="crypto-list">
+            <div class="crypto-item" onclick="showDeposit('BEP20-USDT', 'BEP20-USDT')">
+                <div class="crypto-left">
+                    <img class="crypto-icon" src="https://cryptologos.cc/logos/tether-usdt-logo.png" alt="USDT">
+                    <div class="crypto-name">BEP20-USDT</div>
+                </div>
+                <svg class="arrow-icon" viewBox="0 0 24 24">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                </svg>
+            </div>
+
+            <div class="crypto-item" onclick="showDeposit('TRC20-USDT', 'TRC20-USDT')">
+                <div class="crypto-left">
+                    <img class="crypto-icon" src="https://cryptologos.cc/logos/tether-usdt-logo.png" alt="USDT">
+                    <div class="crypto-name">TRC20-USDT</div>
+                </div>
+                <svg class="arrow-icon" viewBox="0 0 24 24">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                </svg>
+            </div>
+
+            <div class="crypto-item" onclick="showDeposit('POLYGON-USDC', 'POLYGON-USDC')">
+                <div class="crypto-left">
+                    <img class="crypto-icon" src="https://cryptologos.cc/logos/usd-coin-usdc-logo.png" alt="USDC">
+                    <div class="crypto-name">POLYGON-USDC</div>
+                </div>
+                <svg class="arrow-icon" viewBox="0 0 24 24">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                </svg>
+            </div>
+
+            <div class="crypto-item" onclick="showDeposit('BEP20-USDC', 'BEP20-USDC')">
+                <div class="crypto-left">
+                    <img class="crypto-icon" src="https://cryptologos.cc/logos/usd-coin-usdc-logo.png" alt="USDC">
+                    <div class="crypto-name">BEP20-USDC</div>
+                </div>
+                <svg class="arrow-icon" viewBox="0 0 24 24">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                </svg>
+            </div>
+
+            <div class="crypto-item" onclick="showDeposit('TRX', 'Tron')">
+                <div class="crypto-left">
+                    <img class="crypto-icon" src="https://cryptologos.cc/logos/tron-trx-logo.png" alt="TRX">
+                    <div class="crypto-name">TRX</div>
+                </div>
+                <svg class="arrow-icon" viewBox="0 0 24 24">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                </svg>
+            </div>
+
+            <div class="crypto-item" onclick="showDeposit('BNB', 'Binance Coin')">
+                <div class="crypto-left">
+                    <img class="crypto-icon" src="https://cryptologos.cc/logos/bnb-bnb-logo.png" alt="BNB">
+                    <div class="crypto-name">BNB</div>
+                </div>
+                <svg class="arrow-icon" viewBox="0 0 24 24">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                </svg>
+            </div>
+
+            <div class="crypto-item" onclick="showDeposit('POLYGON-USDT', 'POLYGON-USDT')">
+                <div class="crypto-left">
+                    <img class="crypto-icon" src="https://cryptologos.cc/logos/tether-usdt-logo.png" alt="USDT">
+                    <div class="crypto-name">POLYGON-USDT</div>
+                </div>
+                <svg class="arrow-icon" viewBox="0 0 24 24">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                </svg>
+            </div>
+
+            <div class="crypto-item" onclick="showDeposit('ETH-USDT', 'ETH-USDT')">
+                <div class="crypto-left">
+                    <img class="crypto-icon" src="https://cryptologos.cc/logos/tether-usdt-logo.png" alt="USDT">
+                    <div class="crypto-name">ETH-USDT</div>
+                </div>
+                <svg class="arrow-icon" viewBox="0 0 24 24">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                </svg>
+            </div>
+
+            <div class="crypto-item" onclick="showDeposit('ETH-USDC', 'ETH-USDC')">
+                <div class="crypto-left">
+                    <img class="crypto-icon" src="https://cryptologos.cc/logos/usd-coin-usdc-logo.png" alt="USDC">
+                    <div class="crypto-name">ETH-USDC</div>
+                </div>
+                <svg class="arrow-icon" viewBox="0 0 24 24">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                </svg>
+            </div>
+
+            <div class="crypto-item" onclick="showDeposit('ETH', 'Ethereum')">
+                <div class="crypto-left">
+                    <img class="crypto-icon" src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="ETH">
+                    <div class="crypto-name">ETH</div>
+                </div>
+                <svg class="arrow-icon" viewBox="0 0 24 24">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                </svg>
+            </div>
+
+            <div class="crypto-item" onclick="showDeposit('POLYGON', 'Polygon')">
+                <div class="crypto-left">
+                    <img class="crypto-icon" src="https://cryptologos.cc/logos/polygon-matic-logo.png" alt="POLYGON">
+                    <div class="crypto-name">POLYGON</div>
+                </div>
+                <svg class="arrow-icon" viewBox="0 0 24 24">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                </svg>
+            </div>
+
+            <div class="crypto-item" onclick="showDeposit('ETH-PYUSD', 'ETH-PYUSD')">
+                <div class="crypto-left">
+                    <img class="crypto-icon" src="https://s2.coinmarketcap.com/static/img/coins/64x64/28492.png" alt="PYUSD">
+                    <div class="crypto-name">ETH-PYUSD</div>
+                </div>
+                <svg class="arrow-icon" viewBox="0 0 24 24">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="deposit-modal" id="depositModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title" id="modalCryptoName">Deposit</div>
+                <button class="close-btn" onclick="closeDeposit()">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="qr-container">
+                <img id="qrImage" src="" alt="QR Code" class="qr-image">
+            </div>
+
+            <div class="address-box">
+                <div class="address-label">Deposit Address</div>
+                <div class="address-text" id="depositAddress"></div>
+                <button class="copy-address-btn" onclick="copyAddress()">Copy Address</button>
+                <button class="recharge-complete-btn" onclick="showRechargeCompleteNotification()">RECHARGE COMPLETE</button>
+            </div>
+
+            <div class="notice-box">
+                <strong>Warm reminder:</strong><br>
+                • Copy the address above or scan the QR code<br>
+                • Minimum deposit: 2 USDT<br>
+                • Funds will arrive in your account in about 1 to 3 minutes after recharging<br>
+                • If it does not arrive for a long time, please refresh the page or contact customer service
+            </div>
+        </div>
+    </div>
+
+    <div class="notifications-page" id="notificationsPage">
+        <div class="notifications-header">
+            <button class="back-btn" onclick="hideNotificationsPage()">
+                <svg viewBox="0 0 24 24">
+                    <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+                </svg>
+            </button>
+            <div class="header-title">Notifications</div>
+        </div>
+        <div class="notifications-container">
+            <div class="notification-list" id="notificationList">
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast">
+        <svg class="toast-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;">
+            <path d="M20 6L9 17l-5-5"/>
+        </svg>
+        <span id="toastMessage">Copied!</span>
+    </div>
+
+    <div class="bottom-nav">
+        <div class="nav-item" onclick="window.location.href='/'">
+            <svg viewBox="0 0 24 24">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+            <div class="nav-label">Home</div>
+        </div>
+        <div class="nav-item active">
+            <svg viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/>
+            </svg>
+            <div class="nav-label">Recharge</div>
+        </div>
+        <div class="nav-item" onclick="window.location.href='/me'">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
+            <div class="nav-label">Me</div>
+        </div>
+    </div>
+
+    <!-- Review Status Popup -->
+    <div class="review-popup" id="reviewPopup">
+        <div class="review-popup-content">
+            <div class="review-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+            </div>
+            <div class="review-title">Under Review</div>
+            <div class="review-message">Your recharge request is being reviewed and will be processed within 2-4 minutes.</div>
+            <div class="review-buttons">
+                <button class="review-account-btn" onclick="goToViewAccount()">View Account</button>
+                <button class="review-cancel-btn" onclick="closeReviewPopup()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Telegram Floating Button -->
+    <div class="floating-telegram" onclick="openTelegramPopup()">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.692-1.653-1.123-2.678-1.799-1.185-.781-.417-1.21.258-1.911.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.139-5.062 3.345-.479.329-.913.489-1.302.481-.428-.008-1.252-.241-1.865-.44-.751-.244-1.349-.374-1.297-.789.027-.216.324-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.477-1.635.099-.002.321.023.465.141.119.098.152.228.166.319.014.096.015.193.015.296z" fill="#fff"/>
+        </svg>
+    </div>
+
+    <!-- Telegram Popup -->
+    <div id="telegramPopup" class="telegram-popup-overlay" onclick="if(event.target === this) closeTelegramPopup()">
+        <div class="telegram-popup-content">
+            <div class="telegram-popup-header">
+                <h3>Online Service</h3>
+                <button class="close-telegram-popup-btn" onclick="closeTelegramPopup()">&times;</button>
+            </div>
+            <div class="telegram-popup-body">
+                <p class="telegram-popup-desc">Choose your preferred online customer service contact method</p>
+                
+                <div class="telegram-option" onclick="window.open('https://t.me/lux0f', '_blank')">
+                    <div class="telegram-icon-large">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.692-1.653-1.123-2.678-1.799-1.185-.781-.417-1.21.258-1.911.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.139-5.062 3.345-.479.329-.913.489-1.302.481-.428-.008-1.252-.241-1.865-.44-.751-.244-1.349-.374-1.297-.789.027-.216.324-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.477-1.635.099-.002.321.023.465.141.119.098.152.228.166.319.014.096.015.193.015.296z" fill="#fff"/>
+                        </svg>
+                    </div>
+                    <div class="telegram-text">
+                        <span class="telegram-title">Official Customer Service</span>
+                        <span class="telegram-arrow">&rsaquo;</span>
+                    </div>
+                </div>
+
+                <div class="telegram-option" onclick="window.open('https://t.me/+wzwx1sKfVoE4NDg0', '_blank')">
+                    <div class="telegram-icon-large">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.692-1.653-1.123-2.678-1.799-1.185-.781-.417-1.21.258-1.911.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.139-5.062 3.345-.479.329-.913.489-1.302.481-.428-.008-1.252-.241-1.865-.44-.751-.244-1.349-.374-1.297-.789.027-.216.324-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.477-1.635.099-.002.321.023.465.141.119.098.152.228.166.319.014.096.015.193.015.296z" fill="#fff"/>
+                        </svg>
+                    </div>
+                    <div class="telegram-text">
+                        <span class="telegram-title">Official Channel</span>
+                        <span class="telegram-arrow">&rsaquo;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Telegram Popup Functions
+        function openTelegramPopup() {
+            document.getElementById('telegramPopup').classList.add('show');
+        }
+
+        function closeTelegramPopup() {
+            document.getElementById('telegramPopup').classList.remove('show');
+        }
+
+        // Review Popup Functions
+        function showReviewPopup() {
+            document.getElementById('reviewPopup').classList.add('show');
+        }
+
+        function closeReviewPopup() {
+            document.getElementById('reviewPopup').classList.remove('show');
+        }
+
+        function goToViewAccount() {
+            closeReviewPopup();
+            window.location.href = 'me.html';
+        }
+    </script>
+
+    <script>
+        let currentCoin = null;
+        let rechargeTimer = null;
+        let notificationTimeout = null;
+        let timeRemaining = 25 * 60;
+        let swRegistration = null;
+        let activeTimers = {};
+
+        const depositAddresses = {
+            'BEP20-USDT': '0x0CF2D8c94c54DB1B6EA8694c09086FcB8DaC703E',
+            'TRC20-USDT': 'TPBnmkKnekLvxqYg2Cai2nCrqhHqNouscw',
+            'POLYGON-USDC': '0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb',
+            'BEP20-USDC': '0x0CF2D8c94c54DB1B6EA8694c09086FcB8DaC703E',
+            'TRX': 'TPBnmkKnekLvxqYg2Cai2nCrqhHqNouscw',
+            'BNB': '0x0CF2D8c94c54DB1B6EA8694c09086FcB8DaC703E',
+            'POLYGON-USDT': '0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb',
+            'ETH-USDT': '0x99eD7354ceAD29B34561Db7c47937Ebc4cE261eb',
+            'ETH-USDC': '0x99eD7354ceAD29B34561Db7c47937Ebc4cE261eb',
+            'ETH': '0x99eD7354ceAD29B34561Db7c47937Ebc4cE261eb',
+            'POLYGON': '0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb',
+            'ETH-PYUSD': '0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb'
+        };
+
+        function getNotifications() {
+            const stored = localStorage.getItem('luxearn_notifications');
+            return stored ? JSON.parse(stored) : [];
+        }
+
+        function saveNotifications(notifications) {
+            localStorage.setItem('luxearn_notifications', JSON.stringify(notifications));
+            updateNotificationBadge();
+        }
+
+        function addNotification(type, coin) {
+            const notifications = getNotifications();
+            const newNotification = {
+                id: Date.now().toString(),
+                type: type,
+                coin: coin,
+                timestamp: Date.now()
+            };
+            notifications.unshift(newNotification);
+            if (notifications.length > 50) {
+                notifications.pop();
+            }
+            saveNotifications(notifications);
+            return newNotification;
+        }
+
+        function updateNotificationBadge() {
+            const notifications = getNotifications();
+            const badge = document.getElementById('notificationBadge');
+            if (notifications.length > 0) {
+                badge.textContent = notifications.length > 99 ? '99+' : notifications.length;
+                badge.classList.remove('hidden');
+            } else {
+                badge.classList.add('hidden');
+            }
+        }
+
+        function formatDate(timestamp) {
+            const date = new Date(timestamp);
+            const hours = date.getHours().toString().padStart(2, '0');
+            const minutes = date.getMinutes().toString().padStart(2, '0');
+            const seconds = date.getSeconds().toString().padStart(2, '0');
+            const day = date.getDate().toString().padStart(2, '0');
+            const month = (date.getMonth() + 1).toString().padStart(2, '0');
+            const year = date.getFullYear();
+            return `${hours}:${minutes}:${seconds} - ${day}/${month}/${year}`;
+        }
+
+        function formatTimer(seconds) {
+            if (seconds <= 0) return 'Expired';
+            const mins = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `Timer: ${mins}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        function getRemainingTime(notification) {
+            if (notification.type !== 'detected') return 0;
+            const elapsed = Math.floor((Date.now() - notification.timestamp) / 1000);
+            const remaining = (25 * 60) - elapsed;
+            return Math.max(0, remaining);
+        }
+
+        function dismissNotification(id) {
+            let notifications = getNotifications();
+            notifications = notifications.filter(n => n.id !== id);
+            saveNotifications(notifications);
+            renderNotifications();
+        }
+
+        function clearAllNotifications() {
+            if (confirm('Are you sure you want to clear all notifications?')) {
+                saveNotifications([]);
+                renderNotifications();
+            }
+        }
+
+        function showNotificationsPage() {
+            document.getElementById('notificationsPage').classList.add('show');
+            renderNotifications();
+        }
+
+        function hideNotificationsPage() {
+            document.getElementById('notificationsPage').classList.remove('show');
+            Object.values(activeTimers).forEach(timer => clearInterval(timer));
+            activeTimers = {};
+        }
+
+        function renderNotifications() {
+            const list = document.getElementById('notificationList');
+            const notifications = getNotifications();
+
+            Object.values(activeTimers).forEach(timer => clearInterval(timer));
+            activeTimers = {};
+
+            if (notifications.length === 0) {
+                list.innerHTML = `
+                    <div class="empty-state">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+                        </svg>
+                        <p>No notifications yet</p>
+                    </div>
+                `;
+                return;
+            }
+
+            let html = '';
+            notifications.forEach(notification => {
+                let titleClass = 'notification-card-title';
+                let title = '';
+                let body = '';
+
+                if (notification.type === 'detected') {
+                    titleClass += ' detected';
+                    title = 'Recharge Detected';
+                    body = `Detected system recharge using ${notification.coin}`;
+                } else if (notification.type === 'complete') {
+                    titleClass += ' success';
+                    title = 'Recharge Complete';
+                    body = `Your recharge complete request of ${notification.coin} has been received. You'll receive your deposited USDT to your account in the next 2-3 Minutes. Note: Your deposit will automatically reflect to your account...`;
+                } else if (notification.type === 'cancel') {
+                    titleClass += ' cancel';
+                    title = 'Recharge Cancelled';
+                    body = 'Recharge request canceled by user';
+                }
+
+                const remaining = getRemainingTime(notification);
+                const timerHtml = notification.type === 'detected' ? `
+                    <div class="notification-timer-display ${remaining <= 0 ? 'expired' : ''}" id="timer-${notification.id}">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61l1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42C16.07 4.74 14.12 4 12 4c-4.97 0-9 4.03-9 9s4.02 9 9 9 9-4.03 9-9c0-2.12-.74-4.07-1.97-5.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/>
+                        </svg>
+                        <span>${formatTimer(remaining)}</span>
+                    </div>
+                ` : '';
+
+                html += `
+                    <div class="notification-card" data-id="${notification.id}">
+                        <button class="dismiss-notification-btn" onclick="dismissNotification('${notification.id}')">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                            </svg>
+                        </button>
+                        <div class="notification-card-header">
+                            <div class="notification-card-icon">
+                                <img src="quantyx.png" alt="Quantyx" onerror="this.parentElement.innerHTML='<svg viewBox=\\'0 0 24 24\\'><path d=\\'M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5\\'/></svg>'">
+                            </div>
+                            <div class="notification-card-info">
+                                <div class="${titleClass}">${title}</div>
+                                <div class="notification-card-time">${formatDate(notification.timestamp)}</div>
+                            </div>
+                        </div>
+                        <div class="notification-card-body">${body}</div>
+                        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 8px;">
+                            ${timerHtml}
+                            <button class="view-notifications-btn" onclick="hideNotificationsPage()">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+                                </svg>
+                                Go to Recharge
+                            </button>
+                        </div>
+                    </div>
+                `;
+
+                if (notification.type === 'detected' && remaining > 0) {
+                    setTimeout(() => {
+                        activeTimers[notification.id] = setInterval(() => {
+                            const newRemaining = getRemainingTime(notification);
+                            const timerEl = document.getElementById(`timer-${notification.id}`);
+                            if (timerEl) {
+                                timerEl.querySelector('span').textContent = formatTimer(newRemaining);
+                                if (newRemaining <= 0) {
+                                    timerEl.classList.add('expired');
+                                    clearInterval(activeTimers[notification.id]);
+                                }
+                            }
+                        }, 1000);
+                    }, 100);
+                }
+            });
+
+            html += `<button class="clear-all-btn" onclick="clearAllNotifications()">Clear All Notifications</button>`;
+            list.innerHTML = html;
+        }
+
+        function playNotificationSound(type = 'default') {
+            try {
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                if (type === 'success') {
+                    oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+                    oscillator.frequency.setValueAtTime(1000, audioContext.currentTime + 0.1);
+                    oscillator.frequency.setValueAtTime(1200, audioContext.currentTime + 0.2);
+                    gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
+                    oscillator.start(audioContext.currentTime);
+                    oscillator.stop(audioContext.currentTime + 0.3);
+                } else if (type === 'cancel') {
+                    oscillator.frequency.setValueAtTime(600, audioContext.currentTime);
+                    oscillator.frequency.setValueAtTime(400, audioContext.currentTime + 0.1);
+                    gainNode.gain.setValueAtTime(0.2, audioContext.currentTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.2);
+                    oscillator.start(audioContext.currentTime);
+                    oscillator.stop(audioContext.currentTime + 0.2);
+                } else {
+                    oscillator.frequency.setValueAtTime(600, audioContext.currentTime);
+                    oscillator.frequency.setValueAtTime(800, audioContext.currentTime + 0.1);
+                    gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.2);
+                    oscillator.start(audioContext.currentTime);
+                    oscillator.stop(audioContext.currentTime + 0.2);
+                }
+            } catch (e) {
+                console.log('Audio not supported');
+            }
+        }
+
+        async function requestNotificationPermission() {
+            if (!('Notification' in window)) {
+                showToast('Notifications not supported on this browser');
+                return false;
+            }
+
+            const permission = await Notification.requestPermission();
+            document.getElementById('permissionBanner').classList.remove('show');
+            
+            if (permission === 'granted') {
+                showToast('Notifications enabled!');
+                return true;
+            } else {
+                showToast('Please enable notifications in browser settings');
+                return false;
+            }
+        }
+
+        async function showSystemNotification(title, body, tag, actions = [], requireInteraction = false) {
+            playNotificationSound(tag === 'success' ? 'success' : tag === 'cancel' ? 'cancel' : 'default');
+
+            if (!('Notification' in window)) {
+                console.log('Notifications not supported');
+                return;
+            }
+
+            if (Notification.permission !== 'granted') {
+                const granted = await requestNotificationPermission();
+                if (!granted) return;
+            }
+
+            const options = {
+                body: body,
+                icon: 'quantyx.png',
+                badge: 'quantyx.png',
+                tag: tag,
+                requireInteraction: requireInteraction,
+                vibrate: [200, 100, 200],
+                silent: false,
+                data: {
+                    url: window.location.href,
+                    actions: actions
+                }
+            };
+
+            if (swRegistration) {
+                try {
+                    const notificationOptions = {
+                        ...options,
+                        actions: actions.map(a => ({
+                            action: a.action,
+                            title: a.title
+                        }))
+                    };
+                    await swRegistration.showNotification(title, notificationOptions);
+                } catch (e) {
+                    new Notification(title, options);
+                }
+            } else {
+                new Notification(title, options);
+            }
+        }
+
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `${mins}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        function showDeposit(crypto, name) {
+            currentCoin = crypto;
+            const modal = document.getElementById('depositModal');
+            const title = document.getElementById('modalCryptoName');
+            const qrImage = document.getElementById('qrImage');
+            const addressText = document.getElementById('depositAddress');
+            
+            title.textContent = `Deposit ${name}`;
+            const address = depositAddresses[crypto];
+            addressText.textContent = address;
+            qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${address}`;
+            
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+            
+            timeRemaining = 25 * 60;
+            
+            addNotification('detected', crypto);
+            
+            showSystemNotification(
+                'Quantyx',
+                `Detected system recharge using ${crypto}\nGiven time before expires: 25 minutes`,
+                'recharge-detected',
+                [{ action: 'view', title: 'View Notifications' }],
+                false
+            );
+            
+            if (rechargeTimer) {
+                clearInterval(rechargeTimer);
+            }
+            if (notificationTimeout) {
+                clearTimeout(notificationTimeout);
+            }
+            
+            rechargeTimer = setInterval(() => {
+                timeRemaining--;
+                if (timeRemaining <= 0) {
+                    clearInterval(rechargeTimer);
+                    rechargeTimer = null;
+                }
+            }, 1000);
+            
+            notificationTimeout = setTimeout(() => {
+                if (swRegistration) {
+                    swRegistration.getNotifications({ tag: 'recharge-detected' }).then(notifications => {
+                        notifications.forEach(n => n.close());
+                    });
+                }
+            }, 25 * 60 * 1000);
+        }
+
+        function closeDeposit() {
+            const modal = document.getElementById('depositModal');
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+            
+            if (rechargeTimer) {
+                clearInterval(rechargeTimer);
+                rechargeTimer = null;
+            }
+            if (notificationTimeout) {
+                clearTimeout(notificationTimeout);
+                notificationTimeout = null;
+            }
+            
+            currentCoin = null;
+        }
+
+        function handleBackButton() {
+            if (currentCoin) {
+                if (rechargeTimer) {
+                    clearInterval(rechargeTimer);
+                    rechargeTimer = null;
+                }
+                if (notificationTimeout) {
+                    clearTimeout(notificationTimeout);
+                    notificationTimeout = null;
+                }
+                
+                const modal = document.getElementById('depositModal');
+                modal.classList.remove('show');
+                document.body.style.overflow = 'auto';
+                
+                addNotification('cancel', currentCoin);
+                
+                showSystemNotification(
+                    'Quantyx',
+                    'Recharge request canceled by user 📣',
+                    'cancel',
+                    [
+                        { action: 'return', title: 'Return to Recharge' },
+                        { action: 'view', title: 'View Notifications' }
+                    ],
+                    true
+                );
+                
+                currentCoin = null;
+            } else {
+                window.history.back();
+            }
+        }
+
+        function showRechargeCompleteNotification() {
+            if (!currentCoin) return;
+            
+            const coinName = currentCoin;
+            
+            if (rechargeTimer) {
+                clearInterval(rechargeTimer);
+                rechargeTimer = null;
+            }
+            if (notificationTimeout) {
+                clearTimeout(notificationTimeout);
+                notificationTimeout = null;
+            }
+            
+            const modal = document.getElementById('depositModal');
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+            
+            addNotification('complete', coinName);
+            
+            showSystemNotification(
+                'Quantyx',
+                `Your recharge complete request of ${coinName} has been received. You'll receive your deposited USDT to your account in the next 2-3 minutes.\n\nNote: Your deposit will automatically reflect to your account.`,
+                'success',
+                [{ action: 'view', title: 'View Notifications' }],
+                false
+            );
+            
+            // Show the review popup
+            showReviewPopup();
+            
+            currentCoin = null;
+        }
+
+        function copyAddress() {
+            const addressText = document.getElementById('depositAddress').textContent;
+            
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(addressText).then(() => {
+                    showToast('Address copied to clipboard!');
+                }).catch(err => {
+                    fallbackCopyTextToClipboard(addressText);
+                });
+            } else {
+                fallbackCopyTextToClipboard(addressText);
+            }
+        }
+
+        function fallbackCopyTextToClipboard(text) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.position = "fixed";
+            textArea.style.top = "-9999px";
+            textArea.style.left = "-9999px";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    showToast('Address copied to clipboard!');
+                } else {
+                    showToast('Failed to copy address');
+                }
+            } catch (err) {
+                showToast('Failed to copy address');
+            }
+
+            document.body.removeChild(textArea);
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            toastMessage.textContent = message;
+            
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        function goToMe() {
+            currentCoin = null;
+            window.location.href = '/me';
+        }
+
+        document.getElementById('depositModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeDeposit();
+            }
+        });
+
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/recharge-service-worker.js')
+                .then(registration => {
+                    console.log('Recharge Service Worker registered');
+                    swRegistration = registration;
+                })
+                .catch(error => console.log('Recharge Service Worker registration failed:', error));
+        }
+
+        window.addEventListener('load', () => {
+            updateNotificationBadge();
+            if ('Notification' in window && Notification.permission === 'default') {
+                document.getElementById('permissionBanner').classList.add('show');
+            }
+        });
+
+        window.addEventListener('beforeunload', function() {
+            if (rechargeTimer) {
+                clearInterval(rechargeTimer);
+            }
+            if (notificationTimeout) {
+                clearTimeout(notificationTimeout);
+            }
+        });
+
+        window.addEventListener('popstate', function(e) {
+            handleBackButton();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,2580 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quantyx - Unlock Unlimited Potential! 📈
+Join a platform that never closes & earn steady income by inviting subordinates with 16%:3%:2% commission ratio on team benefits. Get bonuses with every recharge, register for lucky prizes & take control of your financial future!
+✅ Task update ✅ 24-hour reset ✅ 
+Grow your network, grow your earnings and uncover the potential within you!!!
+    <title>Quantyx Intel™- Login</title>
+    <link rel="icon" type="quantyx.png" href="quantyx.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #1a0033 0%, #330066 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .floating-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .shape:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            top: 60%;
+            left: 80%;
+            animation-delay: 5s;
+        }
+
+        .shape:nth-child(3) {
+            top: 30%;
+            left: 60%;
+            animation-delay: 10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(180deg); }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 420px;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 32px rgba(0, 255, 255, 0.3);
+            overflow: hidden;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .app-name {
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .app-subtitle {
+            color: #00ffff;
+            font-size: 14px;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .tab-switcher {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, #00ffff, #0099ff);
+            box-shadow: 0 4px 15px rgba(0, 255, 255, 0.4);
+        }
+
+        .form-section {
+            display: none;
+        }
+
+        .form-section.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-label {
+            display: block;
+            color: #00ffff;
+            font-size: 13px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            fill: #00ffff;
+        }
+
+        [dir="rtl"] .input-icon {
+            left: auto;
+            right: 15px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 15px 15px 15px 45px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        [dir="rtl"] input[type="text"],
+        [dir="rtl"] input[type="email"],
+        [dir="rtl"] input[type="password"],
+        [dir="rtl"] input[type="tel"] {
+            padding: 15px 45px 15px 15px;
+            text-align: right;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #00ffff;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            fill: #00ffff;
+        }
+
+        [dir="rtl"] .toggle-password {
+            right: auto;
+            left: 15px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+            cursor: pointer;
+        }
+
+        [dir="rtl"] input[type="checkbox"] {
+            margin-right: 0;
+            margin-left: 8px;
+        }
+
+        .checkbox-label {
+            color: #fff;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 15px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ff6b35, #ff00ff);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(255, 0, 255, 0.4);
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 0, 255, 0.6);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #ccff00, #00ff88);
+            color: #1a0033;
+            box-shadow: 0 4px 15px rgba(204, 255, 0, 0.4);
+        }
+
+        .btn-secondary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(204, 255, 0, 0.6);
+        }
+
+        .btn-google {
+            background: #fff;
+            color: #333;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-google:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .google-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 3px solid transparent;
+            border-top-color: currentColor;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        .btn-primary .spinner {
+            border-top-color: #fff;
+        }
+
+        .btn-secondary .spinner {
+            border-top-color: #1a0033;
+        }
+
+        .btn-google .spinner {
+            border-top-color: #333;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            color: #888;
+            font-size: 13px;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .divider span {
+            padding: 0 15px;
+        }
+
+        .link {
+            color: #00ffff;
+            text-decoration: none;
+            font-size: 13px;
+            display: block;
+            text-align: center;
+            margin: 15px 0;
+            transition: color 0.3s ease;
+        }
+
+        .link:hover {
+            color: #ff00ff;
+        }
+
+        .language-selector {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        select {
+            padding: 10px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        .password-strength {
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+
+        .password-strength-bar {
+            height: 100%;
+            width: 0;
+            transition: all 0.3s ease;
+        }
+
+        .strength-weak { background: #ff6b6b; width: 33%; }
+        .strength-medium { background: #ffd93d; width: 66%; }
+        .strength-strong { background: #6bcf7f; width: 100%; }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            z-index: 9999;
+            display: none;
+            animation: slideIn 0.3s ease;
+            max-width: 350px;
+        }
+
+        [dir="rtl"] .notification {
+            right: auto;
+            left: 20px;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        [dir="rtl"] @keyframes slideIn {
+            from {
+                transform: translateX(-400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+        }
+
+        .notification.error {
+            background: linear-gradient(135deg, #ff6b6b, #ff0000);
+        }
+
+        .notification.success {
+            background: linear-gradient(135deg, #6bcf7f, #00ff88);
+        }
+
+        .notification.info {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .notification.show {
+            display: block;
+        }
+
+        .notification.hide {
+            animation: slideOut 0.3s ease;
+        }
+
+        .password-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .password-modal.active {
+            display: flex;
+        }
+
+        .password-modal-content {
+            background: linear-gradient(135deg, #1a0033, #330066);
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+        }
+
+        .password-modal-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #00ffff;
+        }
+
+        .password-modal-subtitle {
+            font-size: 14px;
+            color: #ccc;
+            margin-bottom: 25px;
+        }
+
+        .password-modal .input-group {
+            text-align: left;
+        }
+
+        [dir="rtl"] .password-modal .input-group {
+            text-align: right;
+        }
+
+        .password-modal .btn {
+            margin-top: 10px;
+        }
+
+        .close-modal-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 10px;
+        }
+
+        .close-modal-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+            }
+            .form-container {
+                padding: 20px;
+            }
+            .notification {
+                right: 10px;
+                left: 10px;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-shapes">
+        <svg class="shape" width="100" height="100" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="40" fill="#00ffff"/>
+        </svg>
+        <svg class="shape" width="120" height="120" viewBox="0 0 100 100">
+            <rect x="10" y="10" width="80" height="80" fill="#ff00ff"/>
+        </svg>
+        <svg class="shape" width="90" height="90" viewBox="0 0 100 100">
+            <polygon points="50,10 90,90 10,90" fill="#ccff00"/>
+        </svg>
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+    <div class="password-modal" id="passwordModal">
+        <div class="password-modal-content">
+            <div class="password-modal-title" data-i18n="setPassword">Set Your Password</div>
+            <div class="password-modal-subtitle" data-i18n="createStrongPassword">Create a strong password to secure your account</div>
+            
+            <form id="google-password-form" onsubmit="completeGoogleSignUp(event)">
+                <div class="input-group">
+                    <label class="input-label" data-i18n="createPassword">Create Password</label>
+                    <div class="input-wrapper">
+                        <svg class="input-icon" viewBox="0 0 24 24">
+                            <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                        </svg>
+                        <input type="password" id="google-password" data-i18n-placeholder="enterStrongPassword" placeholder="Enter strong password (min 6 chars)" minlength="6" required oninput="checkGooglePasswordStrength(this.value)">
+                        <svg class="toggle-password" viewBox="0 0 24 24" onclick="togglePassword('google-password')">
+                            <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                        </svg>
+                    </div>
+                    <div class="password-strength">
+                        <div class="password-strength-bar" id="google-strength-bar"></div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label" data-i18n="confirmPassword">Confirm Password</label>
+                    <div class="input-wrapper">
+                        <svg class="input-icon" viewBox="0 0 24 24">
+                            <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                        </svg>
+                        <input type="password" id="google-confirm-password" data-i18n-placeholder="confirmPasswordPlaceholder" placeholder="Confirm password" minlength="6" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-secondary" id="google-submit-btn">
+                    <span class="btn-text" data-i18n="completeRegistration">Complete Registration</span>
+                </button>
+                <button type="button" class="btn close-modal-btn" onclick="closePasswordModal()" data-i18n="cancel">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="quantyx.png" alt="Quantyx Logo">
+            </div>
+            <h1 class="app-name">Quantyx Intel™</h1>
+            <p class="app-subtitle" data-i18n="appSubtitle">Premium USDT Patform</p>
+        </div>
+
+        <div class="form-container">
+            <div class="tab-switcher">
+                <button class="tab-btn active" onclick="switchTab('login')" data-i18n="login">Login</button>
+                <button class="tab-btn" onclick="switchTab('register')" data-i18n="register">Register</button>
+            </div>
+
+            <div id="login-section" class="form-section active">
+                <form id="login-form" onsubmit="handleLogin(event)">
+                    <div class="input-group">
+                        <label class="input-label" data-i18n="email">Email</label>
+                        <div class="input-wrapper">
+                            <svg class="input-icon" viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                            <input type="email" id="login-email" data-i18n-placeholder="enterEmail" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label" data-i18n="password">Password</label>
+                        <div class="input-wrapper">
+                            <svg class="input-icon" viewBox="0 0 24 24">
+                                <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                            </svg>
+                            <input type="password" id="login-password" data-i18n-placeholder="enterPassword" placeholder="Enter password" required>
+                            <svg class="toggle-password" viewBox="0 0 24 24" onclick="togglePassword('login-password')">
+                                <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="remember-me">
+                        <label class="checkbox-label" for="remember-me" data-i18n="rememberMe">Remember me</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" id="login-btn">
+                        <span class="btn-text" data-i18n="login">Login</span>
+                    </button>
+                    <a href="#" class="link" onclick="switchTab('forgot'); return false;" data-i18n="forgotPassword">Forgot Password?</a>
+                </form>
+            </div>
+
+            <div id="register-section" class="form-section">
+                <button type="button" class="btn btn-google" id="google-signup-btn" onclick="handleGoogleSignUp()">
+                    <svg class="google-icon" viewBox="0 0 24 24">
+                        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                        <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                    </svg>
+                    <span class="btn-text" data-i18n="signUpGoogle">Sign up with Google</span>
+                </button>
+                
+                <div class="divider">
+                    <span data-i18n="or">OR</span>
+                </div>
+
+                <form id="register-form" onsubmit="handleRegister(event)">
+                    <div class="input-group">
+                        <label class="input-label" data-i18n="email">Email</label>
+                        <div class="input-wrapper">
+                            <svg class="input-icon" viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                            <input type="email" id="register-email" data-i18n-placeholder="enterEmail" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label" data-i18n="username">Username</label>
+                        <div class="input-wrapper">
+                            <svg class="input-icon" viewBox="0 0 24 24">
+                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                            </svg>
+                            <input type="text" id="register-username" data-i18n-placeholder="chooseUsername" placeholder="Choose username" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label" data-i18n="password">Password</label>
+                        <div class="input-wrapper">
+                            <svg class="input-icon" viewBox="0 0 24 24">
+                                <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                            </svg>
+                            <input type="password" id="register-password" data-i18n-placeholder="createPasswordPlaceholder" placeholder="Create password" required oninput="checkPasswordStrength(this.value)">
+                            <svg class="toggle-password" viewBox="0 0 24 24" onclick="togglePassword('register-password')">
+                                <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                            </svg>
+                        </div>
+                        <div class="password-strength">
+                            <div class="password-strength-bar" id="strength-bar"></div>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label" data-i18n="confirmPassword">Confirm Password</label>
+                        <div class="input-wrapper">
+                            <svg class="input-icon" viewBox="0 0 24 24">
+                                <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                            </svg>
+                            <input type="password" id="register-confirm-password" data-i18n-placeholder="confirmPasswordPlaceholder" placeholder="Confirm password" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label" data-i18n="invitationCode">Invitation Code (Optional)</label>
+                        <div class="input-wrapper">
+                            <svg class="input-icon" viewBox="0 0 24 24">
+                                <path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 12 7.4l3.38 4.6L17 10.83 14.92 8H20v6z"/>
+                            </svg>
+                            <input type="text" id="invite-code" data-i18n-placeholder="enterInvitationCode" placeholder="Enter invitation code" value="568466">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label" data-i18n="phoneNumber">Phone Number</label>
+                        <div class="input-wrapper">
+                            <svg class="input-icon" viewBox="0 0 24 24">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                            <input type="tel" id="register-phone" data-i18n-placeholder="enterPhone" placeholder="Enter phone number" required>
+                        </div>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terms" required>
+                        <label class="checkbox-label" for="terms" data-i18n="agreeTerms">I agree to Terms & Conditions</label>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="privacy" required>
+                        <label class="checkbox-label" for="privacy" data-i18n="agreePrivacy">I agree to Privacy Policy</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-secondary" id="register-btn">
+                        <span class="btn-text" data-i18n="registerNow">Register Now</span>
+                    </button>
+                    <a href="#" class="link" onclick="switchTab('login'); return false;" data-i18n="alreadyHaveAccount">Already have an account? Login</a>
+                </form>
+            </div>
+
+            <div id="forgot-section" class="form-section">
+                <form id="forgot-form" onsubmit="handleForgotPassword(event)">
+                    <div class="input-group">
+                        <label class="input-label" data-i18n="email">Email</label>
+                        <div class="input-wrapper">
+                            <svg class="input-icon" viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                            <input type="email" id="forgot-email" data-i18n-placeholder="enterEmail" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" id="forgot-btn">
+                        <span class="btn-text" data-i18n="resetPassword">Reset Password</span>
+                    </button>
+                    <a href="#" class="link" onclick="switchTab('login'); return false;" data-i18n="backToLogin">Back to Login</a>
+                </form>
+            </div>
+
+            <div class="language-selector">
+                <select id="language-select" onchange="changeLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="ar">عربي</option>
+                    <option value="fr">Français</option>
+                    <option value="it">Italiano</option>
+                    <option value="ja">日本語</option>
+                    <option value="ko">한국어</option>
+                    <option value="de">Deutsch</option>
+                    <option value="ru">Русский</option>
+                    <option value="vi">Tiếng Việt</option>
+                    <option value="pt">Português</option>
+                    <option value="tr">Türkçe</option>
+                    <option value="es">Español</option>
+                    <option value="fa">فارسی</option>
+                    <option value="id">Bahasa Indonesia</option>
+                    <option value="el">Ελληνικά</option>
+                    <option value="ms">Melayu</option>
+                    <option value="th">ภาษาไทย</option>
+                    <option value="la">Latinus</option>
+                    <option value="hi">हिंदी</option>
+                    <option value="bn">বাংলা</option>
+                    <option value="ur">اردو</option>
+                    <option value="zh">中文（繁體）</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const translations = {
+            en: {
+                appSubtitle: "Premium USDT Platform",
+                login: "Login",
+                register: "Register",
+                email: "Email",
+                password: "Password",
+                username: "Username",
+                confirmPassword: "Confirm Password",
+                invitationCode: "Invitation Code (Optional)",
+                phoneNumber: "Phone Number",
+                rememberMe: "Remember me",
+                forgotPassword: "Forgot Password?",
+                signUpGoogle: "Sign up with Google",
+                or: "OR",
+                agreeTerms: "I agree to Terms & Conditions",
+                agreePrivacy: "I agree to Privacy Policy",
+                registerNow: "Register Now",
+                alreadyHaveAccount: "Already have an account? Login",
+                resetPassword: "Reset Password",
+                backToLogin: "Back to Login",
+                setPassword: "Set Your Password",
+                createStrongPassword: "Create a strong password to secure your account",
+                createPassword: "Create Password",
+                completeRegistration: "Complete Registration",
+                cancel: "Cancel",
+                enterEmail: "Enter your email",
+                enterPassword: "Enter password",
+                chooseUsername: "Choose username",
+                createPasswordPlaceholder: "Create password",
+                confirmPasswordPlaceholder: "Confirm password",
+                enterInvitationCode: "Enter invitation code",
+                enterPhone: "Enter phone number",
+                enterStrongPassword: "Enter strong password (min 6 chars)",
+                welcomeBack: "Welcome back!",
+                accountCreated: "Account created successfully! Welcome",
+                passwordsDontMatch: "Passwords do not match!",
+                passwordTooShort: "Password must be at least 6 characters long!",
+                loginFailed: "Login failed. Please try again.",
+                noAccountFound: "No account found with this email.",
+                incorrectPassword: "Incorrect password.",
+                invalidEmail: "Invalid email address.",
+                tooManyAttempts: "Too many attempts. Please try again later.",
+                invalidCredential: "Invalid email or password.",
+                registrationFailed: "Registration failed. Please try again.",
+                emailAlreadyUsed: "This email is already registered.",
+                weakPassword: "Password is too weak.",
+                googleSignInFailed: "Google sign-in failed. Please try again.",
+                popupClosed: "Sign-in popup was closed.",
+                signInCancelled: "Sign-in was cancelled.",
+                passwordResetSent: "Password reset email sent to",
+                passwordResetFailed: "Password reset failed. Please try again.",
+                sessionExpired: "Your session has expired. Please login again.",
+                welcome: "Welcome"
+            },
+            ar: {
+                appSubtitle: "منصة استثمار متميزة",
+                login: "تسجيل الدخول",
+                register: "تسجيل",
+                email: "البريد الإلكتروني",
+                password: "كلمة المرور",
+                username: "اسم المستخدم",
+                confirmPassword: "تأكيد كلمة المرور",
+                invitationCode: "رمز الدعوة (اختياري)",
+                phoneNumber: "رقم الهاتف",
+                rememberMe: "تذكرني",
+                forgotPassword: "نسيت كلمة المرور؟",
+                signUpGoogle: "التسجيل باستخدام Google",
+                or: "أو",
+                agreeTerms: "أوافق على الشروط والأحكام",
+                agreePrivacy: "أوافق على سياسة الخصوصية",
+                registerNow: "سجل الآن",
+                alreadyHaveAccount: "لديك حساب بالفعل؟ تسجيل الدخول",
+                resetPassword: "إعادة تعيين كلمة المرور",
+                backToLogin: "العودة لتسجيل الدخول",
+                setPassword: "تعيين كلمة المرور",
+                createStrongPassword: "أنشئ كلمة مرور قوية لتأمين حسابك",
+                createPassword: "إنشاء كلمة المرور",
+                completeRegistration: "إكمال التسجيل",
+                cancel: "إلغاء",
+                enterEmail: "أدخل بريدك الإلكتروني",
+                enterPassword: "أدخل كلمة المرور",
+                chooseUsername: "اختر اسم المستخدم",
+                createPasswordPlaceholder: "إنشاء كلمة المرور",
+                confirmPasswordPlaceholder: "تأكيد كلمة المرور",
+                enterInvitationCode: "أدخل رمز الدعوة",
+                enterPhone: "أدخل رقم الهاتف",
+                enterStrongPassword: "أدخل كلمة مرور قوية (6 أحرف على الأقل)",
+                welcomeBack: "مرحبًا بعودتك!",
+                accountCreated: "تم إنشاء الحساب بنجاح! مرحبًا",
+                passwordsDontMatch: "كلمات المرور غير متطابقة!",
+                passwordTooShort: "يجب أن تكون كلمة المرور 6 أحرف على الأقل!",
+                loginFailed: "فشل تسجيل الدخول. حاول مرة أخرى.",
+                noAccountFound: "لم يتم العثور على حساب بهذا البريد.",
+                incorrectPassword: "كلمة مرور غير صحيحة.",
+                invalidEmail: "عنوان بريد إلكتروني غير صالح.",
+                tooManyAttempts: "محاولات كثيرة. حاول لاحقًا.",
+                invalidCredential: "بريد إلكتروني أو كلمة مرور غير صالحة.",
+                registrationFailed: "فشل التسجيل. حاول مرة أخرى.",
+                emailAlreadyUsed: "هذا البريد مسجل بالفعل.",
+                weakPassword: "كلمة المرور ضعيفة جدًا.",
+                googleSignInFailed: "فشل تسجيل الدخول بـ Google.",
+                popupClosed: "تم إغلاق نافذة تسجيل الدخول.",
+                signInCancelled: "تم إلغاء تسجيل الدخول.",
+                passwordResetSent: "تم إرسال بريد إعادة تعيين كلمة المرور إلى",
+                passwordResetFailed: "فشل إعادة تعيين كلمة المرور.",
+                sessionExpired: "انتهت جلستك. سجل الدخول مرة أخرى.",
+                welcome: "مرحبًا"
+            },
+            fr: {
+                appSubtitle: "Plateforme d'investissement premium",
+                login: "Connexion",
+                register: "S'inscrire",
+                email: "E-mail",
+                password: "Mot de passe",
+                username: "Nom d'utilisateur",
+                confirmPassword: "Confirmer le mot de passe",
+                invitationCode: "Code d'invitation (Optionnel)",
+                phoneNumber: "Numéro de téléphone",
+                rememberMe: "Se souvenir de moi",
+                forgotPassword: "Mot de passe oublié?",
+                signUpGoogle: "S'inscrire avec Google",
+                or: "OU",
+                agreeTerms: "J'accepte les conditions générales",
+                agreePrivacy: "J'accepte la politique de confidentialité",
+                registerNow: "S'inscrire maintenant",
+                alreadyHaveAccount: "Vous avez déjà un compte? Connexion",
+                resetPassword: "Réinitialiser le mot de passe",
+                backToLogin: "Retour à la connexion",
+                setPassword: "Définir votre mot de passe",
+                createStrongPassword: "Créez un mot de passe fort pour sécuriser votre compte",
+                createPassword: "Créer un mot de passe",
+                completeRegistration: "Terminer l'inscription",
+                cancel: "Annuler",
+                enterEmail: "Entrez votre e-mail",
+                enterPassword: "Entrez le mot de passe",
+                chooseUsername: "Choisissez un nom d'utilisateur",
+                createPasswordPlaceholder: "Créer un mot de passe",
+                confirmPasswordPlaceholder: "Confirmer le mot de passe",
+                enterInvitationCode: "Entrez le code d'invitation",
+                enterPhone: "Entrez le numéro de téléphone",
+                enterStrongPassword: "Entrez un mot de passe fort (min 6 caractères)",
+                welcomeBack: "Bon retour!",
+                accountCreated: "Compte créé avec succès! Bienvenue",
+                passwordsDontMatch: "Les mots de passe ne correspondent pas!",
+                passwordTooShort: "Le mot de passe doit contenir au moins 6 caractères!",
+                loginFailed: "Échec de la connexion. Veuillez réessayer.",
+                noAccountFound: "Aucun compte trouvé avec cet e-mail.",
+                incorrectPassword: "Mot de passe incorrect.",
+                invalidEmail: "Adresse e-mail invalide.",
+                tooManyAttempts: "Trop de tentatives. Réessayez plus tard.",
+                invalidCredential: "E-mail ou mot de passe invalide.",
+                registrationFailed: "Échec de l'inscription. Veuillez réessayer.",
+                emailAlreadyUsed: "Cet e-mail est déjà enregistré.",
+                weakPassword: "Le mot de passe est trop faible.",
+                googleSignInFailed: "Échec de la connexion Google.",
+                popupClosed: "La fenêtre de connexion a été fermée.",
+                signInCancelled: "La connexion a été annulée.",
+                passwordResetSent: "E-mail de réinitialisation envoyé à",
+                passwordResetFailed: "Échec de la réinitialisation.",
+                sessionExpired: "Votre session a expiré. Veuillez vous reconnecter.",
+                welcome: "Bienvenue"
+            },
+            it: {
+                appSubtitle: "Piattaforma di investimento premium",
+                login: "Accedi",
+                register: "Registrati",
+                email: "E-mail",
+                password: "Password",
+                username: "Nome utente",
+                confirmPassword: "Conferma password",
+                invitationCode: "Codice invito (Opzionale)",
+                phoneNumber: "Numero di telefono",
+                rememberMe: "Ricordami",
+                forgotPassword: "Password dimenticata?",
+                signUpGoogle: "Registrati con Google",
+                or: "OPPURE",
+                agreeTerms: "Accetto i termini e condizioni",
+                agreePrivacy: "Accetto la politica sulla privacy",
+                registerNow: "Registrati ora",
+                alreadyHaveAccount: "Hai già un account? Accedi",
+                resetPassword: "Reimposta password",
+                backToLogin: "Torna al login",
+                setPassword: "Imposta la tua password",
+                createStrongPassword: "Crea una password forte per proteggere il tuo account",
+                createPassword: "Crea password",
+                completeRegistration: "Completa registrazione",
+                cancel: "Annulla",
+                enterEmail: "Inserisci la tua e-mail",
+                enterPassword: "Inserisci password",
+                chooseUsername: "Scegli nome utente",
+                createPasswordPlaceholder: "Crea password",
+                confirmPasswordPlaceholder: "Conferma password",
+                enterInvitationCode: "Inserisci codice invito",
+                enterPhone: "Inserisci numero di telefono",
+                enterStrongPassword: "Inserisci password forte (min 6 caratteri)",
+                welcomeBack: "Bentornato!",
+                accountCreated: "Account creato con successo! Benvenuto",
+                passwordsDontMatch: "Le password non corrispondono!",
+                passwordTooShort: "La password deve avere almeno 6 caratteri!",
+                loginFailed: "Accesso fallito. Riprova.",
+                noAccountFound: "Nessun account trovato con questa e-mail.",
+                incorrectPassword: "Password errata.",
+                invalidEmail: "Indirizzo e-mail non valido.",
+                tooManyAttempts: "Troppi tentativi. Riprova più tardi.",
+                invalidCredential: "E-mail o password non valida.",
+                registrationFailed: "Registrazione fallita. Riprova.",
+                emailAlreadyUsed: "Questa e-mail è già registrata.",
+                weakPassword: "La password è troppo debole.",
+                googleSignInFailed: "Accesso Google fallito.",
+                popupClosed: "La finestra di accesso è stata chiusa.",
+                signInCancelled: "L'accesso è stato annullato.",
+                passwordResetSent: "E-mail di reimpostazione inviata a",
+                passwordResetFailed: "Reimpostazione password fallita.",
+                sessionExpired: "La sessione è scaduta. Accedi di nuovo.",
+                welcome: "Benvenuto"
+            },
+            ja: {
+                appSubtitle: "プレミアム投資プラットフォーム",
+                login: "ログイン",
+                register: "登録",
+                email: "メールアドレス",
+                password: "パスワード",
+                username: "ユーザー名",
+                confirmPassword: "パスワード確認",
+                invitationCode: "招待コード（任意）",
+                phoneNumber: "電話番号",
+                rememberMe: "ログイン状態を保持",
+                forgotPassword: "パスワードを忘れた？",
+                signUpGoogle: "Googleで登録",
+                or: "または",
+                agreeTerms: "利用規約に同意します",
+                agreePrivacy: "プライバシーポリシーに同意します",
+                registerNow: "今すぐ登録",
+                alreadyHaveAccount: "アカウントをお持ちですか？ログイン",
+                resetPassword: "パスワードをリセット",
+                backToLogin: "ログインに戻る",
+                setPassword: "パスワードを設定",
+                createStrongPassword: "アカウントを保護するために強力なパスワードを作成してください",
+                createPassword: "パスワードを作成",
+                completeRegistration: "登録を完了",
+                cancel: "キャンセル",
+                enterEmail: "メールアドレスを入力",
+                enterPassword: "パスワードを入力",
+                chooseUsername: "ユーザー名を選択",
+                createPasswordPlaceholder: "パスワードを作成",
+                confirmPasswordPlaceholder: "パスワードを確認",
+                enterInvitationCode: "招待コードを入力",
+                enterPhone: "電話番号を入力",
+                enterStrongPassword: "強力なパスワードを入力（最小6文字）",
+                welcomeBack: "おかえりなさい！",
+                accountCreated: "アカウントが正常に作成されました！ようこそ",
+                passwordsDontMatch: "パスワードが一致しません！",
+                passwordTooShort: "パスワードは6文字以上必要です！",
+                loginFailed: "ログインに失敗しました。再試行してください。",
+                noAccountFound: "このメールアドレスのアカウントが見つかりません。",
+                incorrectPassword: "パスワードが間違っています。",
+                invalidEmail: "無効なメールアドレスです。",
+                tooManyAttempts: "試行回数が多すぎます。後でお試しください。",
+                invalidCredential: "無効なメールまたはパスワードです。",
+                registrationFailed: "登録に失敗しました。再試行してください。",
+                emailAlreadyUsed: "このメールは既に登録されています。",
+                weakPassword: "パスワードが弱すぎます。",
+                googleSignInFailed: "Googleサインインに失敗しました。",
+                popupClosed: "サインインポップアップが閉じられました。",
+                signInCancelled: "サインインがキャンセルされました。",
+                passwordResetSent: "パスワードリセットメールが送信されました",
+                passwordResetFailed: "パスワードリセットに失敗しました。",
+                sessionExpired: "セッションの有効期限が切れました。再度ログインしてください。",
+                welcome: "ようこそ"
+            },
+            ko: {
+                appSubtitle: "프리미엄 투자 플랫폼",
+                login: "로그인",
+                register: "회원가입",
+                email: "이메일",
+                password: "비밀번호",
+                username: "사용자 이름",
+                confirmPassword: "비밀번호 확인",
+                invitationCode: "초대 코드 (선택사항)",
+                phoneNumber: "전화번호",
+                rememberMe: "로그인 상태 유지",
+                forgotPassword: "비밀번호를 잊으셨나요?",
+                signUpGoogle: "Google로 가입",
+                or: "또는",
+                agreeTerms: "이용약관에 동의합니다",
+                agreePrivacy: "개인정보처리방침에 동의합니다",
+                registerNow: "지금 가입",
+                alreadyHaveAccount: "이미 계정이 있으신가요? 로그인",
+                resetPassword: "비밀번호 재설정",
+                backToLogin: "로그인으로 돌아가기",
+                setPassword: "비밀번호 설정",
+                createStrongPassword: "계정 보안을 위해 강력한 비밀번호를 만드세요",
+                createPassword: "비밀번호 만들기",
+                completeRegistration: "가입 완료",
+                cancel: "취소",
+                enterEmail: "이메일을 입력하세요",
+                enterPassword: "비밀번호를 입력하세요",
+                chooseUsername: "사용자 이름 선택",
+                createPasswordPlaceholder: "비밀번호 만들기",
+                confirmPasswordPlaceholder: "비밀번호 확인",
+                enterInvitationCode: "초대 코드 입력",
+                enterPhone: "전화번호 입력",
+                enterStrongPassword: "강력한 비밀번호 입력 (최소 6자)",
+                welcomeBack: "다시 오신 것을 환영합니다!",
+                accountCreated: "계정이 성공적으로 생성되었습니다! 환영합니다",
+                passwordsDontMatch: "비밀번호가 일치하지 않습니다!",
+                passwordTooShort: "비밀번호는 최소 6자 이상이어야 합니다!",
+                loginFailed: "로그인에 실패했습니다. 다시 시도해주세요.",
+                noAccountFound: "이 이메일로 등록된 계정이 없습니다.",
+                incorrectPassword: "비밀번호가 틀렸습니다.",
+                invalidEmail: "유효하지 않은 이메일 주소입니다.",
+                tooManyAttempts: "시도 횟수가 너무 많습니다. 나중에 다시 시도해주세요.",
+                invalidCredential: "유효하지 않은 이메일 또는 비밀번호입니다.",
+                registrationFailed: "가입에 실패했습니다. 다시 시도해주세요.",
+                emailAlreadyUsed: "이 이메일은 이미 등록되어 있습니다.",
+                weakPassword: "비밀번호가 너무 약합니다.",
+                googleSignInFailed: "Google 로그인에 실패했습니다.",
+                popupClosed: "로그인 팝업이 닫혔습니다.",
+                signInCancelled: "로그인이 취소되었습니다.",
+                passwordResetSent: "비밀번호 재설정 이메일이 전송되었습니다",
+                passwordResetFailed: "비밀번호 재설정에 실패했습니다.",
+                sessionExpired: "세션이 만료되었습니다. 다시 로그인해주세요.",
+                welcome: "환영합니다"
+            },
+            de: {
+                appSubtitle: "Premium-Investitionsplattform",
+                login: "Anmelden",
+                register: "Registrieren",
+                email: "E-Mail",
+                password: "Passwort",
+                username: "Benutzername",
+                confirmPassword: "Passwort bestätigen",
+                invitationCode: "Einladungscode (Optional)",
+                phoneNumber: "Telefonnummer",
+                rememberMe: "Angemeldet bleiben",
+                forgotPassword: "Passwort vergessen?",
+                signUpGoogle: "Mit Google registrieren",
+                or: "ODER",
+                agreeTerms: "Ich stimme den AGB zu",
+                agreePrivacy: "Ich stimme der Datenschutzrichtlinie zu",
+                registerNow: "Jetzt registrieren",
+                alreadyHaveAccount: "Bereits ein Konto? Anmelden",
+                resetPassword: "Passwort zurücksetzen",
+                backToLogin: "Zurück zur Anmeldung",
+                setPassword: "Passwort festlegen",
+                createStrongPassword: "Erstellen Sie ein starkes Passwort für Ihr Konto",
+                createPassword: "Passwort erstellen",
+                completeRegistration: "Registrierung abschließen",
+                cancel: "Abbrechen",
+                enterEmail: "E-Mail eingeben",
+                enterPassword: "Passwort eingeben",
+                chooseUsername: "Benutzername wählen",
+                createPasswordPlaceholder: "Passwort erstellen",
+                confirmPasswordPlaceholder: "Passwort bestätigen",
+                enterInvitationCode: "Einladungscode eingeben",
+                enterPhone: "Telefonnummer eingeben",
+                enterStrongPassword: "Starkes Passwort eingeben (min. 6 Zeichen)",
+                welcomeBack: "Willkommen zurück!",
+                accountCreated: "Konto erfolgreich erstellt! Willkommen",
+                passwordsDontMatch: "Passwörter stimmen nicht überein!",
+                passwordTooShort: "Passwort muss mindestens 6 Zeichen haben!",
+                loginFailed: "Anmeldung fehlgeschlagen. Bitte erneut versuchen.",
+                noAccountFound: "Kein Konto mit dieser E-Mail gefunden.",
+                incorrectPassword: "Falsches Passwort.",
+                invalidEmail: "Ungültige E-Mail-Adresse.",
+                tooManyAttempts: "Zu viele Versuche. Später erneut versuchen.",
+                invalidCredential: "Ungültige E-Mail oder Passwort.",
+                registrationFailed: "Registrierung fehlgeschlagen.",
+                emailAlreadyUsed: "Diese E-Mail ist bereits registriert.",
+                weakPassword: "Passwort ist zu schwach.",
+                googleSignInFailed: "Google-Anmeldung fehlgeschlagen.",
+                popupClosed: "Anmelde-Popup wurde geschlossen.",
+                signInCancelled: "Anmeldung wurde abgebrochen.",
+                passwordResetSent: "Passwort-Reset-E-Mail gesendet an",
+                passwordResetFailed: "Passwort-Reset fehlgeschlagen.",
+                sessionExpired: "Ihre Sitzung ist abgelaufen. Bitte erneut anmelden.",
+                welcome: "Willkommen"
+            },
+            ru: {
+                appSubtitle: "Премиум инвестиционная платформа",
+                login: "Войти",
+                register: "Регистрация",
+                email: "Эл. почта",
+                password: "Пароль",
+                username: "Имя пользователя",
+                confirmPassword: "Подтвердите пароль",
+                invitationCode: "Код приглашения (Необязательно)",
+                phoneNumber: "Номер телефона",
+                rememberMe: "Запомнить меня",
+                forgotPassword: "Забыли пароль?",
+                signUpGoogle: "Зарегистрироваться через Google",
+                or: "ИЛИ",
+                agreeTerms: "Я согласен с условиями использования",
+                agreePrivacy: "Я согласен с политикой конфиденциальности",
+                registerNow: "Зарегистрироваться",
+                alreadyHaveAccount: "Уже есть аккаунт? Войти",
+                resetPassword: "Сбросить пароль",
+                backToLogin: "Вернуться к входу",
+                setPassword: "Установить пароль",
+                createStrongPassword: "Создайте надежный пароль для защиты аккаунта",
+                createPassword: "Создать пароль",
+                completeRegistration: "Завершить регистрацию",
+                cancel: "Отмена",
+                enterEmail: "Введите эл. почту",
+                enterPassword: "Введите пароль",
+                chooseUsername: "Выберите имя пользователя",
+                createPasswordPlaceholder: "Создайте пароль",
+                confirmPasswordPlaceholder: "Подтвердите пароль",
+                enterInvitationCode: "Введите код приглашения",
+                enterPhone: "Введите номер телефона",
+                enterStrongPassword: "Введите надежный пароль (мин. 6 символов)",
+                welcomeBack: "С возвращением!",
+                accountCreated: "Аккаунт успешно создан! Добро пожаловать",
+                passwordsDontMatch: "Пароли не совпадают!",
+                passwordTooShort: "Пароль должен быть не менее 6 символов!",
+                loginFailed: "Ошибка входа. Попробуйте снова.",
+                noAccountFound: "Аккаунт с этой почтой не найден.",
+                incorrectPassword: "Неверный пароль.",
+                invalidEmail: "Неверный адрес эл. почты.",
+                tooManyAttempts: "Слишком много попыток. Попробуйте позже.",
+                invalidCredential: "Неверная почта или пароль.",
+                registrationFailed: "Ошибка регистрации.",
+                emailAlreadyUsed: "Эта почта уже зарегистрирована.",
+                weakPassword: "Пароль слишком слабый.",
+                googleSignInFailed: "Ошибка входа через Google.",
+                popupClosed: "Окно входа было закрыто.",
+                signInCancelled: "Вход отменен.",
+                passwordResetSent: "Письмо для сброса пароля отправлено на",
+                passwordResetFailed: "Ошибка сброса пароля.",
+                sessionExpired: "Сессия истекла. Войдите снова.",
+                welcome: "Добро пожаловать"
+            },
+            vi: {
+                appSubtitle: "Nền tảng đầu tư cao cấp",
+                login: "Đăng nhập",
+                register: "Đăng ký",
+                email: "Email",
+                password: "Mật khẩu",
+                username: "Tên người dùng",
+                confirmPassword: "Xác nhận mật khẩu",
+                invitationCode: "Mã mời (Tùy chọn)",
+                phoneNumber: "Số điện thoại",
+                rememberMe: "Ghi nhớ tôi",
+                forgotPassword: "Quên mật khẩu?",
+                signUpGoogle: "Đăng ký bằng Google",
+                or: "HOẶC",
+                agreeTerms: "Tôi đồng ý với Điều khoản",
+                agreePrivacy: "Tôi đồng ý với Chính sách bảo mật",
+                registerNow: "Đăng ký ngay",
+                alreadyHaveAccount: "Đã có tài khoản? Đăng nhập",
+                resetPassword: "Đặt lại mật khẩu",
+                backToLogin: "Quay lại đăng nhập",
+                setPassword: "Đặt mật khẩu",
+                createStrongPassword: "Tạo mật khẩu mạnh để bảo vệ tài khoản",
+                createPassword: "Tạo mật khẩu",
+                completeRegistration: "Hoàn tất đăng ký",
+                cancel: "Hủy",
+                enterEmail: "Nhập email của bạn",
+                enterPassword: "Nhập mật khẩu",
+                chooseUsername: "Chọn tên người dùng",
+                createPasswordPlaceholder: "Tạo mật khẩu",
+                confirmPasswordPlaceholder: "Xác nhận mật khẩu",
+                enterInvitationCode: "Nhập mã mời",
+                enterPhone: "Nhập số điện thoại",
+                enterStrongPassword: "Nhập mật khẩu mạnh (tối thiểu 6 ký tự)",
+                welcomeBack: "Chào mừng trở lại!",
+                accountCreated: "Tạo tài khoản thành công! Chào mừng",
+                passwordsDontMatch: "Mật khẩu không khớp!",
+                passwordTooShort: "Mật khẩu phải có ít nhất 6 ký tự!",
+                loginFailed: "Đăng nhập thất bại. Vui lòng thử lại.",
+                noAccountFound: "Không tìm thấy tài khoản với email này.",
+                incorrectPassword: "Mật khẩu không đúng.",
+                invalidEmail: "Địa chỉ email không hợp lệ.",
+                tooManyAttempts: "Quá nhiều lần thử. Vui lòng thử lại sau.",
+                invalidCredential: "Email hoặc mật khẩu không hợp lệ.",
+                registrationFailed: "Đăng ký thất bại.",
+                emailAlreadyUsed: "Email này đã được đăng ký.",
+                weakPassword: "Mật khẩu quá yếu.",
+                googleSignInFailed: "Đăng nhập Google thất bại.",
+                popupClosed: "Cửa sổ đăng nhập đã đóng.",
+                signInCancelled: "Đăng nhập đã bị hủy.",
+                passwordResetSent: "Email đặt lại mật khẩu đã được gửi đến",
+                passwordResetFailed: "Đặt lại mật khẩu thất bại.",
+                sessionExpired: "Phiên đã hết hạn. Vui lòng đăng nhập lại.",
+                welcome: "Chào mừng"
+            },
+            pt: {
+                appSubtitle: "Plataforma de investimento premium",
+                login: "Entrar",
+                register: "Registrar",
+                email: "E-mail",
+                password: "Senha",
+                username: "Nome de usuário",
+                confirmPassword: "Confirmar senha",
+                invitationCode: "Código de convite (Opcional)",
+                phoneNumber: "Número de telefone",
+                rememberMe: "Lembrar-me",
+                forgotPassword: "Esqueceu a senha?",
+                signUpGoogle: "Registrar com Google",
+                or: "OU",
+                agreeTerms: "Concordo com os Termos e Condições",
+                agreePrivacy: "Concordo com a Política de Privacidade",
+                registerNow: "Registrar agora",
+                alreadyHaveAccount: "Já tem uma conta? Entrar",
+                resetPassword: "Redefinir senha",
+                backToLogin: "Voltar ao login",
+                setPassword: "Definir sua senha",
+                createStrongPassword: "Crie uma senha forte para proteger sua conta",
+                createPassword: "Criar senha",
+                completeRegistration: "Completar registro",
+                cancel: "Cancelar",
+                enterEmail: "Digite seu e-mail",
+                enterPassword: "Digite a senha",
+                chooseUsername: "Escolha um nome de usuário",
+                createPasswordPlaceholder: "Criar senha",
+                confirmPasswordPlaceholder: "Confirmar senha",
+                enterInvitationCode: "Digite o código de convite",
+                enterPhone: "Digite o número de telefone",
+                enterStrongPassword: "Digite uma senha forte (mín. 6 caracteres)",
+                welcomeBack: "Bem-vindo de volta!",
+                accountCreated: "Conta criada com sucesso! Bem-vindo",
+                passwordsDontMatch: "As senhas não coincidem!",
+                passwordTooShort: "A senha deve ter pelo menos 6 caracteres!",
+                loginFailed: "Falha no login. Tente novamente.",
+                noAccountFound: "Nenhuma conta encontrada com este e-mail.",
+                incorrectPassword: "Senha incorreta.",
+                invalidEmail: "Endereço de e-mail inválido.",
+                tooManyAttempts: "Muitas tentativas. Tente mais tarde.",
+                invalidCredential: "E-mail ou senha inválidos.",
+                registrationFailed: "Falha no registro.",
+                emailAlreadyUsed: "Este e-mail já está registrado.",
+                weakPassword: "A senha é muito fraca.",
+                googleSignInFailed: "Falha no login do Google.",
+                popupClosed: "A janela de login foi fechada.",
+                signInCancelled: "O login foi cancelado.",
+                passwordResetSent: "E-mail de redefinição enviado para",
+                passwordResetFailed: "Falha na redefinição de senha.",
+                sessionExpired: "Sua sessão expirou. Faça login novamente.",
+                welcome: "Bem-vindo"
+            },
+            tr: {
+                appSubtitle: "Premium yatırım platformu",
+                login: "Giriş",
+                register: "Kayıt Ol",
+                email: "E-posta",
+                password: "Şifre",
+                username: "Kullanıcı adı",
+                confirmPassword: "Şifreyi onayla",
+                invitationCode: "Davet kodu (İsteğe bağlı)",
+                phoneNumber: "Telefon numarası",
+                rememberMe: "Beni hatırla",
+                forgotPassword: "Şifrenizi mi unuttunuz?",
+                signUpGoogle: "Google ile kayıt ol",
+                or: "VEYA",
+                agreeTerms: "Şartlar ve Koşulları kabul ediyorum",
+                agreePrivacy: "Gizlilik Politikasını kabul ediyorum",
+                registerNow: "Şimdi kayıt ol",
+                alreadyHaveAccount: "Zaten hesabınız var mı? Giriş yapın",
+                resetPassword: "Şifreyi sıfırla",
+                backToLogin: "Girişe geri dön",
+                setPassword: "Şifrenizi belirleyin",
+                createStrongPassword: "Hesabınızı korumak için güçlü bir şifre oluşturun",
+                createPassword: "Şifre oluştur",
+                completeRegistration: "Kaydı tamamla",
+                cancel: "İptal",
+                enterEmail: "E-postanızı girin",
+                enterPassword: "Şifre girin",
+                chooseUsername: "Kullanıcı adı seçin",
+                createPasswordPlaceholder: "Şifre oluştur",
+                confirmPasswordPlaceholder: "Şifreyi onayla",
+                enterInvitationCode: "Davet kodunu girin",
+                enterPhone: "Telefon numarası girin",
+                enterStrongPassword: "Güçlü şifre girin (min. 6 karakter)",
+                welcomeBack: "Tekrar hoş geldiniz!",
+                accountCreated: "Hesap başarıyla oluşturuldu! Hoş geldiniz",
+                passwordsDontMatch: "Şifreler eşleşmiyor!",
+                passwordTooShort: "Şifre en az 6 karakter olmalı!",
+                loginFailed: "Giriş başarısız. Tekrar deneyin.",
+                noAccountFound: "Bu e-posta ile hesap bulunamadı.",
+                incorrectPassword: "Yanlış şifre.",
+                invalidEmail: "Geçersiz e-posta adresi.",
+                tooManyAttempts: "Çok fazla deneme. Daha sonra tekrar deneyin.",
+                invalidCredential: "Geçersiz e-posta veya şifre.",
+                registrationFailed: "Kayıt başarısız.",
+                emailAlreadyUsed: "Bu e-posta zaten kayıtlı.",
+                weakPassword: "Şifre çok zayıf.",
+                googleSignInFailed: "Google girişi başarısız.",
+                popupClosed: "Giriş penceresi kapatıldı.",
+                signInCancelled: "Giriş iptal edildi.",
+                passwordResetSent: "Şifre sıfırlama e-postası gönderildi",
+                passwordResetFailed: "Şifre sıfırlama başarısız.",
+                sessionExpired: "Oturumunuz sona erdi. Tekrar giriş yapın.",
+                welcome: "Hoş geldiniz"
+            },
+            es: {
+                appSubtitle: "Plataforma de inversión premium",
+                login: "Iniciar sesión",
+                register: "Registrarse",
+                email: "Correo electrónico",
+                password: "Contraseña",
+                username: "Nombre de usuario",
+                confirmPassword: "Confirmar contraseña",
+                invitationCode: "Código de invitación (Opcional)",
+                phoneNumber: "Número de teléfono",
+                rememberMe: "Recordarme",
+                forgotPassword: "¿Olvidó su contraseña?",
+                signUpGoogle: "Registrarse con Google",
+                or: "O",
+                agreeTerms: "Acepto los Términos y Condiciones",
+                agreePrivacy: "Acepto la Política de Privacidad",
+                registerNow: "Registrarse ahora",
+                alreadyHaveAccount: "¿Ya tienes una cuenta? Iniciar sesión",
+                resetPassword: "Restablecer contraseña",
+                backToLogin: "Volver al inicio de sesión",
+                setPassword: "Establecer contraseña",
+                createStrongPassword: "Cree una contraseña segura para proteger su cuenta",
+                createPassword: "Crear contraseña",
+                completeRegistration: "Completar registro",
+                cancel: "Cancelar",
+                enterEmail: "Ingrese su correo",
+                enterPassword: "Ingrese contraseña",
+                chooseUsername: "Elija nombre de usuario",
+                createPasswordPlaceholder: "Crear contraseña",
+                confirmPasswordPlaceholder: "Confirmar contraseña",
+                enterInvitationCode: "Ingrese código de invitación",
+                enterPhone: "Ingrese número de teléfono",
+                enterStrongPassword: "Ingrese contraseña segura (mín. 6 caracteres)",
+                welcomeBack: "¡Bienvenido de nuevo!",
+                accountCreated: "¡Cuenta creada exitosamente! Bienvenido",
+                passwordsDontMatch: "¡Las contraseñas no coinciden!",
+                passwordTooShort: "¡La contraseña debe tener al menos 6 caracteres!",
+                loginFailed: "Error de inicio de sesión. Intente de nuevo.",
+                noAccountFound: "No se encontró cuenta con este correo.",
+                incorrectPassword: "Contraseña incorrecta.",
+                invalidEmail: "Dirección de correo inválida.",
+                tooManyAttempts: "Demasiados intentos. Intente más tarde.",
+                invalidCredential: "Correo o contraseña inválidos.",
+                registrationFailed: "Error de registro.",
+                emailAlreadyUsed: "Este correo ya está registrado.",
+                weakPassword: "La contraseña es muy débil.",
+                googleSignInFailed: "Error de inicio de sesión con Google.",
+                popupClosed: "La ventana de inicio de sesión se cerró.",
+                signInCancelled: "El inicio de sesión fue cancelado.",
+                passwordResetSent: "Correo de restablecimiento enviado a",
+                passwordResetFailed: "Error al restablecer contraseña.",
+                sessionExpired: "Su sesión ha expirado. Inicie sesión de nuevo.",
+                welcome: "Bienvenido"
+            },
+            fa: {
+                appSubtitle: "پلتفرم سرمایه‌گذاری ممتاز",
+                login: "ورود",
+                register: "ثبت نام",
+                email: "ایمیل",
+                password: "رمز عبور",
+                username: "نام کاربری",
+                confirmPassword: "تأیید رمز عبور",
+                invitationCode: "کد دعوت (اختیاری)",
+                phoneNumber: "شماره تلفن",
+                rememberMe: "مرا به خاطر بسپار",
+                forgotPassword: "رمز عبور را فراموش کرده‌اید؟",
+                signUpGoogle: "ثبت نام با گوگل",
+                or: "یا",
+                agreeTerms: "شرایط و ضوابط را می‌پذیرم",
+                agreePrivacy: "سیاست حریم خصوصی را می‌پذیرم",
+                registerNow: "اکنون ثبت نام کنید",
+                alreadyHaveAccount: "حساب کاربری دارید؟ ورود",
+                resetPassword: "بازنشانی رمز عبور",
+                backToLogin: "بازگشت به ورود",
+                setPassword: "رمز عبور را تنظیم کنید",
+                createStrongPassword: "یک رمز عبور قوی برای امنیت حساب خود ایجاد کنید",
+                createPassword: "ایجاد رمز عبور",
+                completeRegistration: "تکمیل ثبت نام",
+                cancel: "لغو",
+                enterEmail: "ایمیل خود را وارد کنید",
+                enterPassword: "رمز عبور را وارد کنید",
+                chooseUsername: "نام کاربری انتخاب کنید",
+                createPasswordPlaceholder: "ایجاد رمز عبور",
+                confirmPasswordPlaceholder: "تأیید رمز عبور",
+                enterInvitationCode: "کد دعوت را وارد کنید",
+                enterPhone: "شماره تلفن را وارد کنید",
+                enterStrongPassword: "رمز عبور قوی وارد کنید (حداقل ۶ کاراکتر)",
+                welcomeBack: "خوش آمدید!",
+                accountCreated: "حساب با موفقیت ایجاد شد! خوش آمدید",
+                passwordsDontMatch: "رمزهای عبور مطابقت ندارند!",
+                passwordTooShort: "رمز عبور باید حداقل ۶ کاراکتر باشد!",
+                loginFailed: "ورود ناموفق. دوباره تلاش کنید.",
+                noAccountFound: "حسابی با این ایمیل یافت نشد.",
+                incorrectPassword: "رمز عبور نادرست.",
+                invalidEmail: "آدرس ایمیل نامعتبر.",
+                tooManyAttempts: "تلاش‌های زیاد. بعداً امتحان کنید.",
+                invalidCredential: "ایمیل یا رمز عبور نامعتبر.",
+                registrationFailed: "ثبت نام ناموفق.",
+                emailAlreadyUsed: "این ایمیل قبلاً ثبت شده است.",
+                weakPassword: "رمز عبور بسیار ضعیف است.",
+                googleSignInFailed: "ورود با گوگل ناموفق بود.",
+                popupClosed: "پنجره ورود بسته شد.",
+                signInCancelled: "ورود لغو شد.",
+                passwordResetSent: "ایمیل بازنشانی رمز عبور ارسال شد به",
+                passwordResetFailed: "بازنشانی رمز عبور ناموفق بود.",
+                sessionExpired: "جلسه شما منقضی شده است. دوباره وارد شوید.",
+                welcome: "خوش آمدید"
+            },
+            id: {
+                appSubtitle: "Platform investasi premium",
+                login: "Masuk",
+                register: "Daftar",
+                email: "Email",
+                password: "Kata sandi",
+                username: "Nama pengguna",
+                confirmPassword: "Konfirmasi kata sandi",
+                invitationCode: "Kode undangan (Opsional)",
+                phoneNumber: "Nomor telepon",
+                rememberMe: "Ingat saya",
+                forgotPassword: "Lupa kata sandi?",
+                signUpGoogle: "Daftar dengan Google",
+                or: "ATAU",
+                agreeTerms: "Saya setuju dengan Syarat & Ketentuan",
+                agreePrivacy: "Saya setuju dengan Kebijakan Privasi",
+                registerNow: "Daftar sekarang",
+                alreadyHaveAccount: "Sudah punya akun? Masuk",
+                resetPassword: "Reset kata sandi",
+                backToLogin: "Kembali ke login",
+                setPassword: "Atur kata sandi Anda",
+                createStrongPassword: "Buat kata sandi yang kuat untuk mengamankan akun Anda",
+                createPassword: "Buat kata sandi",
+                completeRegistration: "Selesaikan pendaftaran",
+                cancel: "Batal",
+                enterEmail: "Masukkan email Anda",
+                enterPassword: "Masukkan kata sandi",
+                chooseUsername: "Pilih nama pengguna",
+                createPasswordPlaceholder: "Buat kata sandi",
+                confirmPasswordPlaceholder: "Konfirmasi kata sandi",
+                enterInvitationCode: "Masukkan kode undangan",
+                enterPhone: "Masukkan nomor telepon",
+                enterStrongPassword: "Masukkan kata sandi kuat (min 6 karakter)",
+                welcomeBack: "Selamat datang kembali!",
+                accountCreated: "Akun berhasil dibuat! Selamat datang",
+                passwordsDontMatch: "Kata sandi tidak cocok!",
+                passwordTooShort: "Kata sandi minimal 6 karakter!",
+                loginFailed: "Login gagal. Silakan coba lagi.",
+                noAccountFound: "Tidak ada akun dengan email ini.",
+                incorrectPassword: "Kata sandi salah.",
+                invalidEmail: "Alamat email tidak valid.",
+                tooManyAttempts: "Terlalu banyak percobaan. Coba lagi nanti.",
+                invalidCredential: "Email atau kata sandi tidak valid.",
+                registrationFailed: "Pendaftaran gagal.",
+                emailAlreadyUsed: "Email ini sudah terdaftar.",
+                weakPassword: "Kata sandi terlalu lemah.",
+                googleSignInFailed: "Login Google gagal.",
+                popupClosed: "Jendela login ditutup.",
+                signInCancelled: "Login dibatalkan.",
+                passwordResetSent: "Email reset kata sandi terkirim ke",
+                passwordResetFailed: "Reset kata sandi gagal.",
+                sessionExpired: "Sesi Anda telah berakhir. Silakan login lagi.",
+                welcome: "Selamat datang"
+            },
+            el: {
+                appSubtitle: "Premium επενδυτική πλατφόρμα",
+                login: "Σύνδεση",
+                register: "Εγγραφή",
+                email: "Email",
+                password: "Κωδικός",
+                username: "Όνομα χρήστη",
+                confirmPassword: "Επιβεβαίωση κωδικού",
+                invitationCode: "Κωδικός πρόσκλησης (Προαιρετικό)",
+                phoneNumber: "Αριθμός τηλεφώνου",
+                rememberMe: "Να με θυμάσαι",
+                forgotPassword: "Ξεχάσατε τον κωδικό;",
+                signUpGoogle: "Εγγραφή με Google",
+                or: "Ή",
+                agreeTerms: "Συμφωνώ με τους Όρους και Προϋποθέσεις",
+                agreePrivacy: "Συμφωνώ με την Πολιτική Απορρήτου",
+                registerNow: "Εγγραφή τώρα",
+                alreadyHaveAccount: "Έχετε ήδη λογαριασμό; Σύνδεση",
+                resetPassword: "Επαναφορά κωδικού",
+                backToLogin: "Πίσω στη σύνδεση",
+                setPassword: "Ορίστε τον κωδικό σας",
+                createStrongPassword: "Δημιουργήστε ισχυρό κωδικό για τον λογαριασμό σας",
+                createPassword: "Δημιουργία κωδικού",
+                completeRegistration: "Ολοκλήρωση εγγραφής",
+                cancel: "Ακύρωση",
+                enterEmail: "Εισάγετε το email σας",
+                enterPassword: "Εισάγετε κωδικό",
+                chooseUsername: "Επιλέξτε όνομα χρήστη",
+                createPasswordPlaceholder: "Δημιουργία κωδικού",
+                confirmPasswordPlaceholder: "Επιβεβαίωση κωδικού",
+                enterInvitationCode: "Εισάγετε κωδικό πρόσκλησης",
+                enterPhone: "Εισάγετε αριθμό τηλεφώνου",
+                enterStrongPassword: "Εισάγετε ισχυρό κωδικό (ελάχ. 6 χαρακτήρες)",
+                welcomeBack: "Καλώς ήρθατε ξανά!",
+                accountCreated: "Ο λογαριασμός δημιουργήθηκε! Καλώς ήρθατε",
+                passwordsDontMatch: "Οι κωδικοί δεν ταιριάζουν!",
+                passwordTooShort: "Ο κωδικός πρέπει να έχει τουλάχιστον 6 χαρακτήρες!",
+                loginFailed: "Αποτυχία σύνδεσης. Δοκιμάστε ξανά.",
+                noAccountFound: "Δεν βρέθηκε λογαριασμός με αυτό το email.",
+                incorrectPassword: "Λάθος κωδικός.",
+                invalidEmail: "Μη έγκυρη διεύθυνση email.",
+                tooManyAttempts: "Πολλές προσπάθειες. Δοκιμάστε αργότερα.",
+                invalidCredential: "Μη έγκυρο email ή κωδικός.",
+                registrationFailed: "Αποτυχία εγγραφής.",
+                emailAlreadyUsed: "Αυτό το email είναι ήδη εγγεγραμμένο.",
+                weakPassword: "Ο κωδικός είναι πολύ αδύναμος.",
+                googleSignInFailed: "Αποτυχία σύνδεσης Google.",
+                popupClosed: "Το παράθυρο σύνδεσης έκλεισε.",
+                signInCancelled: "Η σύνδεση ακυρώθηκε.",
+                passwordResetSent: "Email επαναφοράς κωδικού στάλθηκε στο",
+                passwordResetFailed: "Αποτυχία επαναφοράς κωδικού.",
+                sessionExpired: "Η συνεδρία σας έληξε. Συνδεθείτε ξανά.",
+                welcome: "Καλώς ήρθατε"
+            },
+            ms: {
+                appSubtitle: "Platform pelaburan premium",
+                login: "Log masuk",
+                register: "Daftar",
+                email: "E-mel",
+                password: "Kata laluan",
+                username: "Nama pengguna",
+                confirmPassword: "Sahkan kata laluan",
+                invitationCode: "Kod jemputan (Pilihan)",
+                phoneNumber: "Nombor telefon",
+                rememberMe: "Ingat saya",
+                forgotPassword: "Lupa kata laluan?",
+                signUpGoogle: "Daftar dengan Google",
+                or: "ATAU",
+                agreeTerms: "Saya bersetuju dengan Terma & Syarat",
+                agreePrivacy: "Saya bersetuju dengan Dasar Privasi",
+                registerNow: "Daftar sekarang",
+                alreadyHaveAccount: "Sudah ada akaun? Log masuk",
+                resetPassword: "Tetapkan semula kata laluan",
+                backToLogin: "Kembali ke log masuk",
+                setPassword: "Tetapkan kata laluan anda",
+                createStrongPassword: "Cipta kata laluan kukuh untuk melindungi akaun anda",
+                createPassword: "Cipta kata laluan",
+                completeRegistration: "Lengkapkan pendaftaran",
+                cancel: "Batal",
+                enterEmail: "Masukkan e-mel anda",
+                enterPassword: "Masukkan kata laluan",
+                chooseUsername: "Pilih nama pengguna",
+                createPasswordPlaceholder: "Cipta kata laluan",
+                confirmPasswordPlaceholder: "Sahkan kata laluan",
+                enterInvitationCode: "Masukkan kod jemputan",
+                enterPhone: "Masukkan nombor telefon",
+                enterStrongPassword: "Masukkan kata laluan kukuh (min 6 aksara)",
+                welcomeBack: "Selamat kembali!",
+                accountCreated: "Akaun berjaya dicipta! Selamat datang",
+                passwordsDontMatch: "Kata laluan tidak sepadan!",
+                passwordTooShort: "Kata laluan mesti sekurang-kurangnya 6 aksara!",
+                loginFailed: "Log masuk gagal. Sila cuba lagi.",
+                noAccountFound: "Tiada akaun dijumpai dengan e-mel ini.",
+                incorrectPassword: "Kata laluan salah.",
+                invalidEmail: "Alamat e-mel tidak sah.",
+                tooManyAttempts: "Terlalu banyak percubaan. Cuba lagi kemudian.",
+                invalidCredential: "E-mel atau kata laluan tidak sah.",
+                registrationFailed: "Pendaftaran gagal.",
+                emailAlreadyUsed: "E-mel ini sudah didaftarkan.",
+                weakPassword: "Kata laluan terlalu lemah.",
+                googleSignInFailed: "Log masuk Google gagal.",
+                popupClosed: "Tetingkap log masuk ditutup.",
+                signInCancelled: "Log masuk dibatalkan.",
+                passwordResetSent: "E-mel tetapan semula kata laluan dihantar ke",
+                passwordResetFailed: "Tetapan semula kata laluan gagal.",
+                sessionExpired: "Sesi anda telah tamat. Sila log masuk semula.",
+                welcome: "Selamat datang"
+            },
+            th: {
+                appSubtitle: "แพลตฟอร์มการลงทุนระดับพรีเมียม",
+                login: "เข้าสู่ระบบ",
+                register: "ลงทะเบียน",
+                email: "อีเมล",
+                password: "รหัสผ่าน",
+                username: "ชื่อผู้ใช้",
+                confirmPassword: "ยืนยันรหัสผ่าน",
+                invitationCode: "รหัสเชิญ (ไม่บังคับ)",
+                phoneNumber: "หมายเลขโทรศัพท์",
+                rememberMe: "จดจำฉัน",
+                forgotPassword: "ลืมรหัสผ่าน?",
+                signUpGoogle: "ลงทะเบียนด้วย Google",
+                or: "หรือ",
+                agreeTerms: "ฉันยอมรับข้อกำหนดและเงื่อนไข",
+                agreePrivacy: "ฉันยอมรับนโยบายความเป็นส่วนตัว",
+                registerNow: "ลงทะเบียนเดี๋ยวนี้",
+                alreadyHaveAccount: "มีบัญชีแล้ว? เข้าสู่ระบบ",
+                resetPassword: "รีเซ็ตรหัสผ่าน",
+                backToLogin: "กลับไปเข้าสู่ระบบ",
+                setPassword: "ตั้งรหัสผ่านของคุณ",
+                createStrongPassword: "สร้างรหัสผ่านที่แข็งแกร่งเพื่อปกป้องบัญชีของคุณ",
+                createPassword: "สร้างรหัสผ่าน",
+                completeRegistration: "เสร็จสิ้นการลงทะเบียน",
+                cancel: "ยกเลิก",
+                enterEmail: "กรอกอีเมลของคุณ",
+                enterPassword: "กรอกรหัสผ่าน",
+                chooseUsername: "เลือกชื่อผู้ใช้",
+                createPasswordPlaceholder: "สร้างรหัสผ่าน",
+                confirmPasswordPlaceholder: "ยืนยันรหัสผ่าน",
+                enterInvitationCode: "กรอกรหัสเชิญ",
+                enterPhone: "กรอกหมายเลขโทรศัพท์",
+                enterStrongPassword: "กรอกรหัสผ่านที่แข็งแกร่ง (อย่างน้อย 6 ตัวอักษร)",
+                welcomeBack: "ยินดีต้อนรับกลับ!",
+                accountCreated: "สร้างบัญชีสำเร็จ! ยินดีต้อนรับ",
+                passwordsDontMatch: "รหัสผ่านไม่ตรงกัน!",
+                passwordTooShort: "รหัสผ่านต้องมีอย่างน้อย 6 ตัวอักษร!",
+                loginFailed: "เข้าสู่ระบบล้มเหลว กรุณาลองใหม่",
+                noAccountFound: "ไม่พบบัญชีที่มีอีเมลนี้",
+                incorrectPassword: "รหัสผ่านไม่ถูกต้อง",
+                invalidEmail: "ที่อยู่อีเมลไม่ถูกต้อง",
+                tooManyAttempts: "พยายามมากเกินไป กรุณาลองใหม่ภายหลัง",
+                invalidCredential: "อีเมลหรือรหัสผ่านไม่ถูกต้อง",
+                registrationFailed: "การลงทะเบียนล้มเหลว",
+                emailAlreadyUsed: "อีเมลนี้ลงทะเบียนแล้ว",
+                weakPassword: "รหัสผ่านอ่อนแอเกินไป",
+                googleSignInFailed: "การเข้าสู่ระบบ Google ล้มเหลว",
+                popupClosed: "หน้าต่างเข้าสู่ระบบถูกปิด",
+                signInCancelled: "การเข้าสู่ระบบถูกยกเลิก",
+                passwordResetSent: "อีเมลรีเซ็ตรหัสผ่านถูกส่งไปที่",
+                passwordResetFailed: "การรีเซ็ตรหัสผ่านล้มเหลว",
+                sessionExpired: "เซสชันของคุณหมดอายุแล้ว กรุณาเข้าสู่ระบบใหม่",
+                welcome: "ยินดีต้อนรับ"
+            },
+            la: {
+                appSubtitle: "Premium Investitionis Platform",
+                login: "Ingressus",
+                register: "Inscribere",
+                email: "Litterae electronicae",
+                password: "Tessera",
+                username: "Nomen usoris",
+                confirmPassword: "Confirmare tesseram",
+                invitationCode: "Codex invitationis (Optionalis)",
+                phoneNumber: "Numerus telephonicus",
+                rememberMe: "Memento mei",
+                forgotPassword: "Tesseram oblitus?",
+                signUpGoogle: "Inscribere cum Google",
+                or: "VEL",
+                agreeTerms: "Consentio terminis et conditionibus",
+                agreePrivacy: "Consentio politiae privatae",
+                registerNow: "Inscribere nunc",
+                alreadyHaveAccount: "Iam rationem habes? Ingressus",
+                resetPassword: "Tesseram renovare",
+                backToLogin: "Redi ad ingressum",
+                setPassword: "Tesseram tuam statue",
+                createStrongPassword: "Crea tesseram fortem ad tuendum rationem tuam",
+                createPassword: "Tesseram creare",
+                completeRegistration: "Inscriptionem complere",
+                cancel: "Annullare",
+                enterEmail: "Inscribe litteras electronicas tuas",
+                enterPassword: "Inscribe tesseram",
+                chooseUsername: "Elige nomen usoris",
+                createPasswordPlaceholder: "Tesseram creare",
+                confirmPasswordPlaceholder: "Confirmare tesseram",
+                enterInvitationCode: "Inscribe codicem invitationis",
+                enterPhone: "Inscribe numerum telephonicum",
+                enterStrongPassword: "Inscribe tesseram fortem (min 6 characteres)",
+                welcomeBack: "Salve iterum!",
+                accountCreated: "Ratio feliciter creata! Salve",
+                passwordsDontMatch: "Tesserae non congruunt!",
+                passwordTooShort: "Tessera debet habere minimum 6 characteres!",
+                loginFailed: "Ingressus defecit. Rursus tempta.",
+                noAccountFound: "Nulla ratio inventa cum hac email.",
+                incorrectPassword: "Tessera falsa.",
+                invalidEmail: "Inscriptio email invalida.",
+                tooManyAttempts: "Nimis multi conatus. Postea rursus tempta.",
+                invalidCredential: "Email vel tessera invalida.",
+                registrationFailed: "Inscriptio defecit.",
+                emailAlreadyUsed: "Haec email iam inscripta est.",
+                weakPassword: "Tessera nimis debilis est.",
+                googleSignInFailed: "Ingressus Google defecit.",
+                popupClosed: "Fenestra ingressus clausa est.",
+                signInCancelled: "Ingressus annullatus est.",
+                passwordResetSent: "Email renovationis tesserae missa ad",
+                passwordResetFailed: "Renovatio tesserae defecit.",
+                sessionExpired: "Sessio tua expiravit. Rursus ingrede.",
+                welcome: "Salve"
+            },
+            hi: {
+                appSubtitle: "प्रीमियम निवेश प्लेटफ़ॉर्म",
+                login: "लॉगिन",
+                register: "रजिस्टर",
+                email: "ईमेल",
+                password: "पासवर्ड",
+                username: "उपयोगकर्ता नाम",
+                confirmPassword: "पासवर्ड की पुष्टि करें",
+                invitationCode: "निमंत्रण कोड (वैकल्पिक)",
+                phoneNumber: "फ़ोन नंबर",
+                rememberMe: "मुझे याद रखें",
+                forgotPassword: "पासवर्ड भूल गए?",
+                signUpGoogle: "Google से साइन अप करें",
+                or: "या",
+                agreeTerms: "मैं नियम और शर्तों से सहमत हूं",
+                agreePrivacy: "मैं गोपनीयता नीति से सहमत हूं",
+                registerNow: "अभी रजिस्टर करें",
+                alreadyHaveAccount: "पहले से खाता है? लॉगिन करें",
+                resetPassword: "पासवर्ड रीसेट करें",
+                backToLogin: "लॉगिन पर वापस जाएं",
+                setPassword: "अपना पासवर्ड सेट करें",
+                createStrongPassword: "अपने खाते को सुरक्षित करने के लिए एक मजबूत पासवर्ड बनाएं",
+                createPassword: "पासवर्ड बनाएं",
+                completeRegistration: "पंजीकरण पूरा करें",
+                cancel: "रद्द करें",
+                enterEmail: "अपना ईमेल दर्ज करें",
+                enterPassword: "पासवर्ड दर्ज करें",
+                chooseUsername: "उपयोगकर्ता नाम चुनें",
+                createPasswordPlaceholder: "पासवर्ड बनाएं",
+                confirmPasswordPlaceholder: "पासवर्ड की पुष्टि करें",
+                enterInvitationCode: "निमंत्रण कोड दर्ज करें",
+                enterPhone: "फ़ोन नंबर दर्ज करें",
+                enterStrongPassword: "मजबूत पासवर्ड दर्ज करें (न्यूनतम 6 वर्ण)",
+                welcomeBack: "आपका स्वागत है!",
+                accountCreated: "खाता सफलतापूर्वक बनाया गया! स्वागत है",
+                passwordsDontMatch: "पासवर्ड मेल नहीं खाते!",
+                passwordTooShort: "पासवर्ड कम से कम 6 वर्णों का होना चाहिए!",
+                loginFailed: "लॉगिन विफल। कृपया पुनः प्रयास करें।",
+                noAccountFound: "इस ईमेल से कोई खाता नहीं मिला।",
+                incorrectPassword: "गलत पासवर्ड।",
+                invalidEmail: "अमान्य ईमेल पता।",
+                tooManyAttempts: "बहुत अधिक प्रयास। बाद में पुनः प्रयास करें।",
+                invalidCredential: "अमान्य ईमेल या पासवर्ड।",
+                registrationFailed: "पंजीकरण विफल।",
+                emailAlreadyUsed: "यह ईमेल पहले से पंजीकृत है।",
+                weakPassword: "पासवर्ड बहुत कमजोर है।",
+                googleSignInFailed: "Google साइन-इन विफल।",
+                popupClosed: "साइन-इन पॉपअप बंद कर दिया गया।",
+                signInCancelled: "साइन-इन रद्द कर दिया गया।",
+                passwordResetSent: "पासवर्ड रीसेट ईमेल भेजा गया",
+                passwordResetFailed: "पासवर्ड रीसेट विफल।",
+                sessionExpired: "आपका सत्र समाप्त हो गया है। कृपया पुनः लॉगिन करें।",
+                welcome: "स्वागत है"
+            },
+            bn: {
+                appSubtitle: "প্রিমিয়াম বিনিয়োগ প্ল্যাটফর্ম",
+                login: "লগইন",
+                register: "নিবন্ধন",
+                email: "ইমেইল",
+                password: "পাসওয়ার্ড",
+                username: "ব্যবহারকারীর নাম",
+                confirmPassword: "পাসওয়ার্ড নিশ্চিত করুন",
+                invitationCode: "আমন্ত্রণ কোড (ঐচ্ছিক)",
+                phoneNumber: "ফোন নম্বর",
+                rememberMe: "আমাকে মনে রাখুন",
+                forgotPassword: "পাসওয়ার্ড ভুলে গেছেন?",
+                signUpGoogle: "Google দিয়ে সাইন আপ করুন",
+                or: "অথবা",
+                agreeTerms: "আমি শর্তাবলী মেনে নিচ্ছি",
+                agreePrivacy: "আমি গোপনীয়তা নীতি মেনে নিচ্ছি",
+                registerNow: "এখনই নিবন্ধন করুন",
+                alreadyHaveAccount: "ইতিমধ্যে অ্যাকাউন্ট আছে? লগইন করুন",
+                resetPassword: "পাসওয়ার্ড রিসেট করুন",
+                backToLogin: "লগইনে ফিরে যান",
+                setPassword: "আপনার পাসওয়ার্ড সেট করুন",
+                createStrongPassword: "আপনার অ্যাকাউন্ট সুরক্ষিত করতে একটি শক্তিশালী পাসওয়ার্ড তৈরি করুন",
+                createPassword: "পাসওয়ার্ড তৈরি করুন",
+                completeRegistration: "নিবন্ধন সম্পূর্ণ করুন",
+                cancel: "বাতিল",
+                enterEmail: "আপনার ইমেইল লিখুন",
+                enterPassword: "পাসওয়ার্ড লিখুন",
+                chooseUsername: "ব্যবহারকারীর নাম নির্বাচন করুন",
+                createPasswordPlaceholder: "পাসওয়ার্ড তৈরি করুন",
+                confirmPasswordPlaceholder: "পাসওয়ার্ড নিশ্চিত করুন",
+                enterInvitationCode: "আমন্ত্রণ কোড লিখুন",
+                enterPhone: "ফোন নম্বর লিখুন",
+                enterStrongPassword: "শক্তিশালী পাসওয়ার্ড লিখুন (সর্বনিম্ন ৬ অক্ষর)",
+                welcomeBack: "স্বাগতম আবার!",
+                accountCreated: "অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে! স্বাগতম",
+                passwordsDontMatch: "পাসওয়ার্ড মিলছে না!",
+                passwordTooShort: "পাসওয়ার্ড কমপক্ষে ৬ অক্ষরের হতে হবে!",
+                loginFailed: "লগইন ব্যর্থ। আবার চেষ্টা করুন।",
+                noAccountFound: "এই ইমেইলে কোনো অ্যাকাউন্ট পাওয়া যায়নি।",
+                incorrectPassword: "ভুল পাসওয়ার্ড।",
+                invalidEmail: "অবৈধ ইমেইল ঠিকানা।",
+                tooManyAttempts: "অনেক চেষ্টা হয়েছে। পরে আবার চেষ্টা করুন।",
+                invalidCredential: "অবৈধ ইমেইল বা পাসওয়ার্ড।",
+                registrationFailed: "নিবন্ধন ব্যর্থ।",
+                emailAlreadyUsed: "এই ইমেইল ইতিমধ্যে নিবন্ধিত।",
+                weakPassword: "পাসওয়ার্ড খুব দুর্বল।",
+                googleSignInFailed: "Google সাইন-ইন ব্যর্থ।",
+                popupClosed: "সাইন-ইন পপআপ বন্ধ হয়ে গেছে।",
+                signInCancelled: "সাইন-ইন বাতিল হয়েছে।",
+                passwordResetSent: "পাসওয়ার্ড রিসেট ইমেইল পাঠানো হয়েছে",
+                passwordResetFailed: "পাসওয়ার্ড রিসেট ব্যর্থ।",
+                sessionExpired: "আপনার সেশন মেয়াদ উত্তীর্ণ হয়েছে। আবার লগইন করুন।",
+                welcome: "স্বাগতম"
+            },
+            ur: {
+                appSubtitle: "پریمیم سرمایہ کاری پلیٹ فارم",
+                login: "لاگ ان",
+                register: "رجسٹر",
+                email: "ای میل",
+                password: "پاس ورڈ",
+                username: "صارف نام",
+                confirmPassword: "پاس ورڈ کی تصدیق کریں",
+                invitationCode: "دعوت کوڈ (اختیاری)",
+                phoneNumber: "فون نمبر",
+                rememberMe: "مجھے یاد رکھیں",
+                forgotPassword: "پاس ورڈ بھول گئے؟",
+                signUpGoogle: "Google سے سائن اپ کریں",
+                or: "یا",
+                agreeTerms: "میں شرائط و ضوابط سے اتفاق کرتا ہوں",
+                agreePrivacy: "میں رازداری کی پالیسی سے اتفاق کرتا ہوں",
+                registerNow: "ابھی رجسٹر کریں",
+                alreadyHaveAccount: "پہلے سے اکاؤنٹ ہے؟ لاگ ان کریں",
+                resetPassword: "پاس ورڈ ری سیٹ کریں",
+                backToLogin: "لاگ ان پر واپس جائیں",
+                setPassword: "اپنا پاس ورڈ سیٹ کریں",
+                createStrongPassword: "اپنے اکاؤنٹ کو محفوظ بنانے کے لیے ایک مضبوط پاس ورڈ بنائیں",
+                createPassword: "پاس ورڈ بنائیں",
+                completeRegistration: "رجسٹریشن مکمل کریں",
+                cancel: "منسوخ",
+                enterEmail: "اپنا ای میل درج کریں",
+                enterPassword: "پاس ورڈ درج کریں",
+                chooseUsername: "صارف نام منتخب کریں",
+                createPasswordPlaceholder: "پاس ورڈ بنائیں",
+                confirmPasswordPlaceholder: "پاس ورڈ کی تصدیق کریں",
+                enterInvitationCode: "دعوت کوڈ درج کریں",
+                enterPhone: "فون نمبر درج کریں",
+                enterStrongPassword: "مضبوط پاس ورڈ درج کریں (کم از کم 6 حروف)",
+                welcomeBack: "خوش آمدید!",
+                accountCreated: "اکاؤنٹ کامیابی سے بنا! خوش آمدید",
+                passwordsDontMatch: "پاس ورڈ میل نہیں کھاتے!",
+                passwordTooShort: "پاس ورڈ کم از کم 6 حروف کا ہونا چاہیے!",
+                loginFailed: "لاگ ان ناکام۔ دوبارہ کوشش کریں۔",
+                noAccountFound: "اس ای میل سے کوئی اکاؤنٹ نہیں ملا۔",
+                incorrectPassword: "غلط پاس ورڈ۔",
+                invalidEmail: "غلط ای میل پتہ۔",
+                tooManyAttempts: "بہت زیادہ کوششیں۔ بعد میں دوبارہ کوشش کریں۔",
+                invalidCredential: "غلط ای میل یا پاس ورڈ۔",
+                registrationFailed: "رجسٹریشن ناکام۔",
+                emailAlreadyUsed: "یہ ای میل پہلے سے رجسٹرڈ ہے۔",
+                weakPassword: "پاس ورڈ بہت کمزور ہے۔",
+                googleSignInFailed: "Google سائن ان ناکام۔",
+                popupClosed: "سائن ان ونڈو بند ہو گئی۔",
+                signInCancelled: "سائن ان منسوخ ہو گیا۔",
+                passwordResetSent: "پاس ورڈ ری سیٹ ای میل بھیج دی گئی",
+                passwordResetFailed: "پاس ورڈ ری سیٹ ناکام۔",
+                sessionExpired: "آپ کا سیشن ختم ہو گیا۔ دوبارہ لاگ ان کریں۔",
+                welcome: "خوش آمدید"
+            },
+            zh: {
+                appSubtitle: "優質投資平台",
+                login: "登入",
+                register: "註冊",
+                email: "電子郵件",
+                password: "密碼",
+                username: "使用者名稱",
+                confirmPassword: "確認密碼",
+                invitationCode: "邀請碼（可選）",
+                phoneNumber: "電話號碼",
+                rememberMe: "記住我",
+                forgotPassword: "忘記密碼？",
+                signUpGoogle: "使用 Google 註冊",
+                or: "或",
+                agreeTerms: "我同意條款和條件",
+                agreePrivacy: "我同意隱私政策",
+                registerNow: "立即註冊",
+                alreadyHaveAccount: "已有帳戶？登入",
+                resetPassword: "重置密碼",
+                backToLogin: "返回登入",
+                setPassword: "設定您的密碼",
+                createStrongPassword: "建立強密碼以保護您的帳戶",
+                createPassword: "建立密碼",
+                completeRegistration: "完成註冊",
+                cancel: "取消",
+                enterEmail: "輸入您的電子郵件",
+                enterPassword: "輸入密碼",
+                chooseUsername: "選擇使用者名稱",
+                createPasswordPlaceholder: "建立密碼",
+                confirmPasswordPlaceholder: "確認密碼",
+                enterInvitationCode: "輸入邀請碼",
+                enterPhone: "輸入電話號碼",
+                enterStrongPassword: "輸入強密碼（至少6個字符）",
+                welcomeBack: "歡迎回來！",
+                accountCreated: "帳戶創建成功！歡迎",
+                passwordsDontMatch: "密碼不匹配！",
+                passwordTooShort: "密碼必須至少6個字符！",
+                loginFailed: "登入失敗。請重試。",
+                noAccountFound: "找不到此電子郵件的帳戶。",
+                incorrectPassword: "密碼錯誤。",
+                invalidEmail: "無效的電子郵件地址。",
+                tooManyAttempts: "嘗試次數過多。請稍後重試。",
+                invalidCredential: "無效的電子郵件或密碼。",
+                registrationFailed: "註冊失敗。",
+                emailAlreadyUsed: "此電子郵件已註冊。",
+                weakPassword: "密碼太弱。",
+                googleSignInFailed: "Google 登入失敗。",
+                popupClosed: "登入彈窗已關閉。",
+                signInCancelled: "登入已取消。",
+                passwordResetSent: "密碼重置郵件已發送至",
+                passwordResetFailed: "密碼重置失敗。",
+                sessionExpired: "您的會話已過期。請重新登入。",
+                welcome: "歡迎"
+            }
+        };
+
+        const rtlLanguages = ['ar', 'fa', 'ur'];
+        let currentLanguage = localStorage.getItem('selectedLanguage') || 'en';
+
+        function applyTranslations(lang) {
+            const t = translations[lang] || translations.en;
+            
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (t[key]) {
+                    el.textContent = t[key];
+                }
+            });
+            
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (t[key]) {
+                    el.placeholder = t[key];
+                }
+            });
+            
+            if (rtlLanguages.includes(lang)) {
+                document.documentElement.setAttribute('dir', 'rtl');
+                document.documentElement.setAttribute('lang', lang);
+            } else {
+                document.documentElement.setAttribute('dir', 'ltr');
+                document.documentElement.setAttribute('lang', lang);
+            }
+            
+            document.getElementById('language-select').value = lang;
+            localStorage.setItem('selectedLanguage', lang);
+            currentLanguage = lang;
+        }
+
+        function getTranslation(key) {
+            const t = translations[currentLanguage] || translations.en;
+            return t[key] || translations.en[key] || key;
+        }
+
+        window.changeLanguage = function(lang) {
+            applyTranslations(lang);
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            applyTranslations(currentLanguage);
+            
+            // Handle referral link: #register?ref=XXXXX
+            handleReferralLink();
+        });
+        
+        function handleReferralLink() {
+            const hash = window.location.hash;
+            const fullUrl = window.location.href;
+            let referralCode = null;
+            
+            // Check for #register?ref=XXXXX format
+            if (hash.includes('/login')) {
+                const hashParts = hash.split('?');
+                if (hashParts.length > 1) {
+                    const params = new URLSearchParams(hashParts[1]);
+                    referralCode = params.get('ref');
+                }
+            }
+            
+            // Also check for regular query params ?ref=XXXXX
+            const urlParams = new URLSearchParams(window.location.search);
+            if (!referralCode) {
+                referralCode = urlParams.get('ref');
+            }
+            
+            // If referral code found, handle it
+            if (referralCode) {
+                // Store referral code for later use (both keys for compatibility)
+                localStorage.setItem('pendingReferralCode', referralCode);
+                localStorage.setItem('referredByCode', referralCode);
+                
+                // Switch to register tab
+                setTimeout(() => {
+                    switchToRegisterWithReferral(referralCode);
+                }, 500);
+            }
+        }
+        
+        function switchToRegisterWithReferral(referralCode) {
+            // Switch to register tab
+            const tabs = document.querySelectorAll('.tab-btn');
+            const sections = document.querySelectorAll('.form-section');
+            
+            tabs.forEach(t => t.classList.remove('active'));
+            sections.forEach(s => s.classList.remove('active'));
+            
+            if (tabs.length > 1) tabs[1].classList.add('active');
+            document.getElementById('register-section').classList.add('active');
+            
+            // Fill in the referral code
+            const inviteCodeInput = document.getElementById('invite-code');
+            if (inviteCodeInput) {
+                inviteCodeInput.value = referralCode;
+            }
+            
+            // Show the "Invited by" notification
+            showReferralNotification(referralCode);
+        }
+        
+        function showReferralNotification(referralCode) {
+            const notification = document.getElementById('notification');
+            notification.innerHTML = '<span style="display: flex; align-items: center; gap: 8px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> Invited by ' + referralCode + '</span>';
+            notification.className = 'notification info show';
+            
+            // Keep visible longer for referral notifications
+            setTimeout(() => {
+                notification.classList.add('hide');
+                setTimeout(() => {
+                    notification.classList.remove('show', 'hide');
+                }, 300);
+            }, 5000);
+        }
+        
+        window.switchToRegisterWithReferral = switchToRegisterWithReferral;
+    </script>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
+        import { 
+            getAuth, 
+            createUserWithEmailAndPassword,
+            signInWithEmailAndPassword,
+            sendPasswordResetEmail,
+            GoogleAuthProvider,
+            signInWithPopup,
+            updatePassword
+        } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+        // Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAFrf0PhE-uIlTUR8eqtmbWyx_zmoWDNYY",
+  authDomain: "quantyx-ai.firebaseapp.com",
+  projectId: "quantyx-ai",
+  storageBucket: "quantyx-ai.firebasestorage.app",
+  messagingSenderId: "262095327610",
+  appId: "1:262095327610:web:9dd6f9f9f2bf87634d86c3",
+  measurementId: "G-WQK778HBE9"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+        const auth = getAuth(app);
+        const googleProvider = new GoogleAuthProvider();
+
+        let pendingGoogleUser = null;
+
+        function getTranslation(key) {
+            const lang = localStorage.getItem('selectedLanguage') || 'en';
+            const t = window.translations ? (window.translations[lang] || window.translations.en) : {};
+            return t[key] || key;
+        }
+
+        function showNotification(message, type = 'success') {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.className = `notification ${type} show`;
+            
+            setTimeout(() => {
+                notification.classList.add('hide');
+                setTimeout(() => {
+                    notification.classList.remove('show', 'hide');
+                }, 300);
+            }, 3000);
+        }
+
+        window.showNotification = showNotification;
+
+        function setButtonLoading(btnId, loading) {
+            const btn = document.getElementById(btnId);
+            if (!btn) return;
+            
+            const btnText = btn.querySelector('.btn-text');
+            let spinner = btn.querySelector('.spinner');
+            
+            if (loading) {
+                btn.disabled = true;
+                if (btnText) btnText.style.display = 'none';
+                if (!spinner) {
+                    spinner = document.createElement('div');
+                    spinner.className = 'spinner';
+                    btn.appendChild(spinner);
+                }
+            } else {
+                btn.disabled = false;
+                if (btnText) btnText.style.display = 'inline';
+                if (spinner) spinner.remove();
+            }
+        }
+
+        window.setButtonLoading = setButtonLoading;
+
+        function checkSession() {
+            const userData = JSON.parse(localStorage.getItem('luxeEarnUser') || 'null');
+            if (userData && userData.isLoggedIn) {
+                const loginTime = new Date(userData.loginTime);
+                const now = new Date();
+                const hoursDiff = (now - loginTime) / (1000 * 60 * 60);
+                
+                if (hoursDiff < 24) {
+                    window.location.href = '/index';
+                } else {
+                    localStorage.removeItem('luxeEarnUser');
+                    showNotification(getTranslation('sessionExpired'), 'error');
+                }
+            }
+        }
+
+        checkSession();
+
+        window.handleLogin = async function(e) {
+            e.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            const remember = document.getElementById('remember-me').checked;
+
+            setButtonLoading('login-btn', true);
+
+            try {
+                const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+                
+                const userData = {
+                    email: user.email,
+                    uid: user.uid,
+                    isLoggedIn: true,
+                    loginTime: new Date().toISOString()
+                };
+                
+                localStorage.setItem('luxeEarnUser', JSON.stringify(userData));
+                localStorage.setItem('userEmail', user.email);
+                if (remember) {
+                    localStorage.setItem('rememberMe', 'true');
+                }
+                
+                showNotification(`${getTranslation('welcomeBack')} ${user.email}`, 'success');
+                setTimeout(() => {
+                    window.location.href = '/index';
+                }, 2000);
+                
+            } catch (error) {
+                console.error('Login error:', error);
+                let errorMessage = getTranslation('loginFailed');
+                
+                if (error.code === 'auth/user-not-found') {
+                    errorMessage = getTranslation('noAccountFound');
+                } else if (error.code === 'auth/wrong-password') {
+                    errorMessage = getTranslation('incorrectPassword');
+                } else if (error.code === 'auth/invalid-email') {
+                    errorMessage = getTranslation('invalidEmail');
+                } else if (error.code === 'auth/too-many-requests') {
+                    errorMessage = getTranslation('tooManyAttempts');
+                } else if (error.code === 'auth/invalid-credential') {
+                    errorMessage = getTranslation('invalidCredential');
+                }
+                
+                showNotification(errorMessage, 'error');
+                setButtonLoading('login-btn', false);
+            }
+        };
+
+        window.handleRegister = async function(e) {
+            e.preventDefault();
+            const email = document.getElementById('register-email').value;
+            const username = document.getElementById('register-username').value;
+            const password = document.getElementById('register-password').value;
+            const confirmPassword = document.getElementById('register-confirm-password').value;
+            const inviteCode = document.getElementById('invite-code').value;
+            const phone = document.getElementById('register-phone').value;
+
+            if (password !== confirmPassword) {
+                showNotification(getTranslation('passwordsDontMatch'), 'error');
+                return;
+            }
+
+            if (password.length < 6) {
+                showNotification(getTranslation('passwordTooShort'), 'error');
+                return;
+            }
+
+            setButtonLoading('register-btn', true);
+
+            try {
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+                
+                const userData = {
+                    email: user.email,
+                    uid: user.uid,
+                    username: username,
+                    phone: phone,
+                    inviteCode: inviteCode,
+                    isLoggedIn: true,
+                    loginTime: new Date().toISOString()
+                };
+                
+                localStorage.setItem('luxeEarnUser', JSON.stringify(userData));
+                localStorage.setItem('userEmail', user.email);
+                localStorage.setItem('username', username);
+                localStorage.setItem('userPhone', phone);
+                if (inviteCode) {
+                    localStorage.setItem('inviteCode', inviteCode);
+                    localStorage.setItem('referredByCode', inviteCode);
+                }
+                
+                localStorage.removeItem('pendingReferralCode');
+                
+                showNotification(`${getTranslation('accountCreated')} ${user.email}`, 'success');
+                setTimeout(() => {
+                    window.location.href = '/index';
+                }, 2000);
+                
+            } catch (error) {
+                console.error('Registration error:', error);
+                let errorMessage = getTranslation('registrationFailed');
+                
+                if (error.code === 'auth/email-already-in-use') {
+                    errorMessage = getTranslation('emailAlreadyUsed');
+                } else if (error.code === 'auth/invalid-email') {
+                    errorMessage = getTranslation('invalidEmail');
+                } else if (error.code === 'auth/weak-password') {
+                    errorMessage = getTranslation('weakPassword');
+                }
+                
+                showNotification(errorMessage, 'error');
+                setButtonLoading('register-btn', false);
+            }
+        };
+
+        window.handleGoogleSignUp = async function() {
+            setButtonLoading('google-signup-btn', true);
+            
+            try {
+                const result = await signInWithPopup(auth, googleProvider);
+                const user = result.user;
+                
+                pendingGoogleUser = {
+                    email: user.email,
+                    uid: user.uid,
+                    displayName: user.displayName,
+                    photoURL: user.photoURL
+                };
+                
+                setButtonLoading('google-signup-btn', false);
+                document.getElementById('passwordModal').classList.add('active');
+                
+            } catch (error) {
+                console.error('Google sign-in error:', error);
+                let errorMessage = getTranslation('googleSignInFailed');
+                
+                if (error.code === 'auth/popup-closed-by-user') {
+                    errorMessage = getTranslation('popupClosed');
+                } else if (error.code === 'auth/cancelled-popup-request') {
+                    errorMessage = getTranslation('signInCancelled');
+                }
+                
+                showNotification(errorMessage, 'error');
+                setButtonLoading('google-signup-btn', false);
+            }
+        };
+
+        window.completeGoogleSignUp = async function(e) {
+            e.preventDefault();
+            
+            const password = document.getElementById('google-password').value;
+            const confirmPassword = document.getElementById('google-confirm-password').value;
+            
+            if (password !== confirmPassword) {
+                showNotification(getTranslation('passwordsDontMatch'), 'error');
+                return;
+            }
+            
+            if (password.length < 6) {
+                showNotification(getTranslation('passwordTooShort'), 'error');
+                return;
+            }
+            
+            setButtonLoading('google-submit-btn', true);
+            
+            try {
+                const user = auth.currentUser;
+                if (user) {
+                    await updatePassword(user, password);
+                }
+                
+                const userData = {
+                    email: pendingGoogleUser.email,
+                    uid: pendingGoogleUser.uid,
+                    displayName: pendingGoogleUser.displayName,
+                    photoURL: pendingGoogleUser.photoURL,
+                    isLoggedIn: true,
+                    loginTime: new Date().toISOString(),
+                    provider: 'google'
+                };
+                
+                localStorage.setItem('luxeEarnUser', JSON.stringify(userData));
+                localStorage.setItem('userEmail', pendingGoogleUser.email);
+                if (pendingGoogleUser.displayName) {
+                    localStorage.setItem('username', pendingGoogleUser.displayName);
+                }
+                
+                const storedReferralCode = localStorage.getItem('pendingReferralCode');
+                if (storedReferralCode) {
+                    localStorage.setItem('referredByCode', storedReferralCode);
+                    localStorage.removeItem('pendingReferralCode');
+                }
+                
+                document.getElementById('passwordModal').classList.remove('active');
+                showNotification(`${getTranslation('welcome')} ${pendingGoogleUser.displayName || pendingGoogleUser.email}!`, 'success');
+                
+                setTimeout(() => {
+                    window.location.href = '/index';
+                }, 2000);
+                
+            } catch (error) {
+                console.error('Password update error:', error);
+                
+                const userData = {
+                    email: pendingGoogleUser.email,
+                    uid: pendingGoogleUser.uid,
+                    displayName: pendingGoogleUser.displayName,
+                    photoURL: pendingGoogleUser.photoURL,
+                    isLoggedIn: true,
+                    loginTime: new Date().toISOString(),
+                    provider: 'google',
+                    customPassword: password
+                };
+                
+                localStorage.setItem('luxeEarnUser', JSON.stringify(userData));
+                localStorage.setItem('userEmail', pendingGoogleUser.email);
+                if (pendingGoogleUser.displayName) {
+                    localStorage.setItem('username', pendingGoogleUser.displayName);
+                }
+                
+                const storedReferralCodeCatch = localStorage.getItem('pendingReferralCode');
+                if (storedReferralCodeCatch) {
+                    localStorage.setItem('referredByCode', storedReferralCodeCatch);
+                    localStorage.removeItem('pendingReferralCode');
+                }
+                
+                document.getElementById('passwordModal').classList.remove('active');
+                showNotification(`${getTranslation('welcome')} ${pendingGoogleUser.displayName || pendingGoogleUser.email}!`, 'success');
+                
+                setTimeout(() => {
+                    window.location.href = '/index';
+                }, 2000);
+            }
+        };
+
+        window.closePasswordModal = function() {
+            document.getElementById('passwordModal').classList.remove('active');
+            pendingGoogleUser = null;
+            
+            if (auth.currentUser) {
+                auth.signOut();
+            }
+        };
+
+        window.handleForgotPassword = async function(e) {
+            e.preventDefault();
+            const email = document.getElementById('forgot-email').value;
+
+            setButtonLoading('forgot-btn', true);
+
+            try {
+                await sendPasswordResetEmail(auth, email);
+                showNotification(`${getTranslation('passwordResetSent')} ${email}`, 'success');
+                setTimeout(() => {
+                    switchTab('login');
+                    setButtonLoading('forgot-btn', false);
+                }, 2000);
+                
+            } catch (error) {
+                console.error('Password reset error:', error);
+                let errorMessage = getTranslation('passwordResetFailed');
+                
+                if (error.code === 'auth/user-not-found') {
+                    errorMessage = getTranslation('noAccountFound');
+                } else if (error.code === 'auth/invalid-email') {
+                    errorMessage = getTranslation('invalidEmail');
+                }
+                
+                showNotification(errorMessage, 'error');
+                setButtonLoading('forgot-btn', false);
+            }
+        };
+
+        window.switchTab = function(tab) {
+            const tabs = document.querySelectorAll('.tab-btn');
+            const sections = document.querySelectorAll('.form-section');
+            
+            tabs.forEach(t => t.classList.remove('active'));
+            sections.forEach(s => s.classList.remove('active'));
+            
+            if (tab === 'login') {
+                if (tabs.length > 0) tabs[0].classList.add('active');
+                document.getElementById('login-section').classList.add('active');
+            } else if (tab === 'register') {
+                if (tabs.length > 1) tabs[1].classList.add('active');
+                document.getElementById('register-section').classList.add('active');
+                const urlParams = new URLSearchParams(window.location.search);
+                const inviteCode = urlParams.get('code');
+                if (inviteCode) {
+                    document.getElementById('invite-code').value = inviteCode;
+                }
+            } else if (tab === 'forgot') {
+                document.getElementById('forgot-section').classList.add('active');
+            }
+        };
+
+        window.togglePassword = function(id) {
+            const input = document.getElementById(id);
+            input.type = input.type === 'password' ? 'text' : 'password';
+        };
+
+        window.checkPasswordStrength = function(password) {
+            const strengthBar = document.getElementById('strength-bar');
+            strengthBar.className = 'password-strength-bar';
+            
+            if (password.length < 6) {
+                strengthBar.classList.add('strength-weak');
+            } else if (password.length < 10) {
+                strengthBar.classList.add('strength-medium');
+            } else {
+                strengthBar.classList.add('strength-strong');
+            }
+        };
+
+        window.checkGooglePasswordStrength = function(password) {
+            const strengthBar = document.getElementById('google-strength-bar');
+            strengthBar.className = 'password-strength-bar';
+            
+            if (password.length < 6) {
+                strengthBar.classList.add('strength-weak');
+            } else if (password.length < 10) {
+                strengthBar.classList.add('strength-medium');
+            } else {
+                strengthBar.classList.add('strength-strong');
+            }
+        };
+
+        window.translations = {
+            en: {
+                welcomeBack: "Welcome back!",
+                accountCreated: "Account created successfully! Welcome",
+                passwordsDontMatch: "Passwords do not match!",
+                passwordTooShort: "Password must be at least 6 characters long!",
+                loginFailed: "Login failed. Please try again.",
+                noAccountFound: "No account found with this email.",
+                incorrectPassword: "Incorrect password.",
+                invalidEmail: "Invalid email address.",
+                tooManyAttempts: "Too many attempts. Please try again later.",
+                invalidCredential: "Invalid email or password.",
+                registrationFailed: "Registration failed. Please try again.",
+                emailAlreadyUsed: "This email is already registered.",
+                weakPassword: "Password is too weak.",
+                googleSignInFailed: "Google sign-in failed. Please try again.",
+                popupClosed: "Sign-in popup was closed.",
+                signInCancelled: "Sign-in was cancelled.",
+                passwordResetSent: "Password reset email sent to",
+                passwordResetFailed: "Password reset failed. Please try again.",
+                sessionExpired: "Your session has expired. Please login again.",
+                welcome: "Welcome"
+            }
+        };
+    </script>
+</body>
+</html>

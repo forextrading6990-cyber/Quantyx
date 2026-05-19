@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantyx - Withdraw</title>
+    <link rel="icon" type="image/png" href="quantyx.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a0033 0%, #330066 100%);
+            min-height: 100vh;
+            color: #fff;
+            padding-bottom: 70px;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            background: rgba(26, 0, 51, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+            z-index: 100;
+        }
+
+        .back-btn {
+            width: 35px;
+            height: 35px;
+            background: rgba(0, 255, 255, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+        }
+
+        .back-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: #00ffff;
+        }
+
+        .header-title {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .balance-display {
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 255, 255, 0.1));
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            text-align: center;
+            border: 1px solid rgba(0, 255, 136, 0.2);
+        }
+
+        .balance-label {
+            font-size: 14px;
+            color: #00ffff;
+            margin-bottom: 10px;
+        }
+
+        .balance-amount {
+            font-size: 40px;
+            font-weight: 800;
+            color: #ccff00;
+        }
+
+        .method-selector {
+            margin-bottom: 25px;
+        }
+
+        .selector-label {
+            font-size: 14px;
+            color: #00ffff;
+            margin-bottom: 12px;
+        }
+
+        .method-buttons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .method-btn {
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 10px;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .method-btn img {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+        }
+
+        .method-btn.active {
+            background: linear-gradient(135deg, #00ffff, #0099ff);
+            box-shadow: 0 4px 15px rgba(0, 255, 255, 0.4);
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-label {
+            font-size: 13px;
+            color: #00ffff;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"] {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 15px;
+        }
+
+        input::placeholder {
+            color: #888;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #00ffff;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+        }
+
+        .password-wrapper {
+            position: relative;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #888;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .quick-amounts {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .quick-btn {
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(204, 255, 0, 0.2);
+            border-radius: 8px;
+            color: #ccff00;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .fee-info {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 13px;
+        }
+
+        .fee-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .fee-label {
+            color: #888;
+        }
+
+        .fee-value {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .fee-strikethrough {
+            text-decoration: line-through;
+            color: #888;
+        }
+
+        .free-text {
+            font-size: 11px;
+            color: #00ff88;
+            margin-top: 3px;
+            text-align: right;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #00ff88, #00ffaa);
+            border: none;
+            border-radius: 12px;
+            color: #1a0033;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 255, 136, 0.4);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 255, 136, 0.6);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .loading-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loading-overlay.active {
+            display: flex;
+        }
+
+        .loading-dots {
+            text-align: center;
+        }
+
+        .loading-dots span {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: #00ffff;
+            border-radius: 50%;
+            margin: 0 5px;
+            animation: bounce 1.4s infinite ease-in-out both;
+        }
+
+        .loading-dots span:nth-child(1) {
+            animation-delay: -0.32s;
+        }
+
+        .loading-dots span:nth-child(2) {
+            animation-delay: -0.16s;
+        }
+
+        @keyframes bounce {
+            0%, 80%, 100% {
+                transform: scale(0);
+            }
+            40% {
+                transform: scale(1);
+            }
+        }
+
+        .notice {
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            border-radius: 10px;
+            padding: 15px;
+            font-size: 12px;
+            color: #ffaa66;
+            margin-top: 20px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #1a0033, #330066);
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+        }
+
+        .modal-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .modal-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #00ffff;
+        }
+
+        .modal-message {
+            font-size: 14px;
+            color: #ccc;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .receipt-details {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: left;
+        }
+
+        .receipt-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 13px;
+        }
+
+        .receipt-label {
+            color: #888;
+        }
+
+        .receipt-value {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .modal-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #00ff88, #00ffaa);
+            border: none;
+            border-radius: 10px;
+            padding: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #1a0033;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <button class="back-btn" onclick="window.location.href='/me'">
+            <svg viewBox="0 0 24 24">
+                <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+            </svg>
+        </button>
+        <div class="header-title">Withdraw</div>
+    </div>
+
+    <div class="container">
+        <div class="balance-display">
+            <div class="balance-label">Available Balance</div>
+            <div class="balance-amount" id="balanceAmount">0.00 <span id="currencyType">USDT</span></div>
+        </div>
+
+        <div class="method-selector">
+            <div class="selector-label">Withdrawal Method</div>
+            <div class="method-buttons">
+                <button class="method-btn active" data-method="BEP20-USDT" data-currency="USDT" type="button">
+                    <img src="https://cryptologos.cc/logos/bnb-bnb-logo.png" alt="BEP20">
+                    BEP20-USDT
+                </button>
+                <button class="method-btn" data-method="BEP20-USDC" data-currency="USDC" type="button">
+                    <img src="https://cryptologos.cc/logos/usd-coin-usdc-logo.png" alt="USDC">
+                    BEP20-USDC
+                </button>
+                <button class="method-btn" data-method="ETH-USDT" data-currency="USDT" type="button">
+                    <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="ETH">
+                    ETH-USDT
+                </button>
+                <button class="method-btn" data-method="ETH-USDC" data-currency="USDC" type="button">
+                    <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="ETH">
+                    ETH-USDC
+                </button>
+                <button class="method-btn" data-method="TRC20-USDT" data-currency="USDT" type="button">
+                    <img src="https://cryptologos.cc/logos/tron-trx-logo.png" alt="TRC20">
+                    TRC20-USDT
+                </button>
+                <button class="method-btn" data-method="POLYGON-USDT" data-currency="USDT" type="button">
+                    <img src="https://cryptologos.cc/logos/polygon-matic-logo.png" alt="POLYGON">
+                    POLYGON-USDT
+                </button>
+                <button class="method-btn" data-method="POLYGON-USDC" data-currency="USDC" type="button">
+                    <img src="https://cryptologos.cc/logos/polygon-matic-logo.png" alt="POLYGON">
+                    POLYGON-USDC
+                </button>
+                <button class="method-btn" data-method="TRX" data-currency="TRX" type="button">
+                    <img src="https://cryptologos.cc/logos/tron-trx-logo.png" alt="TRX">
+                    TRX
+                </button>
+            </div>
+        </div>
+
+        <form id="withdrawalForm">
+            <div class="input-group">
+                <label class="input-label">Withdrawal Address</label>
+                <input type="text" id="withdrawAddress" placeholder="Enter your wallet address" required>
+            </div>
+
+            <div class="input-group">
+                <label class="input-label">Email Address</label>
+                <input type="email" id="userEmail" placeholder="Enter your email" required>
+            </div>
+
+            <div class="input-group">
+                 <label class="input-label">Security Password (6+ characters)</label>
+<div class="password-wrapper">
+    <input type="password" id="securityPassword" placeholder="Enter security password" minlength="6" maxlength="50" required>
+    <button type="button" class="toggle-password" onclick="togglePassword()">👁</button>
+</div>
+            </div>
+
+            <div class="input-group">
+                <label class="input-label">Withdrawal Amount</label>
+                <input type="number" id="withdrawAmount" placeholder="Enter amount" step="0.01" min="2" required>
+                <div class="quick-amounts">
+                    <button type="button" class="quick-btn" onclick="setAmount(100)">100</button>
+                    <button type="button" class="quick-btn" onclick="setAmount(500)">500</button>
+                    <button type="button" class="quick-btn" onclick="setAmount(1000)">1000</button>
+                    <button type="button" class="quick-btn" onclick="setAll()">All</button>
+                </div>
+            </div>
+
+            <div class="fee-info">
+                <div class="fee-row">
+                    <span class="fee-label">Quota Range:</span>
+                    <span class="fee-value">2.000 - 1,000,000 <span id="quotaCurrency">USDT</span></span>
+                </div>
+                <div class="fee-row">
+                    <div class="fee-label">Handling Fee:</div>
+                    <div style="text-align: right;">
+                        <div class="fee-strikethrough">0 <span id="feeCurrency">USDT</span></div>
+                        <div class="free-text">Free times-1</div>
+                    </div>
+                </div>
+                <div class="fee-row">
+                    <span class="fee-label">Receipt:</span>
+                    <span class="fee-value" id="receiptAmount">0.00 <span id="receiptCurrency">USDT</span></span>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn" id="confirmBtn">Confirm Withdrawal</button>
+        </form>
+
+        <div class="notice">
+            <strong>Withdrawal Notice:</strong><br>
+            • Processing time: 1-3 minutes<br>
+            • Minimum withdrawal: 2 USDT/USDC<br>
+            • Maximum withdrawal: 1,000,000 per transaction<br>
+            • Please ensure the address is correct
+        </div>
+    </div>
+
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <div class="modal" id="receiptModal">
+        <div class="modal-content">
+            <div class="modal-icon" id="modalIcon">⏳</div>
+            <div class="modal-title" id="modalTitle">Withdrawal Receipt</div>
+            <div class="modal-message" id="modalMessage"></div>
+            <div class="receipt-details" id="receiptDetails" style="display: none;"></div>
+            <button class="modal-btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+        import { getAuth, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
+
+        const firebaseConfig = {
+  apiKey: "AIzaSyAFrf0PhE-uIlTUR8eqtmbWyx_zmoWDNYY",
+  authDomain: "quantyx-ai.firebaseapp.com",
+  projectId: "quantyx-ai",
+  storageBucket: "quantyx-ai.firebasestorage.app",
+  messagingSenderId: "262095327610",
+  appId: "1:262095327610:web:9dd6f9f9f2bf87634d86c3",
+  measurementId: "G-WQK778HBE9"
+};
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        window.firebaseAuth = auth;
+        window.signInWithEmailAndPassword = signInWithEmailAndPassword;
+
+        loadUserData();
+    </script>
+
+    <script>
+        let selectedMethod = 'BEP20-USDT';
+        let currentCurrency = 'USDT';
+        let userBalance = 0;
+
+        function getTotalBalance() {
+            const userBalance = parseFloat(localStorage.getItem('userBalance') || '0');
+            const taskRewards = parseFloat(localStorage.getItem('LUXE_WALLET_BALANCE') || '0');
+            return userBalance + taskRewards;
+        }
+
+        function loadUserData() {
+            userBalance = getTotalBalance();
+            updateBalanceDisplay();
+
+            const storedEmail = localStorage.getItem('userEmail');
+            if (storedEmail) {
+                document.getElementById('userEmail').value = storedEmail;
+            }
+        }
+
+        function updateBalanceDisplay() {
+            document.getElementById('balanceAmount').innerHTML = userBalance.toFixed(2) + ' <span id="currencyType">' + currentCurrency + '</span>';
+        }
+
+        function updateCurrency(currency) {
+            currentCurrency = currency;
+            document.getElementById('currencyType').textContent = currency;
+            document.getElementById('quotaCurrency').textContent = currency;
+            document.getElementById('feeCurrency').textContent = currency;
+            document.getElementById('receiptCurrency').textContent = currency;
+            updateReceived();
+        }
+
+        const methodButtons = document.querySelectorAll('.method-btn');
+        methodButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const loadingOverlay = document.getElementById('loadingOverlay');
+                loadingOverlay.classList.add('active');
+
+                setTimeout(() => {
+                    methodButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    selectedMethod = this.dataset.method;
+                    const currency = this.dataset.currency;
+                    updateCurrency(currency);
+                    loadingOverlay.classList.remove('active');
+                }, 500);
+            });
+        });
+
+        function setAmount(amount) {
+            document.getElementById('withdrawAmount').value = amount;
+            updateReceived();
+        }
+
+        function setAll() {
+            document.getElementById('withdrawAmount').value = userBalance;
+            updateReceived();
+        }
+
+        function updateReceived() {
+            const amount = parseFloat(document.getElementById('withdrawAmount').value) || 0;
+            document.getElementById('receiptAmount').innerHTML = amount.toFixed(2) + ' <span id="receiptCurrency">' + currentCurrency + '</span>';
+        }
+
+        document.getElementById('withdrawAmount').addEventListener('input', updateReceived);
+
+        function togglePassword() {
+            const passwordInput = document.getElementById('securityPassword');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+            } else {
+                passwordInput.type = 'password';
+            }
+        }
+
+        document.getElementById('withdrawalForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const address = document.getElementById('withdrawAddress').value.trim();
+            const email = document.getElementById('userEmail').value.trim();
+            const password = document.getElementById('securityPassword').value.trim();
+            const amount = parseFloat(document.getElementById('withdrawAmount').value);
+
+            if (!address || !email || !password || !amount) {
+                alert('Please fill in all fields');
+                return;
+            }
+
+if (password.length < 6) {
+    alert('Security password must be at least 6 characters');
+    return;
+}
+
+            const minAmount = (currentCurrency === 'USDT' || currentCurrency === 'USDC') ? 2 : 1;
+            if (amount < minAmount) {
+                alert('Minimum withdrawal amount is ' + minAmount + ' ' + currentCurrency);
+                return;
+            }
+
+            const loadingOverlay = document.getElementById('loadingOverlay');
+            loadingOverlay.classList.add('active');
+
+            try {
+                await window.signInWithEmailAndPassword(window.firebaseAuth, email, password);
+
+                setTimeout(() => {
+                    loadingOverlay.classList.remove('active');
+
+                    if (amount > userBalance) {
+                        showModal('error', 'Withdrawal Failed', 
+                            `Insufficient Balance<br><br>Your balance: ${userBalance.toFixed(2)} ${currentCurrency}<br>Requested: ${amount.toFixed(2)} ${currentCurrency}`);
+                    } else {
+                        const creditTime = new Date();
+                        creditTime.setMinutes(creditTime.getMinutes() + Math.floor(Math.random() * 3) + 1);
+                        
+                        showModal('pending', 'Withdrawal Pending', '', {
+                            method: selectedMethod,
+                            address: address,
+                            amount: amount.toFixed(2) + ' ' + currentCurrency,
+                            fee: '0 ' + currentCurrency,
+                            receipt: amount.toFixed(2) + ' ' + currentCurrency,
+                            creditTime: creditTime.toLocaleString()
+                        });
+
+                        userBalance -= amount;
+                        const storedUserBalance = parseFloat(localStorage.getItem('userBalance') || '0');
+                        const taskRewards = parseFloat(localStorage.getItem('LUXE_WALLET_BALANCE') || '0');
+                        
+                        if (storedUserBalance >= amount) {
+                            localStorage.setItem('userBalance', (storedUserBalance - amount).toString());
+                        } else {
+                            const remaining = amount - storedUserBalance;
+                            localStorage.setItem('userBalance', '0');
+                            localStorage.setItem('LUXE_WALLET_BALANCE', (taskRewards - remaining).toString());
+                        }
+                        
+                        updateBalanceDisplay();
+                        document.getElementById('withdrawalForm').reset();
+                        loadUserData();
+                    }
+                }, 1500);
+            } catch (error) {
+                loadingOverlay.classList.remove('active');
+                showModal('error', 'Authentication Failed', 'Invalid email or password. Please try again.');
+            }
+        });
+
+        function showModal(type, title, message, receiptData = null) {
+            const modal = document.getElementById('receiptModal');
+            const modalIcon = document.getElementById('modalIcon');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalMessage = document.getElementById('modalMessage');
+            const receiptDetails = document.getElementById('receiptDetails');
+
+            if (type === 'error') {
+                modalIcon.textContent = '❌';
+            } else if (type === 'pending') {
+                modalIcon.textContent = '⏳';
+            } else if (type === 'success') {
+                modalIcon.textContent = '✅';
+            }
+
+            modalTitle.textContent = title;
+            modalMessage.innerHTML = message;
+
+            if (receiptData) {
+                receiptDetails.style.display = 'block';
+                receiptDetails.innerHTML = `
+                    <div class="receipt-row">
+                        <span class="receipt-label">Method:</span>
+                        <span class="receipt-value">${receiptData.method}</span>
+                    </div>
+                    <div class="receipt-row">
+                        <span class="receipt-label">Address:</span>
+                        <span class="receipt-value">${receiptData.address.substring(0, 10)}...${receiptData.address.substring(receiptData.address.length - 10)}</span>
+                    </div>
+                    <div class="receipt-row">
+                        <span class="receipt-label">Amount:</span>
+                        <span class="receipt-value">${receiptData.amount}</span>
+                    </div>
+                    <div class="receipt-row">
+                        <span class="receipt-label">Fee:</span>
+                        <span class="receipt-value">${receiptData.fee}</span>
+                    </div>
+                    <div class="receipt-row">
+                        <span class="receipt-label">Receipt:</span>
+                        <span class="receipt-value">${receiptData.receipt}</span>
+                    </div>
+                    <div class="receipt-row">
+                        <span class="receipt-label">Est. Credit:</span>
+                        <span class="receipt-value">${receiptData.creditTime}</span>
+                    </div>
+                `;
+            } else {
+                receiptDetails.style.display = 'none';
+            }
+
+            modal.classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('receiptModal').classList.remove('active');
+        }
+
+        window.addEventListener('storage', function(e) {
+            if (e.key === 'userBalance' || e.key === 'LUXE_WALLET_BALANCE') {
+                loadUserData();
+            }
+        });
+
+        setInterval(loadUserData, 1000);
+    </script>
+</body>
+</html>

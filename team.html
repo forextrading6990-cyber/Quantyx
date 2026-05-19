@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <!-- ===============================
+ LUXEEARN SOCIAL SHARE PREVIEW
+=============================== -->
+
+<meta property="og:title" content="Quantyx - Earn Up To 5000 USDT">
+<meta property="og:description" content="Join Quantyx and earn up to 21% in referral rewards. Start earning today.">
+<meta property="og:type" content="website">
+
+<meta property="og:url" content="https://quantyxintel.top">
+
+<meta property="og:image" content="https://quantyxintel.top/images/share-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- ✅ TWITTER / X PREVIEW -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Quantyx - Earn Up To 5000 USDT">
+<meta name="twitter:description" content="Earn passive income with Quantyx referrals!">
+<meta name="twitter:image" content="https://quantyxintel.top/images/share-image.jpg">
+
+<!-- ===============================
+ END SOCIAL SHARE PREVIEW
+=============================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantyx - Referral Dashboard</title>
+    <meta name="description" content="Earn up to 21% referral rebates with Quantyx's multi-level referral program. Invite friends and build your team!">
+    <link rel="icon" type="image/png" href="quantyx.png">
+    <link rel="apple-touch-icon" href="quantyx.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a0033 0%, #330066 100%);
+            min-height: 100vh;
+            padding-bottom: 100px;
+            color: #fff;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            background: rgba(26, 0, 51, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+            z-index: 100;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .back-btn {
+            width: 35px;
+            height: 35px;
+            background: rgba(0, 255, 255, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border: none;
+        }
+
+        .back-btn:hover {
+            background: rgba(0, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .back-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: #00ffff;
+        }
+
+        .page-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #00ffff;
+        }
+
+        .corner-notification {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .email-badge {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 25px;
+            padding: 8px 15px;
+            font-size: 12px;
+            color: #00ffff;
+            display: none;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .email-badge .email-icon {
+            width: 16px;
+            height: 16px;
+            background: #00ffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: #1a0033;
+        }
+
+        .add-email-btn {
+            background: linear-gradient(135deg, #ff00ff, #cc00cc);
+            border: none;
+            border-radius: 25px;
+            padding: 10px 18px;
+            font-size: 12px;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            animation: pulse 2s infinite;
+            box-shadow: 0 4px 15px rgba(255, 0, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .add-email-btn:hover {
+            animation: none;
+            transform: scale(1.05);
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .card-title {
+            font-size: 12px;
+            color: #00ffff;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .balance-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            text-align: center;
+            padding: 35px 25px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .balance-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(180deg); }
+        }
+
+        .balance-amount {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .balance-label {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .claim-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            color: white;
+            padding: 14px 50px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .claim-btn:hover:not(:disabled) {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+            box-shadow: 0 5px 25px rgba(255, 255, 255, 0.3);
+        }
+
+        .claim-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .inviter-card {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(0, 153, 255, 0.1));
+            border: 1px solid rgba(0, 255, 255, 0.3);
+        }
+
+        .inviter-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .inviter-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .inviter-details {
+            flex: 1;
+        }
+
+        .inviter-email-label {
+            font-size: 11px;
+            color: #888;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .inviter-email {
+            font-size: 16px;
+            font-weight: 600;
+            color: #00ffff;
+            margin-bottom: 5px;
+        }
+
+        .inviter-code-label {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .inviter-code-label span {
+            color: #c8aa6e;
+            font-weight: 600;
+        }
+
+        .referral-code-section {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(200, 170, 110, 0.2);
+            position: relative;
+        }
+
+        .invite-tagline {
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .code-label {
+            font-size: 14px;
+            color: #c8aa6e;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .code-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .referral-code {
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: 6px;
+            color: #fff;
+            text-align: left;
+            flex: 1;
+        }
+
+        .copy-inline-btn {
+            background: linear-gradient(135deg, #c8aa6e, #a08050);
+            border: none;
+            border-radius: 20px;
+            padding: 10px 25px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a0033;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .copy-inline-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(200, 170, 110, 0.4);
+        }
+
+        .link-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .referral-link {
+            font-size: 14px;
+            color: #888;
+            word-break: break-all;
+            text-align: left;
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .get-code-btn {
+            background: linear-gradient(135deg, #c8aa6e, #a08050);
+            border: none;
+            border-radius: 12px;
+            padding: 16px 35px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a0033;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .get-code-btn:hover:not(:disabled) {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(200, 170, 110, 0.4);
+        }
+
+        .get-code-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .code-waiting {
+            display: block;
+        }
+
+        .code-loaded {
+            display: none;
+        }
+
+        .share-label {
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .social-share {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .social-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .social-btn svg {
+            width: 22px;
+            height: 22px;
+            fill: white;
+        }
+
+        .social-btn.twitter { background: #000; }
+        .social-btn.facebook { background: #1877f2; }
+        .social-btn.telegram { background: #0088cc; }
+        .social-btn.linkedin { background: #0077b5; }
+        .social-btn.line { background: #00c300; }
+        .social-btn.whatsapp { background: #25d366; }
+
+        .floating-telegram {
+            position: absolute;
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, #00c853, #00e676);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 200, 83, 0.4);
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .floating-telegram:hover {
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .floating-telegram svg {
+            width: 28px;
+            height: 28px;
+            fill: #fff;
+        }
+
+        .view-team-btn {
+            background: linear-gradient(135deg, #e8d5a3, #c8aa6e);
+            border: none;
+            border-radius: 30px;
+            padding: 18px 40px;
+            font-size: 16px;
+            font-weight: 700;
+            color: #1a0033;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .view-team-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(200, 170, 110, 0.4);
+        }
+
+        .levels-section {
+            margin-bottom: 25px;
+        }
+
+        .levels-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .levels-header h2 {
+            font-size: 24px;
+            color: #00ffff;
+            margin-bottom: 10px;
+        }
+
+        .levels-header p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .level-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .level-card {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            padding: 25px;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .level-card.level-1 {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 165, 0, 0.1));
+            border-color: rgba(255, 215, 0, 0.3);
+        }
+
+        .level-card.level-1:hover {
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+        }
+
+        .level-card.level-2 {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(0, 153, 255, 0.1));
+            border-color: rgba(0, 255, 255, 0.3);
+        }
+
+        .level-card.level-2:hover {
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
+        }
+
+        .level-card.level-3 {
+            background: linear-gradient(135deg, rgba(255, 0, 255, 0.1), rgba(138, 43, 226, 0.1));
+            border-color: rgba(255, 0, 255, 0.3);
+        }
+
+        .level-card.level-3:hover {
+            box-shadow: 0 10px 30px rgba(255, 0, 255, 0.2);
+        }
+
+        .level-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .level-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .level-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .level-1 .level-icon {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #1a0033;
+        }
+
+        .level-2 .level-icon {
+            background: linear-gradient(135deg, #00ffff, #0099ff);
+            color: #1a0033;
+        }
+
+        .level-3 .level-icon {
+            background: linear-gradient(135deg, #ff00ff, #8a2be2);
+            color: #fff;
+        }
+
+        .level-info h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .level-1 .level-info h3 { color: #FFD700; }
+        .level-2 .level-info h3 { color: #00ffff; }
+        .level-3 .level-info h3 { color: #ff00ff; }
+
+        .level-info p {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .rebate-badge {
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .level-1 .rebate-badge {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #1a0033;
+        }
+
+        .level-2 .rebate-badge {
+            background: linear-gradient(135deg, #00ffff, #0099ff);
+            color: #1a0033;
+        }
+
+        .level-3 .rebate-badge {
+            background: linear-gradient(135deg, #ff00ff, #8a2be2);
+            color: #fff;
+        }
+
+        .level-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .level-stat {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .level-stat-value {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .level-1 .level-stat-value { color: #FFD700; }
+        .level-2 .level-stat-value { color: #00ffff; }
+        .level-3 .level-stat-value { color: #ff00ff; }
+
+        .level-stat-label {
+            font-size: 11px;
+            color: #888;
+            margin-top: 5px;
+            text-transform: uppercase;
+        }
+
+        .view-members-btn {
+            width: 100%;
+            padding: 12px 20px;
+            border-radius: 12px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .level-1 .view-members-btn {
+            background: rgba(255, 215, 0, 0.2);
+            color: #FFD700;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .level-1 .view-members-btn:hover {
+            background: rgba(255, 215, 0, 0.3);
+        }
+
+        .level-2 .view-members-btn {
+            background: rgba(0, 255, 255, 0.2);
+            color: #00ffff;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+        }
+
+        .level-2 .view-members-btn:hover {
+            background: rgba(0, 255, 255, 0.3);
+        }
+
+        .level-3 .view-members-btn {
+            background: rgba(255, 0, 255, 0.2);
+            color: #ff00ff;
+            border: 1px solid rgba(255, 0, 255, 0.3);
+        }
+
+        .level-3 .view-members-btn:hover {
+            background: rgba(255, 0, 255, 0.3);
+        }
+
+        .view-members-btn .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .view-members-btn.expanded .arrow {
+            transform: rotate(180deg);
+        }
+
+        .members-dropdown {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, margin-top 0.4s ease;
+        }
+
+        .members-dropdown.expanded {
+            max-height: 400px;
+            margin-top: 15px;
+            overflow-y: auto;
+        }
+
+        .members-dropdown::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .members-dropdown::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        .members-dropdown::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+        }
+
+        .dropdown-member-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            margin-bottom: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-member-item:hover {
+            background: rgba(0, 0, 0, 0.5);
+            transform: translateX(5px);
+        }
+
+        .level-1 .dropdown-member-item {
+            border-left: 3px solid #FFD700;
+        }
+
+        .level-2 .dropdown-member-item {
+            border-left: 3px solid #00ffff;
+        }
+
+        .level-3 .dropdown-member-item {
+            border-left: 3px solid #ff00ff;
+        }
+
+        .dropdown-member-email {
+            font-size: 13px;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .dropdown-member-date {
+            font-size: 11px;
+            color: #888;
+        }
+
+        .dropdown-empty {
+            text-align: center;
+            color: #666;
+            padding: 20px;
+            font-size: 13px;
+        }
+
+        .total-team-card {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            text-align: center;
+            padding: 30px 25px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .total-team-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30L30 0z' fill='rgba(255,255,255,0.05)'/%3E%3C/svg%3E");
+            background-size: 30px 30px;
+        }
+
+        .total-team-value {
+            font-size: 56px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+
+        .total-team-label {
+            font-size: 14px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .earnings-history-card {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .history-list {
+            max-height: 350px;
+            overflow-y: auto;
+        }
+
+        .history-list::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .history-list::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        .history-list::-webkit-scrollbar-thumb {
+            background: #00ffff;
+            border-radius: 10px;
+        }
+
+        .history-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .history-item:hover {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .history-item-left {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .history-email {
+            font-size: 13px;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .history-meta {
+            font-size: 11px;
+            color: #888;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .history-level {
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        .history-level.l1 {
+            background: rgba(255, 215, 0, 0.2);
+            color: #FFD700;
+        }
+
+        .history-level.l2 {
+            background: rgba(0, 255, 255, 0.2);
+            color: #00ffff;
+        }
+
+        .history-level.l3 {
+            background: rgba(255, 0, 255, 0.2);
+            color: #ff00ff;
+        }
+
+        .history-item-right {
+            text-align: right;
+        }
+
+        .history-amount {
+            font-size: 16px;
+            font-weight: 700;
+            color: #22c55e;
+        }
+
+        .history-status {
+            font-size: 10px;
+            padding: 3px 8px;
+            border-radius: 10px;
+            margin-top: 5px;
+            display: inline-block;
+        }
+
+        .history-status.pending {
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+        }
+
+        .history-status.claimed {
+            background: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            border: 3px solid rgba(0, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #00ffff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        .loading-text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: #888;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .popup-overlay.hidden {
+            display: none;
+        }
+
+        .popup {
+            background: linear-gradient(135deg, #1a0033 0%, #330066 100%);
+            border-radius: 25px;
+            padding: 35px;
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            position: relative;
+        }
+
+        .popup h2 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #00ffff;
+            font-size: 24px;
+        }
+
+        .popup p {
+            text-align: center;
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .popup input {
+            width: 100%;
+            padding: 16px 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            font-size: 16px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .popup input::placeholder {
+            color: #666;
+        }
+
+        .popup input:focus {
+            outline: none;
+            border-color: #00ffff;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+        }
+
+        .popup-btn {
+            width: 100%;
+            padding: 16px;
+            border-radius: 12px;
+            border: none;
+            background: linear-gradient(135deg, #00ffff, #0099ff);
+            color: #1a0033;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .popup-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 255, 255, 0.4);
+        }
+
+        .popup-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: #888;
+            font-size: 28px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .popup-close:hover {
+            color: #ff00ff;
+            transform: rotate(90deg);
+        }
+
+        .error-msg {
+            color: #ff4757;
+            font-size: 13px;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .success-toast {
+            position: fixed;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.4);
+            z-index: 2000;
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .success-toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .empty-state {
+            text-align: center;
+            color: #666;
+            padding: 30px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 400px) {
+            .balance-amount {
+                font-size: 36px;
+            }
+            
+            .referral-code {
+                font-size: 28px;
+                letter-spacing: 4px;
+            }
+            
+            .level-card-header {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+            
+            .rebate-badge {
+                align-self: flex-end;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+            <a href="/index" class="back-btn">
+                <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+            </a>
+            <span class="page-title">Referral Dashboard</span>
+        </div>
+        <div class="corner-notification">
+            <div class="email-badge" id="emailBadge">
+                <span class="email-icon">@</span>
+                <span id="displayEmail"></span>
+            </div>
+            <button class="add-email-btn" id="addEmailBtn" onclick="showEmailPopup()">
+                <span>+</span> Add Email
+            </button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card balance-card">
+            <div class="balance-amount" id="pendingBalance">
+                <span class="loading-text"><span class="loading"></span></span>
+            </div>
+            <div class="balance-label">Pending Rewards (USDT)</div>
+            <button class="claim-btn" id="claimBtn" onclick="claimRewards()" disabled>Claim Rewards</button>
+        </div>
+
+        <div class="card inviter-card" id="inviterCard" style="display: none;">
+            <div class="card-title">Invited By</div>
+            <div class="inviter-info">
+                <div class="inviter-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="#00ffff">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    </svg>
+                </div>
+                <div class="inviter-details">
+                    <div class="inviter-email-label">Inviter Email</div>
+                    <div class="inviter-email" id="inviterEmail">em***@email.com</div>
+                    <div class="inviter-code-label">Invitation Code: <span id="inviterCode">------</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card referral-code-section">
+            <div class="floating-telegram" onclick="shareToTelegram()">
+                <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.94 8.13l-2.03 9.56c-.15.68-.56.85-1.13.53l-3.12-2.3-1.51 1.45c-.17.17-.31.31-.63.31l.22-3.19 5.79-5.23c.25-.22-.05-.35-.39-.13l-7.15 4.5-3.08-.96c-.67-.21-.68-.67.14-.99l12.03-4.64c.56-.2 1.05.14.86.99z"/></svg>
+            </div>
+            
+            <div id="codeWaiting" class="code-waiting">
+                <div class="invite-tagline">Build a team and get generous rewards</div>
+                <div class="referral-code">
+                    <span class="waiting-text">------</span>
+                </div>
+                <button class="get-code-btn" id="getCodeBtn" onclick="getMyCode()">Get My Invitation Code</button>
+            </div>
+            
+            <div id="codeLoaded" class="code-loaded">
+                <div class="invite-tagline">Build a team and get generous rewards</div>
+                
+                <div class="code-label">My Invitation Code</div>
+                <div class="code-row">
+                    <div class="referral-code" id="referralCode">------</div>
+                    <button class="copy-inline-btn" onclick="copyCode()">Copy</button>
+                </div>
+                
+                <div class="code-label">Invite Link</div>
+                <div class="link-row">
+                    <div class="referral-link" id="referralLink">------</div>
+                    <button class="copy-inline-btn" onclick="copyLink()">Copy</button>
+                </div>
+                
+                <div class="share-label">Share To</div>
+                <div class="social-share">
+                    <button class="social-btn twitter" onclick="shareToTwitter()">
+                        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </button>
+                    <button class="social-btn facebook" onclick="shareToFacebook()">
+                        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </button>
+                    <button class="social-btn telegram" onclick="shareToTelegram()">
+                        <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.94 8.13l-2.03 9.56c-.15.68-.56.85-1.13.53l-3.12-2.3-1.51 1.45c-.17.17-.31.31-.63.31l.22-3.19 5.79-5.23c.25-.22-.05-.35-.39-.13l-7.15 4.5-3.08-.96c-.67-.21-.68-.67.14-.99l12.03-4.64c.56-.2 1.05.14.86.99z"/></svg>
+                    </button>
+                    <button class="social-btn linkedin" onclick="shareToLinkedIn()">
+                        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </button>
+                    <button class="social-btn line" onclick="shareToLine()">
+                        <svg viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+                    </button>
+                    <button class="social-btn whatsapp" onclick="shareToWhatsApp()">
+                        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    </button>
+                </div>
+                
+                <button class="view-team-btn" onclick="scrollToTeam()">View The Team</button>
+            </div>
+        </div>
+
+        <div class="levels-section" id="teamSection">
+            <div class="levels-header">
+                <h2>Earn Up To 21% Rebates!</h2>
+                <p>Build your team and earn from 3 levels of referrals</p>
+            </div>
+
+            <div class="level-cards">
+                <div class="level-card level-1">
+                    <div class="level-card-header">
+                        <div class="level-badge">
+                            <div class="level-icon">L1</div>
+                            <div class="level-info">
+                                <h3>Level 1 - Direct</h3>
+                                <p>Your direct referrals</p>
+                            </div>
+                        </div>
+                        <div class="rebate-badge">16%</div>
+                    </div>
+                    <div class="level-stats">
+                        <div class="level-stat">
+                            <div class="level-stat-value" id="level1Count">0</div>
+                            <div class="level-stat-label">Members</div>
+                        </div>
+                        <div class="level-stat">
+                            <div class="level-stat-value" id="level1Earnings">0.00</div>
+                            <div class="level-stat-label">USDT Earned</div>
+                        </div>
+                    </div>
+                    <button class="view-members-btn" onclick="toggleMembers(1, this)">
+                        <span>View Members</span>
+                        <span class="arrow">&#9660;</span>
+                    </button>
+                    <div class="members-dropdown" id="level1Dropdown">
+                        <div id="level1Members">
+                            <div class="dropdown-empty">No members yet</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="level-card level-2">
+                    <div class="level-card-header">
+                        <div class="level-badge">
+                            <div class="level-icon">L2</div>
+                            <div class="level-info">
+                                <h3>Level 2 - Indirect</h3>
+                                <p>Your referrals' referrals</p>
+                            </div>
+                        </div>
+                        <div class="rebate-badge">3%</div>
+                    </div>
+                    <div class="level-stats">
+                        <div class="level-stat">
+                            <div class="level-stat-value" id="level2Count">0</div>
+                            <div class="level-stat-label">Members</div>
+                        </div>
+                        <div class="level-stat">
+                            <div class="level-stat-value" id="level2Earnings">0.00</div>
+                            <div class="level-stat-label">USDT Earned</div>
+                        </div>
+                    </div>
+                    <button class="view-members-btn" onclick="toggleMembers(2, this)">
+                        <span>View Members</span>
+                        <span class="arrow">&#9660;</span>
+                    </button>
+                    <div class="members-dropdown" id="level2Dropdown">
+                        <div id="level2Members">
+                            <div class="dropdown-empty">No members yet</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="level-card level-3">
+                    <div class="level-card-header">
+                        <div class="level-badge">
+                            <div class="level-icon">L3</div>
+                            <div class="level-info">
+                                <h3>Level 3 - Network</h3>
+                                <p>Extended team network</p>
+                            </div>
+                        </div>
+                        <div class="rebate-badge">2%</div>
+                    </div>
+                    <div class="level-stats">
+                        <div class="level-stat">
+                            <div class="level-stat-value" id="level3Count">0</div>
+                            <div class="level-stat-label">Members</div>
+                        </div>
+                        <div class="level-stat">
+                            <div class="level-stat-value" id="level3Earnings">0.00</div>
+                            <div class="level-stat-label">USDT Earned</div>
+                        </div>
+                    </div>
+                    <button class="view-members-btn" onclick="toggleMembers(3, this)">
+                        <span>View Members</span>
+                        <span class="arrow">&#9660;</span>
+                    </button>
+                    <div class="members-dropdown" id="level3Dropdown">
+                        <div id="level3Members">
+                            <div class="dropdown-empty">No members yet</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card total-team-card">
+            <div class="total-team-value" id="totalTeam">
+                <span class="loading-text"><span class="loading"></span></span>
+            </div>
+            <div class="total-team-label">Total Team Members</div>
+        </div>
+
+        <div class="card earnings-history-card">
+            <div class="card-title">Earnings History</div>
+            <div class="history-list" id="earningsHistory">
+                <div class="loading-text"><span class="loading"></span> Loading...</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-overlay hidden" id="emailPopup">
+        <div class="popup">
+            <button class="popup-close" onclick="hideEmailPopup()">&times;</button>
+            <h2>Enter Your Email</h2>
+            <p>Get your unique referral code and start earning rewards</p>
+            <input type="email" id="emailInput" placeholder="Enter your email address">
+            <button class="popup-btn" id="submitEmailBtn" onclick="submitEmail()">Get My Code</button>
+            <div class="error-msg" id="errorMsg"></div>
+        </div>
+    </div>
+
+    <div class="success-toast" id="successToast">Copied to clipboard!</div>
+
+    <script>
+        const API_URL = 'https://quantyx-intel-ref.onrender.com';
+        
+        let userEmail = null;
+        let referralData = null;
+        let referredByCode = null;
+        let inviterInfo = null;
+        let teamData = null;
+
+        function init() {
+            userEmail = localStorage.getItem('userEmail');
+            referredByCode = localStorage.getItem('referredByCode') || localStorage.getItem('pendingReferralCode') || localStorage.getItem('inviteCode');
+            updateCornerNotification();
+            loadDefaultData();
+            
+            if (userEmail) {
+                loadUserData();
+            }
+            
+            if (referredByCode) {
+                loadInviterInfo();
+            }
+        }
+
+        function updateCornerNotification() {
+            const addEmailBtn = document.getElementById('addEmailBtn');
+            const emailBadge = document.getElementById('emailBadge');
+            
+            if (userEmail) {
+                addEmailBtn.style.display = 'none';
+                emailBadge.style.display = 'flex';
+                document.getElementById('displayEmail').textContent = userEmail.length > 20 
+                    ? userEmail.substring(0, 17) + '...' 
+                    : userEmail;
+            } else {
+                addEmailBtn.style.display = 'flex';
+                emailBadge.style.display = 'none';
+            }
+        }
+
+        function loadDefaultData() {
+            document.getElementById('pendingBalance').textContent = '0.00';
+            document.getElementById('totalTeam').textContent = '0';
+            document.getElementById('level1Count').textContent = '0';
+            document.getElementById('level2Count').textContent = '0';
+            document.getElementById('level3Count').textContent = '0';
+            document.getElementById('level1Earnings').textContent = '0.00';
+            document.getElementById('level2Earnings').textContent = '0.00';
+            document.getElementById('level3Earnings').textContent = '0.00';
+            
+            renderDropdownMembers('level1Members', []);
+            renderDropdownMembers('level2Members', []);
+            renderDropdownMembers('level3Members', []);
+            renderEarningsHistory([]);
+        }
+
+        function showEmailPopup() {
+            document.getElementById('emailPopup').classList.remove('hidden');
+            document.getElementById('emailInput').focus();
+        }
+
+        function hideEmailPopup() {
+            document.getElementById('emailPopup').classList.add('hidden');
+            document.getElementById('errorMsg').textContent = '';
+        }
+
+        function getMyCode() {
+            if (userEmail) {
+                loadReferralData();
+            } else {
+                showEmailPopup();
+            }
+        }
+
+        async function submitEmail() {
+            const email = document.getElementById('emailInput').value.trim();
+            const errorMsg = document.getElementById('errorMsg');
+            const submitBtn = document.getElementById('submitEmailBtn');
+            
+            if (!email) {
+                errorMsg.textContent = 'Please enter your email';
+                return;
+            }
+            
+            if (!isValidEmail(email)) {
+                errorMsg.textContent = 'Please enter a valid email';
+                return;
+            }
+            
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Loading...';
+            errorMsg.textContent = '';
+            
+            try {
+                const storedRefCode = localStorage.getItem('referredByCode') || localStorage.getItem('pendingReferralCode') || localStorage.getItem('inviteCode');
+                const urlParams = new URLSearchParams(window.location.hash.split('?')[1] || window.location.search);
+                const urlRefCode = urlParams.get('ref') || '';
+                const refCode = storedRefCode || urlRefCode;
+                
+                const response = await fetch(`${API_URL}/api/register`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: email, referralCode: refCode })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    localStorage.setItem('userEmail', email);
+                    if (refCode) {
+                        localStorage.setItem('referredByCode', refCode);
+                    }
+                    userEmail = email;
+                    referredByCode = refCode;
+                    hideEmailPopup();
+                    updateCornerNotification();
+                    loadUserData();
+                    if (refCode) {
+                        loadInviterInfo();
+                    }
+                    showToast('Email saved successfully!');
+                } else {
+                    errorMsg.textContent = data.error || 'Something went wrong';
+                }
+            } catch (error) {
+                errorMsg.textContent = 'Connection error. Please try again.';
+            }
+            
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Get My Code';
+        }
+
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        async function loadUserData() {
+            await Promise.all([
+                loadReferralData(),
+                loadTeamData(),
+                loadBalanceData(),
+                loadEarningsHistory()
+            ]);
+        }
+
+        async function loadReferralData() {
+            if (!userEmail) {
+                showEmailPopup();
+                return;
+            }
+            
+            const getCodeBtn = document.getElementById('getCodeBtn');
+            getCodeBtn.disabled = true;
+            getCodeBtn.textContent = 'Loading...';
+            
+            try {
+                const response = await fetch(`${API_URL}/api/referral?email=${encodeURIComponent(userEmail)}`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    referralData = data.data;
+                    document.getElementById('referralCode').textContent = data.data.referralCode;
+                    document.getElementById('referralLink').textContent = data.data.referralLink;
+                    
+                    document.getElementById('codeWaiting').style.display = 'none';
+                    document.getElementById('codeLoaded').style.display = 'block';
+                } else {
+                    showToast('Failed to load code');
+                    getCodeBtn.disabled = false;
+                    getCodeBtn.textContent = 'Get My Referral Code';
+                }
+            } catch (error) {
+                showToast('Connection error');
+                getCodeBtn.disabled = false;
+                getCodeBtn.textContent = 'Get My Referral Code';
+            }
+        }
+
+        async function loadTeamData() {
+            if (!userEmail) return;
+            
+            try {
+                const response = await fetch(`${API_URL}/api/team?email=${encodeURIComponent(userEmail)}`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    teamData = data.data;
+                    
+                    document.getElementById('totalTeam').textContent = teamData.totalTeam;
+                    document.getElementById('level1Count').textContent = teamData.level1.count;
+                    document.getElementById('level2Count').textContent = teamData.level2.count;
+                    document.getElementById('level3Count').textContent = teamData.level3.count;
+                    
+                    renderDropdownMembers('level1Members', teamData.level1.members);
+                    renderDropdownMembers('level2Members', teamData.level2.members);
+                    renderDropdownMembers('level3Members', teamData.level3.members);
+                }
+            } catch (error) {
+                console.log('Error loading team data');
+            }
+        }
+
+        function renderDropdownMembers(containerId, members) {
+            const container = document.getElementById(containerId);
+            
+            if (!members || members.length === 0) {
+                container.innerHTML = '<div class="dropdown-empty">No members yet. Share your referral link to start building your team!</div>';
+                return;
+            }
+            
+            container.innerHTML = members.map(member => `
+                <div class="dropdown-member-item">
+                    <span class="dropdown-member-email">${member.email}</span>
+                    <span class="dropdown-member-date">${formatDate(member.joinedAt)}</span>
+                </div>
+            `).join('');
+        }
+
+        function toggleMembers(level, btn) {
+            const dropdown = document.getElementById(`level${level}Dropdown`);
+            const isExpanded = dropdown.classList.contains('expanded');
+            
+            document.querySelectorAll('.members-dropdown').forEach(d => d.classList.remove('expanded'));
+            document.querySelectorAll('.view-members-btn').forEach(b => b.classList.remove('expanded'));
+            
+            if (!isExpanded) {
+                dropdown.classList.add('expanded');
+                btn.classList.add('expanded');
+            }
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        }
+
+        async function loadBalanceData() {
+            if (!userEmail) return;
+            
+            try {
+                const response = await fetch(`${API_URL}/api/balance?email=${encodeURIComponent(userEmail)}`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    const balance = data.data;
+                    
+                    document.getElementById('pendingBalance').textContent = balance.pendingBalance.toFixed(2);
+                    document.getElementById('level1Earnings').textContent = balance.breakdown.level1.toFixed(2);
+                    document.getElementById('level2Earnings').textContent = balance.breakdown.level2.toFixed(2);
+                    document.getElementById('level3Earnings').textContent = balance.breakdown.level3.toFixed(2);
+                    
+                    document.getElementById('claimBtn').disabled = balance.pendingBalance <= 0;
+                }
+            } catch (error) {
+                console.log('Error loading balance');
+            }
+        }
+
+        async function loadEarningsHistory() {
+            if (!userEmail) {
+                renderEarningsHistory([]);
+                return;
+            }
+            
+            try {
+                const response = await fetch(`${API_URL}/api/earnings-history?email=${encodeURIComponent(userEmail)}`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    renderEarningsHistory(data.data);
+                } else {
+                    renderEarningsHistory([]);
+                }
+            } catch (error) {
+                console.log('Error loading earnings history');
+                renderEarningsHistory([]);
+            }
+        }
+
+        function renderEarningsHistory(history) {
+            const container = document.getElementById('earningsHistory');
+            
+            if (!history || history.length === 0) {
+                container.innerHTML = '<div class="empty-state">No earnings yet. Invite friends and earn when they make deposits!</div>';
+                return;
+            }
+            
+            container.innerHTML = history.map(item => `
+                <div class="history-item">
+                    <div class="history-item-left">
+                        <span class="history-email">${item.referredEmail}</span>
+                        <div class="history-meta">
+                            <span class="history-level l${item.level}">Level ${item.level}</span>
+                            <span>${item.percentage}% rebate</span>
+                            <span>${formatDate(item.createdAt)}</span>
+                        </div>
+                    </div>
+                    <div class="history-item-right">
+                        <div class="history-amount">+${item.amount.toFixed(2)} USDT</div>
+                        <span class="history-status ${item.status}">${item.status}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        async function loadInviterInfo() {
+            if (!referredByCode) return;
+            
+            const inviterCard = document.getElementById('inviterCard');
+            const inviterEmail = document.getElementById('inviterEmail');
+            const inviterCode = document.getElementById('inviterCode');
+            
+            if (!inviterCard) return;
+            
+            try {
+                const response = await fetch(`${API_URL}/api/inviter?referralCode=${encodeURIComponent(referredByCode)}`);
+                const data = await response.json();
+                
+                if (data.success && data.data) {
+                    inviterInfo = data.data;
+                    inviterEmail.textContent = data.data.maskedEmail;
+                    inviterCode.textContent = data.data.referralCode;
+                    inviterCard.style.display = 'block';
+                } else {
+                    inviterCard.style.display = 'none';
+                }
+            } catch (error) {
+                inviterCard.style.display = 'none';
+            }
+        }
+
+        async function claimRewards() {
+            if (!userEmail) {
+                showEmailPopup();
+                return;
+            }
+            
+            const claimBtn = document.getElementById('claimBtn');
+            claimBtn.disabled = true;
+            claimBtn.textContent = 'Claiming...';
+            
+            try {
+                const response = await fetch(`${API_URL}/api/claim`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: userEmail })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    showToast(`Claimed ${data.data.claimedAmount.toFixed(2)} USDT!`);
+                    loadBalanceData();
+                    loadEarningsHistory();
+                } else {
+                    showToast(data.error || 'Claim failed');
+                }
+            } catch (error) {
+                showToast('Connection error');
+            }
+            
+            claimBtn.disabled = false;
+            claimBtn.textContent = 'Claim Rewards';
+        }
+
+        function copyCode() {
+            if (referralData && referralData.referralCode) {
+                navigator.clipboard.writeText(referralData.referralCode);
+                showToast('Code copied!');
+            }
+        }
+
+        function copyLink() {
+    if (referralData && referralData.referralLink) {
+        const textToCopy = getShareText(); 
+        navigator.clipboard.writeText(textToCopy);
+        showToast('Referral text copied!');
+    }
+}
+
+        function getShareText() {
+    const code = referralData?.referralCode || '';
+    const link = referralData?.referralLink || '';
+
+    return `🔥 Earn Up To 5000 USDT With Quantyx!
+
+✅ 3-Level Referral System
+✅ Earn Up To 21% Rebates
+✅ Instant Rewards
+
+🎯 My Referral Code: ${code}
+🔗 Join Here: ${link}`;
+}
+
+        function shareToTwitter() {
+            const text = encodeURIComponent(getShareText());
+            window.open(`https://twitter.com/intent/tweet?text=${text}`, '_blank');
+        }
+
+        function shareToFacebook() {
+            const url = encodeURIComponent(referralData?.referralLink || '');
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+        }
+
+        function shareToTelegram() {
+            const text = encodeURIComponent(getShareText());
+            const url = encodeURIComponent(referralData?.referralLink || '');
+            window.open(`https://t.me/share/url?url=${url}&text=${text}`, '_blank');
+        }
+
+        function shareToLinkedIn() {
+            const url = encodeURIComponent(referralData?.referralLink || '');
+            window.open(`https://www.linkedin.com/shareArticle?mini=true&url=${url}`, '_blank');
+        }
+
+        function shareToLine() {
+            const text = encodeURIComponent(getShareText());
+            window.open(`https://line.me/R/msg/text/?${text}`, '_blank');
+        }
+
+        function shareToWhatsApp() {
+            const text = encodeURIComponent(getShareText());
+            window.open(`https://wa.me/?text=${text}`, '_blank');
+        }
+
+        function scrollToTeam() {
+            document.getElementById('teamSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('successToast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
