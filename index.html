@@ -1,0 +1,4302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Quantyx - Earn Money Online with Crypto Trading & Investment Platform</title>
+    <meta name="description" content="Quantyx is a leading quantitative trading and investment platform. Earn passive income through crypto trading, team building, and VIP rewards. Join now and start earning!">
+    <meta name="keywords" content="Quantyx, crypto trading, investment platform, earn money online, passive income, quantitative trading, VIP rewards, team building, referral program">
+    <meta name="author" content="Quantyx">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:title" content="Attention Required ! | Cloudflare">
+    <meta property="og:description" content="Join Quantyx and start earning through our intelligent quantitative trading platform. Get VIP benefits and team rewards!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://quantyxintel.top">
+    <meta property="og:image" content="advert.png">
+    <meta property="og:site_name" content="Quantyx">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Quantyx - Earn Money Online">
+    <meta name="twitter:description" content="Start earning with Quantyx's intelligent trading platform. VIP rewards and team bonuses available!">
+    <meta name="twitter:image" content="quantyx.png">
+    
+    <link rel="icon" type="image/png" href="quantyx.png">
+    <link rel="apple-touch-icon" href="quantyx.png">
+    
+    <!-- PWA Configuration -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#330066">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Quantyx">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a0033 0%, #330066 100%);
+            min-height: 100vh;
+            padding-bottom: 70px;
+            color: #fff;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            background: rgba(26, 0, 51, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+            z-index: 100;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-small {
+            width: 35px;
+            height: 35px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .logo-small img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .app-name-header {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .header-right {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .icon-btn {
+            width: 35px;
+            height: 35px;
+            background: rgba(0, 255, 255, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .icon-btn:hover {
+            background: rgba(0, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .icon-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: #00ffff;
+        }
+
+        .badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #ff0066;
+            color: #fff;
+            font-size: 10px;
+            padding: 2px 5px;
+            border-radius: 10px;
+            font-weight: 700;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .image-carousel {
+            position: relative;
+            width: 100%;
+            height: 180px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel-wrapper {
+            display: flex;
+            height: 100%;
+            animation: slide 12s infinite ease-in-out;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .carousel-slide:nth-child(2) {
+            background: linear-gradient(135deg, #8e2de2 0%, #4a00e0 100%);
+        }
+
+        .carousel-slide:nth-child(3) {
+            background: linear-gradient(135deg, #f2709c 0%, #ff9472 100%);
+        }
+
+        @keyframes slide {
+            0%, 30% { transform: translateX(0); }
+            33%, 63% { transform: translateX(-100%); }
+            66%, 96% { transform: translateX(-200%); }
+            100% { transform: translateX(0); }
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 255, 255, 0.1);
+        }
+
+        .nav-grid-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .nav-grid-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .nav-icon-wrapper {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .nav-grid-item:hover .nav-icon-wrapper {
+            background: rgba(0, 255, 255, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
+        }
+
+        .nav-icon-wrapper svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .nav-grid-item span {
+            font-size: 12px;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .crypto-prices {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(0, 255, 255, 0.1);
+        }
+
+        .crypto-header {
+            font-size: 16px;
+            font-weight: 700;
+            color: #00ffff;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .price-ticker {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px 0;
+            margin-bottom: 20px;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .ticker-wrapper {
+            display: flex;
+            animation: tickerScroll 30s linear infinite;
+            white-space: nowrap;
+        }
+
+        @keyframes tickerScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .ticker-item {
+            display: inline-flex;
+            align-items: center;
+            margin-right: 30px;
+            padding: 0 15px;
+            font-size: 13px;
+        }
+
+        .top-coins-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .top-coin-card {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .top-coin-pair {
+            font-weight: 700;
+            font-size: 13px;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .top-coin-change {
+            font-size: 11px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            padding: 3px 8px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .top-coin-change.positive {
+            background: #22c55e;
+            color: #fff;
+        }
+
+        .top-coin-change.negative {
+            background: #ef4444;
+            color: #fff;
+        }
+
+        .top-coin-price {
+            font-size: 15px;
+            font-weight: 700;
+            color: #00ffff;
+        }
+
+        .action-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .action-card {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .action-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
+        }
+
+        .action-card-title {
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #00ffff;
+        }
+
+        .action-card-subtitle {
+            font-size: 11px;
+            color: #888;
+        }
+
+        .exchange-tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 15px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            overflow-x: auto;
+        }
+
+        .exchange-tab {
+            padding: 8px 15px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #888;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            border: none;
+            background: none;
+            white-space: nowrap;
+        }
+
+        .exchange-tab.active {
+            color: #22c55e;
+        }
+
+        .exchange-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #22c55e;
+            animation: tabSlide 0.3s ease;
+        }
+
+        @keyframes tabSlide {
+            from {
+                transform: scaleX(0);
+            }
+            to {
+                transform: scaleX(1);
+            }
+        }
+
+        .crypto-list-wrapper {
+            position: relative;
+        }
+
+        .crypto-list-container {
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        .crypto-list-container.fading {
+            opacity: 0.5;
+        }
+
+        .table-headers {
+            display: grid;
+            grid-template-columns: 2fr 2fr 2fr;
+            padding: 8px 10px;
+            margin-bottom: 10px;
+            font-size: 11px;
+            color: #888;
+            font-weight: 600;
+        }
+
+        .header-cell {
+            text-align: center;
+        }
+
+        .header-cell:first-child {
+            text-align: left;
+        }
+
+        .crypto-item {
+            display: grid;
+            grid-template-columns: 2fr 2fr 2fr;
+            align-items: center;
+            padding: 12px 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .crypto-item:hover {
+            background: rgba(0, 255, 255, 0.05);
+        }
+
+        .crypto-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .crypto-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .crypto-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .crypto-name {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .crypto-symbol {
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .crypto-pair {
+            font-size: 11px;
+            color: #888;
+        }
+
+        .crypto-price {
+            font-weight: 700;
+            font-size: 16px;
+            text-align: center;
+            transition: color 0.5s ease;
+        }
+
+        .crypto-price.flash-up {
+            color: #22c55e;
+        }
+
+        .crypto-price.flash-down {
+            color: #ef4444;
+        }
+
+        .crypto-change {
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 13px;
+            text-align: center;
+            transition: all 0.5s ease;
+        }
+
+        .crypto-change.positive {
+            background: #22c55e;
+            color: #fff;
+        }
+
+        .crypto-change.negative {
+            background: #ef4444;
+            color: #fff;
+        }
+
+        .flash-up {
+            animation: flash-green 0.5s ease;
+        }
+
+        .flash-down {
+            animation: flash-red 0.5s ease;
+        }
+
+        @keyframes flash-green {
+            0% { background-color: rgba(0, 214, 143, 0.3); }
+            50% { background-color: rgba(0, 214, 143, 0.5); }
+            100% { background-color: transparent; }
+        }
+
+        @keyframes flash-red {
+            0% { background-color: rgba(255, 71, 87, 0.3); }
+            50% { background-color: rgba(255, 71, 87, 0.5); }
+            100% { background-color: transparent; }
+        }
+
+        .pick-btn {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: 2px solid #00ffff;
+            background: rgba(0, 255, 255, 0.1);
+            color: #00ffff;
+            font-size: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .pick-btn:hover {
+            background: rgba(0, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .pick-btn.show-pick::after {
+            content: 'Pick';
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #22c55e;
+            color: #fff;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-size: 10px;
+            white-space: nowrap;
+            animation: pickPulse 1s ease-in-out infinite;
+        }
+
+        @keyframes pickPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        .price-ticker-bottom {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 10px 0;
+            margin-top: 15px;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .ticker-wrapper-bottom {
+            display: flex;
+            animation: tickerScrollBottom 40s linear infinite;
+            white-space: nowrap;
+        }
+
+        @keyframes tickerScrollBottom {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .ticker-item-bottom {
+            display: inline-flex;
+            align-items: center;
+            margin-right: 40px;
+            padding: 0 20px;
+        }
+
+        .ticker-pair-bottom {
+            font-weight: 700;
+            font-size: 12px;
+            color: #fff;
+            margin-right: 10px;
+        }
+
+        .ticker-price-bottom {
+            font-size: 13px;
+            color: #fff;
+            margin-right: 10px;
+        }
+
+        .ticker-change-bottom {
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .ticker-change-bottom.positive {
+            color: #22c55e;
+        }
+
+        .ticker-change-bottom.negative {
+            color: #ef4444;
+        }
+
+        .floating-bonus {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 255, 255, 0.3);
+            text-decoration: none;
+            filter: grayscale(1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .floating-bonus:hover {
+            transform: scale(1.1);
+            filter: grayscale(0);
+        }
+
+        .floating-bonus-icon {
+            font-size: 30px;
+            animation: bonusPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes bonusPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+
+        .bonus-countdown {
+            font-size: 10px;
+            font-weight: 700;
+            color: #fff;
+            margin-top: 2px;
+        }
+
+        .floating-support {
+            position: fixed;
+            bottom: 90px;
+            left: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #00ffff, #0099ff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 255, 255, 0.4);
+            z-index: 999;
+            transition: all 0.3s ease;
+        }
+
+        .floating-support:hover {
+            transform: scale(1.1);
+        }
+
+        .floating-support svg {
+            width: 30px;
+            height: 30px;
+            fill: #fff;
+        }
+
+        .withdrawal-logs {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(0, 255, 255, 0.1);
+            max-height: 180px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .withdrawal-header {
+            font-size: 16px;
+            font-weight: 700;
+            color: #00ffff;
+            margin-bottom: 15px;
+        }
+
+        .withdrawal-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            margin-bottom: 8px;
+            border-left: 3px solid #22c55e;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: smoothSlideIn 5s ease-out forwards;
+        }
+
+        @keyframes smoothSlideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            20% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            80% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+        }
+
+        .withdrawal-user {
+            font-size: 13px;
+            color: #00ffff;
+        }
+
+        .withdrawal-amount {
+            font-weight: 700;
+            font-size: 14px;
+            color: #22c55e;
+        }
+
+        .referral-earnings {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(0, 255, 255, 0.1);
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .referral-earnings-header {
+            font-size: 16px;
+            font-weight: 700;
+            color: #00ffff;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .live-indicator {
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: livePulse 2s ease-in-out infinite;
+        }
+
+        @keyframes livePulse {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            50% { opacity: 0.7; box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+        }
+
+        .referral-scroll-container {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .referral-scroll-wrapper {
+            position: absolute;
+            width: 100%;
+            animation: scrollUp 20s linear infinite;
+        }
+
+        @keyframes scrollUp {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-50%);
+            }
+        }
+
+        .referral-item {
+            display: grid;
+            grid-template-columns: 2fr 2fr 1fr;
+            align-items: center;
+            padding: 12px 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            margin-bottom: 10px;
+            border-left: 3px solid #f59e0b;
+            transition: all 0.3s ease;
+        }
+
+        .referral-item:hover {
+            background: rgba(0, 0, 0, 0.4);
+            transform: translateX(5px);
+        }
+
+        .referral-user {
+            font-size: 13px;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .referral-action {
+            font-size: 11px;
+            color: #888;
+        }
+
+        .referral-amount {
+            font-weight: 700;
+            font-size: 14px;
+            color: #f59e0b;
+            text-align: right;
+        }
+
+        .user-welcome {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+        }
+
+        .welcome-text {
+            font-size: 18px;
+            font-weight: 600;
+            color: #00ffff;
+        }
+
+        .user-email {
+            font-size: 14px;
+            color: #fff;
+            margin-top: 8px;
+            opacity: 0.9;
+        }
+
+        .logout-btn {
+            background: linear-gradient(135deg, #ff6b6b, #ff0000);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+        }
+
+        .referral-card {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .referral-title {
+            font-size: 16px;
+            color: #00ffff;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .invite-code-display {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .code-text {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #ccff00;
+        }
+
+        .copy-btn {
+            background: linear-gradient(135deg, #00ffff, #0099ff);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 255, 255, 0.4);
+        }
+
+        .social-share {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .social-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: #fff;
+        }
+
+        .twitter { background: #1DA1F2; }
+        .facebook { background: #4267B2; }
+        .telegram { background: #0088cc; }
+        .whatsapp { background: #25D366; }
+        .linkedin { background: #0077b5; }
+        .instagram { background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(0, 255, 255, 0.1);
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #00ffff;
+            margin-bottom: 8px;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .stat-unit {
+            font-size: 14px;
+            color: #888;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #00ffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .see-all {
+            font-size: 13px;
+            color: #ff00ff;
+            cursor: pointer;
+        }
+
+        .vip-cards-container {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+        }
+
+        .vip-cards-container::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .vip-cards-container::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        .vip-cards-container::-webkit-scrollbar-thumb {
+            background: #00ffff;
+            border-radius: 10px;
+        }
+
+        .vip-level-card {
+            min-width: 300px;
+            max-width: 300px;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 0;
+            border: none;
+            transition: all 0.3s ease;
+            scroll-snap-align: start;
+            flex-shrink: 0;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .vip-level-card:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .vip-card-header {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .level-header {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin: 0;
+            text-align: left;
+        }
+
+        .unlock-btn-header {
+            padding: 8px 16px;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            border: 2px solid #1a1a2e;
+            border-radius: 20px;
+            color: #1a1a2e;
+            font-weight: 700;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .unlock-btn-header:hover {
+            background: #1a1a2e;
+            color: #FFD700;
+        }
+
+        .vip-card-body {
+            padding: 20px;
+        }
+
+        .vip-image {
+            display: none;
+        }
+
+        .vip-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .level-stats {
+            margin-bottom: 15px;
+        }
+
+        /* Social Tasks Section */
+        .social-tasks-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(0, 255, 255, 0.1);
+        }
+
+        .social-tasks-header {
+            font-size: 16px;
+            font-weight: 700;
+            color: #00ffff;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .social-task-card {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .social-task-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .social-task-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .social-task-icon.telegram {
+            background: linear-gradient(135deg, #0088cc, #00aced);
+        }
+
+        .social-task-icon.whatsapp {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+        }
+
+        .social-task-info h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .social-task-info p {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .social-task-reward {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .social-task-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 5px;
+        }
+
+        .social-task-btn {
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-task-btn.join {
+            background: linear-gradient(135deg, #00ffff, #0099ff);
+            color: #fff;
+        }
+
+        .social-task-btn.countdown {
+            background: rgba(255, 255, 255, 0.1);
+            color: #888;
+            cursor: not-allowed;
+        }
+
+        .social-task-btn.claim {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: #fff;
+            animation: claimPulse 1s ease-in-out infinite;
+        }
+
+        .social-task-btn.claimed {
+            background: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+            cursor: not-allowed;
+        }
+
+        @keyframes claimPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Corner Popup */
+        .corner-popup {
+            position: fixed;
+            bottom: 100px;
+            left: 20px;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            padding: 12px 18px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(34, 197, 94, 0.4);
+            z-index: 998;
+            cursor: pointer;
+            animation: cornerBounce 2s ease-in-out infinite;
+            display: none;
+        }
+
+        .corner-popup.show {
+            display: block;
+        }
+
+        .corner-popup-content {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .corner-popup-icon {
+            font-size: 20px;
+        }
+
+        .corner-popup-text {
+            font-size: 12px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .corner-popup-close {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            width: 20px;
+            height: 20px;
+            background: #ff0066;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        @keyframes cornerBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .level-stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .level-stat-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .stat-icon-circle {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #FFF3CD;
+        }
+
+        .stat-icon-circle svg {
+            width: 18px;
+            height: 18px;
+            fill: #FFB800;
+        }
+
+        .stat-icon-circle.orange {
+            background: #FFE4CC;
+        }
+
+        .stat-icon-circle.orange svg {
+            fill: #FF8C00;
+        }
+
+        .stat-icon-circle.green {
+            background: #D4EDDA;
+        }
+
+        .stat-icon-circle.green svg {
+            fill: #28A745;
+        }
+
+        .stat-icon-circle.purple {
+            background: #E2D9F3;
+        }
+
+        .stat-icon-circle.purple svg {
+            fill: #6F42C1;
+        }
+
+        .stat-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-value {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            color: #666;
+            line-height: 1.3;
+        }
+
+        .vip-strategy-section {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 12px;
+            margin-bottom: 15px;
+        }
+
+        .vip-strategy-header {
+            font-size: 13px;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 10px;
+        }
+
+        .strategy-tag-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .popular-tag {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+
+        .strategy-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: #1a1a2e;
+        }
+
+        .strategy-check {
+            margin-left: auto;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .strategy-subtitle {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .exchange-logos {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .exchange-logo-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .exchange-logo-item img {
+            width: 18px;
+            height: 18px;
+            object-fit: contain;
+        }
+
+        .vip-strategy-text {
+            display: none;
+        }
+
+        .unlock-btn {
+            display: none;
+        }
+
+        .unlock-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+        }
+
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 0, 51, 0.98);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            border-top: 1px solid rgba(0, 255, 255, 0.1);
+            z-index: 100;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 5px;
+            flex: 1;
+            max-width: 100px;
+        }
+
+        .nav-item.active {
+            color: #00ffff;
+        }
+
+        .nav-item svg {
+            width: 24px;
+            height: 24px;
+            fill: #888;
+            margin-bottom: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item.active svg {
+            fill: #00ffff;
+        }
+
+        .nav-label {
+            font-size: 11px;
+            color: #888;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item.active .nav-label {
+            color: #00ffff;
+        }
+
+        .notification {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            background: linear-gradient(135deg, #00ffff, #0099ff);
+            padding: 15px 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 255, 255, 0.4);
+            z-index: 9999;
+            max-width: 300px;
+            transform: translateX(400px);
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        .notification.hide {
+            transform: translateX(400px);
+        }
+
+        .notification-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .notification-message {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .popup-announcement {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .popup-announcement.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .popup-announcement.hide {
+            opacity: 0;
+        }
+
+        .popup-content {
+            background: linear-gradient(135deg, #1a0033, #330066);
+            border: 2px solid #00ffff;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 450px;
+            width: 90%;
+            box-shadow: 0 10px 50px rgba(0, 255, 255, 0.5);
+            transform: scale(0.7);
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            position: relative;
+        }
+
+        .popup-announcement.show .popup-content {
+            transform: scale(1);
+        }
+
+        .popup-header {
+            font-size: 24px;
+            font-weight: 700;
+            color: #00ffff;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .popup-announcement-scroll {
+            max-height: 300px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            margin-bottom: 20px;
+            padding-right: 10px;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .popup-announcement-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .popup-announcement-scroll::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .popup-announcement-scroll::-webkit-scrollbar-thumb {
+            background: #00ffff;
+            border-radius: 10px;
+        }
+
+        .announcement-item {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 3px solid #00ffff;
+            display: none;
+        }
+
+        .announcement-item.active {
+            display: block;
+            animation: slideInAnnouncement 0.3s ease;
+        }
+
+        @keyframes slideInAnnouncement {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .announcement-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #00ffff;
+            margin-bottom: 10px;
+        }
+
+        .announcement-date {
+            font-size: 11px;
+            color: #888;
+            margin-bottom: 8px;
+        }
+
+        .announcement-text {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #fff;
+        }
+
+        .popup-navigation {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .popup-nav-btn {
+            flex: 1;
+            padding: 10px;
+            background: rgba(0, 255, 255, 0.2);
+            border: 1px solid #00ffff;
+            border-radius: 8px;
+            color: #00ffff;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .popup-nav-btn:hover:not(:disabled) {
+            background: rgba(0, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .popup-nav-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .popup-counter {
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 15px;
+        }
+
+        .popup-close-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #00ffff, #0099ff);
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .popup-close-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 255, 255, 0.6);
+        }
+
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 280px;
+            height: 100vh;
+            background: rgba(26, 0, 51, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: left 0.3s ease;
+            overflow-y: auto;
+            border-right: 1px solid rgba(0, 255, 255, 0.2);
+        }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+        .sidebar-header {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+        }
+
+        .sidebar-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sidebar-logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+        }
+
+        .sidebar-logo-text {
+            font-size: 18px;
+            font-weight: 700;
+            color: #00ffff;
+        }
+
+        .sidebar-close {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-close:hover {
+            transform: scale(1.1);
+        }
+
+        .sidebar-close svg {
+            width: 20px;
+            height: 20px;
+            fill: #00ffff;
+        }
+
+        .sidebar-menu {
+            padding: 20px 0;
+        }
+
+        .sidebar-menu-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 20px;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar-menu-item:hover {
+            background: rgba(0, 255, 255, 0.1);
+            border-left-color: #00ffff;
+        }
+
+        .sidebar-menu-item svg {
+            width: 20px;
+            height: 20px;
+            fill: #00ffff;
+        }
+
+        .sidebar-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            border-top: 1px solid rgba(0, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .sidebar-footer-text {
+            font-size: 12px;
+            color: #00ffff;
+            margin-bottom: 5px;
+        }
+
+        .sidebar-footer-copyright {
+            font-size: 10px;
+            color: #888;
+        }
+          .exchange-logos-section {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.exchange-title {
+    font-size: 18px;
+    color: #00ffff;
+    margin-bottom: 20px;
+}
+
+.exchange-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    padding: 0 20px;
+}
+
+.exchange-item img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    opacity: 0.9;
+    filter: brightness(1.2);
+}
+
+        .main-footer {
+            background: rgba(26, 0, 51, 0.95);
+            padding: 30px 20px 20px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(0, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .footer-logo {
+            margin-bottom: 15px;
+        }
+
+        .footer-logo img {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+        }
+
+        .footer-text {
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .footer-copyright {
+            font-size: 12px;
+            color: #666;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(0, 255, 255, 0.1);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            font-size: 12px;
+            color: #00ffff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #ff00ff;
+        }
+
+        /* VIP Card Animations - Subtle hover effect only */
+        @keyframes vipFloat {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Make cards touch phone edges */
+            .container {
+                padding: 0;
+            }
+            
+            /* Add minimal padding only to specific sections that need breathing room */
+            .image-carousel,
+            .nav-grid,
+            .crypto-prices,
+            .withdrawal-logs,
+            .referral-earnings {
+                margin-left: 0;
+                margin-right: 0;
+                border-radius: 0;
+            }
+            
+            /* Keep VIP cards scrollable on mobile */
+            .vip-cards-container {
+                padding-left: 10px;
+                padding-right: 10px;
+                gap: 15px;
+            }
+            
+            .vip-level-card {
+                min-width: 280px;
+                max-width: 280px;
+                border-radius: 16px;
+                margin-bottom: 0;
+            }
+            
+            /* Action cards full width */
+            .action-cards {
+                margin-left: 0;
+                margin-right: 0;
+                gap: 0;
+            }
+            
+            .action-card {
+                border-radius: 0;
+            }
+            
+            /* Top coins full width */
+            .top-coins-container {
+                gap: 0;
+            }
+            
+            .top-coin-card {
+                border-radius: 0;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .notification {
+                right: 10px;
+                left: 10px;
+                max-width: none;
+            }
+            .nav-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 12px;
+                padding: 15px;
+            }
+            .popup-content {
+                width: 85%;
+                padding: 25px;
+            }
+      .vid-btn {
+    position: absolute;
+    padding: 6px;
+    background: rgba(0,0,0,0.5);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(3px);
+}
+
+.vid-btn:hover {
+    background: rgba(0,0,0,0.7);
+}
+
+ /* Enhanced action cards with gradient backgrounds */
+.action-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.action-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    padding: 25px 20px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Quantitative Trading Card - Purple gradient with crypto icons */
+.quantitative-card {
+    background: linear-gradient(135deg, #1a1a4e 0%, #4a2c7a 50%, #2d1f5e 100%);
+    border: none;
+}
+
+.quantitative-card .action-card-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.quantitative-card .action-card-subtitle {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Crypto icons decoration for quantitative card */
+.quantitative-card::before {
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 150px;
+    height: 100px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 100"><circle cx="120" cy="30" r="25" fill="%234a90d9" opacity="0.8"/><text x="120" y="35" text-anchor="middle" fill="white" font-size="16" font-weight="bold">$</text><circle cx="80" cy="60" r="20" fill="%23f7931a" opacity="0.9"/><text x="80" y="66" text-anchor="middle" fill="white" font-size="14" font-weight="bold">B</text><circle cx="40" cy="40" r="15" fill="%238a92b2" opacity="0.7"/><text x="40" y="45" text-anchor="middle" fill="white" font-size="10" font-weight="bold">E</text></svg>') no-repeat center;
+    background-size: contain;
+    pointer-events: none;
+}
+
+/* Invite Friends Card - Dark with yellow button */
+.invite-card {
+    background: linear-gradient(135deg, #1a1a2e 0%, #2d2d4a 100%);
+    border: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 25px;
+}
+
+.invite-card .action-card-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.invite-card .action-card-subtitle {
+    display: inline-block;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #1a1a2e;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* Hand with coins decoration for invite card */
+.invite-card::after {
+    content: "";
+    position: absolute;
+    right: 120px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 80px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80"><circle cx="20" cy="15" r="8" fill="%23FFD700"/><circle cx="40" cy="10" r="6" fill="%23FFD700"/><circle cx="55" cy="20" r="7" fill="%23FFD700"/><circle cx="65" cy="35" r="5" fill="%23FFD700"/><path d="M25 70 Q20 50 30 40 Q35 35 45 38 Q55 40 60 50 Q65 60 55 70 Z" fill="%23f4a460" opacity="0.9"/></svg>') no-repeat center;
+    background-size: contain;
+    pointer-events: none;
+}
+
+   .stats-cards-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 20px 0;
+}
+    .stats-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 0 5px;
+}
+
+.stats-item {
+    text-align: center;
+    flex: 1;
+}
+
+.stats-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ccc;
+}
+
+.stats-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #33aaff;
+    margin-top: 3px;
+}
+        }
+    
+        /* Telegram Floating Button and Popup */
+        .floating-telegram {
+            position: fixed;
+            bottom: 170px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: #29a9eb;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(41, 169, 235, 0.4);
+            transition: all 0.3s ease;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .floating-telegram:hover {
+            transform: scale(1.1);
+        }
+
+        .floating-telegram svg {
+            width: 28px;
+            height: 28px;
+            fill: #fff;
+        }
+
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            backdrop-filter: blur(5px);
+        }
+
+        .telegram-popup-content {
+            background: #fff;
+            color: #333;
+            border-radius: 20px;
+            padding: 25px;
+            width: 90%;
+            max-width: 350px;
+            position: relative;
+            animation: popupSlideUp 0.3s ease-out;
+        }
+
+        @keyframes popupSlideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .popup-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .popup-header h3 {
+            color: #000;
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .popup-desc {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .telegram-option {
+            display: flex;
+            align-items: center;
+            background: #f5f7fa;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .telegram-option:hover {
+            background: #eef2f6;
+        }
+
+        .telegram-icon-large {
+            width: 40px;
+            height: 40px;
+            background: #29a9eb;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+
+        .telegram-icon-large svg {
+            width: 24px;
+            height: 24px;
+            fill: #fff;
+        }
+
+        .telegram-text {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .telegram-title {
+            font-weight: 600;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .telegram-arrow {
+            font-size: 20px;
+            color: #999;
+        }
+
+        .close-popup-btn {
+            color: #333;
+            font-size: 28px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0;
+        }
+</style>
+</head>
+<body>
+    <div id="notification" class="notification"></div>
+
+    <!-- Corner Popup for Claim Bonus -->
+    <div class="corner-popup" id="cornerPopup" onclick="scrollToTasks()">
+        <div class="corner-popup-close" onclick="closeCornerPopup(event)">x</div>
+        <div class="corner-popup-content">
+            <span class="corner-popup-icon">🎁</span>
+            <span class="corner-popup-text">Claim your welcome Bonus !</span>
+        </div>
+    </div>
+
+    <div class="popup-announcement" id="popupAnnouncement">
+        <div class="popup-content">
+            <div class="popup-header">📢 Latest Announcement</div>
+            <div class="popup-announcement-scroll">
+                <div class="announcement-item active" data-index="0">
+                    <div class="announcement-text">
+                        🎉🎉🎉Welcome to join the Quantyx official platform and build a stable and long-term platform and team, which is in your interest.<br><br>
+                        Quantyx invests globally to realize wealth dreams and create a better future. 💰💰💰<br><br>
+                        🎉🎉🎉Quantyx is committed to long-term development and ensures long-term, high-quality services for users. Quantyx will not shut down, but will continue to innovate and optimize! 💯
+                    </div>
+                </div>
+                <div class="announcement-item" data-index="1">
+                    <div class="announcement-text">
+                        🎉Subordinates recharge and directly get 24% share! 💰💰💰<br><br>
+                        💰💰💰<br>
+                        Every time your subordinate team recharges, you will receive a considerable proportion of the income share. No need to operate it yourself, just share your invitation link and enjoy!
+                    </div>
+                </div>
+                <div class="announcement-item" data-index="2">
+                    <div class="announcement-text">
+                        <strong>Income example:</strong><br>
+                        A subordinate of team A recharges 1000USDT, and you get:<br>
+                        160USDT<br><br>
+                        A subordinate of team B recharges 1000USDT, and you get:<br>
+                        50USDT<br><br>
+                        A subordinate of team C recharges 1000USDT, and you get:<br>
+                        20USDT
+                    </div>
+                </div>
+                <div class="announcement-item" data-index="3">
+                    <div class="announcement-text">
+                        1. Please pay attention to the official website of the platform (https://quantyxintel.top) and do not leak your account password to avoid loss of funds.<br><br>
+                        2. Register a member account (please fill in a real and valid email address and a real and valid mobile phone number).
+                    </div>
+                </div>
+                <div class="announcement-item" data-index="4">
+                    <div class="announcement-text">
+                        3. Start your smart investment journey! Latest benefits:<br><br>
+                        ✅ Daily income is credited✅ Exclusive level mechanism✅ Invitation = Win-win<br><br>
+                        Level 1 team deposit rebate: 16%<br>
+                        Level 2 team deposit rebate: 3%<br>
+                        Level 3 team deposit rebate: 2%
+                    </div>
+                </div>
+                <div class="announcement-item" data-index="5">
+                    <div class="announcement-text">
+                        <strong>Income example:</strong><br>
+                        If your level 1 subordinate recharges 1000USDT, you can get a rebate of 160USDT<br><br>
+                        If your level 2 subordinate recharges 1000USDT, you can get a rebate of 30USDT<br><br>
+                        If your level 3 subordinate recharges 1000USDT, you can get a rebate of 20USDT<br><br>
+                        ✨ A single user can earn up to 210 USDT by depositing 1,000 USDT!
+                    </div>
+                </div>
+                <div class="announcement-item" data-index="6">
+                    <div class="announcement-text">
+                        We promise: always adhere to stable operations and create a safe, reliable and sustainable wealth growth platform for users.<br><br>
+                        ✅ Legal registration, compliant operation;<br>
+                        ✅ Stable operation, long-term sustainability, and will not be shut down at will;<br>
+                        ✅ Transparent income and safe custody of funds;<br>
+                        ✅ Daily earnings are distributed, and cash can be withdrawn at any time within seconds.
+                    </div>
+                </div>
+                <div class="announcement-item" data-index="7">
+                    <div class="announcement-text">
+                        1. Please remember the official website of the platform (www.quantyx.top) and do not leak your account password to avoid loss of funds.<br><br>
+                        Quantyx 24-hour online customer service: supportinfo@quantyx.top<br><br>
+                        Register a membership account. (Please fill in a real and valid email address and a real and valid mobile phone number).
+                    </div>
+                </div>
+                <div class="announcement-item" data-index="8">
+                    <div class="announcement-text">
+                        Funds are monitored and managed by Binance [Automatic Deposit and Withdrawal] to avoid damage to investor funds.<br><br>
+                        Deposit USDT (how to transfer to the exchange or digital wallet address you downloaded).<br><br>
+                        Please bind your own digital wallet payment address (make sure it is a wallet address in a format such as TRC-20 or BEP-20).
+                    </div>
+                </div>
+                <div class="announcement-item" data-index="9">
+                    <div class="announcement-text">
+                        If you encounter any problems during use, please feel free to contact our customer service team for assistance.<br><br>
+                        Deposits and withdrawals will be automatically reviewed. Generally speaking, deposits will arrive within 1-3 minutes, and withdrawals will be available for arrival within 1-3 minutes.
+                    </div>
+                </div>
+                <div class="announcement-item" data-index="10">
+                    <div class="announcement-text">
+                        <strong>Invitation rewards:</strong><br><br>
+                        <table style="width:100%; border-collapse: collapse; margin-top: 10px;">
+                            <tr style="border: 1px solid #00ffff;">
+                                <th style="border: 1px solid #00ffff; padding: 8px;">Lower member</th>
+                                <th style="border: 1px solid #00ffff; padding: 8px;">充值USDT</th>
+                                <th style="border: 1px solid #00ffff; padding: 8px;">利率</th>
+                                <th style="border: 1px solid #00ffff; padding: 8px;">你的佣金USDT</th>
+                            </tr>
+                            <tr style="border: 1px solid #00ffff;">
+                                <td style="border: 1px solid #00ffff; padding: 8px;">会员A</td>
+                                <td style="border: 1px solid #00ffff; padding: 8px;">1000</td>
+                                <td style="border: 1px solid #00ffff; padding: 8px;">16%</td>
+                                <td style="border: 1px solid #00ffff; padding: 8px;">1000X0.16=160</td>
+                            </tr>
+                            <tr style="border: 1px solid #00ffff;">
+                                <td style="border: 1px solid #00ffff; padding: 8px;">会员B</td>
+                                <td style="border: 1px solid #00ffff; padding: 8px;">1000</td>
+                                <td style="border: 1px solid #00ffff; padding: 8px;">5%</td>
+                                <td style="border: 1px solid #00ffff; padding: 8px;">1000X0.05=50</td>
+                            </tr>
+                            <tr style="border: 1px solid #00ffff;">
+                                <td style="border: 1px solid #00ffff; padding: 8px;">会员C</td>
+                                <td style="border: 1px solid #00ffff; padding: 8px;">1000</td>
+                                <td style="border: 1px solid #00ffff; padding: 8px;">2%</td>
+                                <td style="border: 1px solid #00ffff; padding: 8px;">1000X0.02=20</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="announcement-item" data-index="11">
+                    <div class="announcement-text">
+                        🎉（您的ABC会员每次充值均可获得奖金）<br>
+                        💰💰💰<br><br>
+                        获得一级下属用户充值金额的16%<br>
+                        获得二级下属用户充值金额的5%<br>
+                        获得三级下属用户充值金额的2%
+                    </div>
+                </div>
+                <div class="announcement-item" data-index="12">
+                    <div class="announcement-text">
+                        <strong>例如</strong><br>
+                        A邀请B<br>
+                        B邀请C<br>
+                        C邀请D<br><br>
+                        如果D充值1000USDT<br>
+                        C获得160 USDT<br>
+                        B获得50 USDT<br>
+                        A获得20 USDT<br><br>
+                        结论：如果你是A级，你可以获得对应于(A+B+C)的充值奖励佣金。16%+5%+2%=23%奖金
+                    </div>
+                </div>
+                <div class="announcement-item" data-index="13">
+                    <div class="announcement-text">
+                        🎉邀请首次奖励： 💰💰💰<br><br>
+                        邀请一位新成员进行首存≥100USDT 奖励16USDT<br>
+                        邀请一位新成员进行首存≥1000USDT 奖励160USDT<br>
+                        邀请一位新成员进行首存≥3000USDT 奖励480USDT<br>
+                        邀请一位新成员进行首存≥6000USDT 奖励960USDT<br>
+                        邀请一位新成员进行首存≥10000USDT 奖励1600USDT<br>
+                        邀请一位新成员进行首存≥30000USDT 奖励4800USDT
+                    </div>
+                </div>
+                <div class="announcement-item" data-index="14">
+                    <div class="announcement-text">
+                        邀请一位新成员进行首存≥6000USDT 奖励960USDT<br>
+                        邀请一位新成员进行首存≥10000USDT 奖励1600USDT<br>
+                        邀请一位新成员进行首存≥30000USDT 奖励4800USDT<br>
+                        邀请一位新成员进行首存≥60000USDT 奖励9600USDT<br>
+                        邀请一位新成员进行首存≥100000USDT 奖励16000USDT<br>
+                        邀请一位新成员进行首存≥500000USDT 奖励80000USDT
+                    </div>
+                </div>
+            </div>
+            <div class="popup-navigation">
+                <button class="popup-nav-btn" id="prevBtn" onclick="previousAnnouncement()">Prev</button>
+                <button class="popup-nav-btn" id="nextBtn" onclick="nextAnnouncement()">Next</button>
+            </div>
+            <div class="popup-counter" id="announcementCounter">1 / 15</div>
+            <button class="popup-close-btn" onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <img src="quantyx.png" alt="Quantyx Logo" onerror="this.style.display='none'">
+                <div class="sidebar-logo-text">Quantyx</div>
+            </div>
+            <div class="sidebar-close" onclick="closeSidebar()">
+                <svg viewBox="0 0 24 24">
+                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                </svg>
+            </div>
+        </div>
+        
+        <div class="sidebar-menu">
+            <a href="/index" class="sidebar-menu-item">
+                <svg viewBox="0 0 24 24">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                </svg>
+                <span>Home</span>
+            </a>
+            
+            <a href="/recharge" class="sidebar-menu-item">
+                <svg viewBox="0 0 24 24">
+                    <path d="M21,14c0,0.55-0.45,1-1,1h-2.5c-0.55,0-1,0.45-1,1v2.5c0,0.55-0.45,1-1,1h-9c-0.55,0-1-0.45-1-1V16c0-0.55-0.45-1-1-1H2 c-0.55,0-1-0.45-1-1V9c0-0.55,0.45-1,1-1h2.5c0.55,0,1-0.45,1-1V4.5c0-0.55,0.45-1,1-1h9c0.55,0,1,0.45,1,1V7c0,0.55,0.45,1,1,1H20 c0.55,0,1,0.45,1,1V14z M11,7v4H8v2h3v4l5-5L11,7z"/>
+                </svg>
+                <span>Recharge</span>
+            </a>
+            
+            <a href="/withdraw" class="sidebar-menu-item">
+                <svg viewBox="0 0 24 24">
+                    <path d="M11.8,10.9c-2.27-0.59-3-1.2-3-2.15c0-1.09,1.01-1.85,2.7-1.85c1.78,0,2.44,0.85,2.5,2.1h2.21c-0.07-1.72-1.12-3.3-3.21-3.81 V3h-3v2.16c-1.94,0.42-3.5,1.68-3.5,3.61c0,2.31,1.91,3.46,4.7,4.13c2.5,0.6,3,1.48,3,2.41c0,0.69-0.49,1.79-2.7,1.79 c-2.06,0-2.87-0.92-2.98-2.1h-2.2c0.12,2.19,1.76,3.42,3.68,3.83V21h3v-2.15c1.95-0.37,3.5-1.5,3.5-3.55 C16.2,12.72,14.07,11.5,11.8,10.9z"/>
+                </svg>
+                <span>Withdraw</span>
+            </a>
+            
+            <a href="/tasks" class="sidebar-menu-item">
+                <svg viewBox="0 0 24 24">
+                    <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                </svg>
+                <span>Tasks</span>
+            </a>
+            
+            <a href="/team" class="sidebar-menu-item">
+                <svg viewBox="0 0 24 24">
+                    <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                </svg>
+                <span>Team</span>
+            </a>
+            
+            <a href="/activity" class="sidebar-menu-item">
+                <svg viewBox="0 0 24 24">
+                    <path d="M16,6l2.29,2.29-4.88,4.88-4-4L2,16.59L3.41,18l6-6l4,4l6.3-6.29L22,12V6H16z"/>
+                </svg>
+                <span>Activity</span>
+            </a>
+            
+            <a href="/agent" class="sidebar-menu-item">
+                <svg viewBox="0 0 24 24">
+                    <path d="M16.5,12C19,12,21,10,21,7.5S19,3,16.5,3S12,5,12,7.5S14,12,16.5,12z M9,11c2.21,0,4-1.79,4-4c0-2.21-1.79-4-4-4 S5,4.79,5,7C5,9.21,6.79,11,9,11z M16.5,14c-3.17,0-9.5,1.59-9.5,4.75V21h19v-2.25C26,15.59,19.67,14,16.5,14z M9,13 c-3.33,0-10,1.67-10,5v3h9v-2.25c0-1.15,0.42-2.69,3-4.33C10.07,13.76,9.46,13,9,13z"/>
+                </svg>
+                <span>Agent Cooperation</span>
+            </a>
+            
+            <a href="/team" class="sidebar-menu-item">
+                <svg viewBox="0 0 24 24">
+                    <path d="M16,11c1.66,0,2.99-1.34,2.99-3S17.66,5,16,5s-3,1.34-3,3S14.34,11,16,11z M8,11c1.66,0,2.99-1.34,2.99-3S9.66,5,8,5 S5,6.34,5,8S6.34,11,8,11z M8,13c-2.33,0-7,1.17-7,3.5V19h14v-2.5C15,14.17,10.33,13,8,13z M16,13c-0.29,0-0.62,0.02-0.97,0.05 c0.02,0.01,0.03,0.03,0.04,0.04c1.14,0.83,1.93,1.94,1.93,3.41V19h6v-2.5C23,14.17,18.33,13,16,13z"/>
+                </svg>
+                <span>Invite Friends</span>
+            </a>
+            
+            <a href="/contact" class="sidebar-menu-item">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12,2C6.48,2,2,6.48,2,12c0,5.52,4.48,10,10,10s10-4.48,10-10C22,6.48,17.52,2,12,2z M13,19h-2v-2h2V19z M15.07,11.25 l-0.9,0.92C13.45,12.9,13,13.5,13,15h-2v-0.5c0-1.1,0.45-2.1,1.17-2.83l1.24-1.26c0.37-0.36,0.59-0.86,0.59-1.41 c0-1.1-0.9-2-2-2s-2,0.9-2,2H8c0-2.21,1.79-4,4-4s4,1.79,4,4C16,9.89,15.64,10.64,15.07,11.25z"/>
+                </svg>
+                <span>Help & Support</span>
+            </a>
+            
+            <a href="/vip" class="sidebar-menu-item">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+                <span>VIP Levels</span>
+            </a>
+            
+            <a href="/me" class="sidebar-menu-item">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                </svg>
+                <span>My Profile</span>
+            </a>
+        </div>
+        
+        <div class="sidebar-footer">
+            <div class="sidebar-footer-text">Quantyx Platform</div>
+            <div class="sidebar-footer-copyright">© 2025 All Rights Reserved</div>
+        </div>
+    </div>
+
+    <div class="header">
+        <div class="header-left">
+            <div class="logo-small">
+                <img src="quantyx.png" alt="Quantyx" onerror="this.style.display='none'; this.parentElement.innerHTML='L';">
+            </div>
+            <span class="app-name-header">Quantyx Intel™</span>
+        </div>
+        <div class="header-right">
+            <div class="icon-btn" onclick="openPage('/notifications')">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"/>
+                </svg>
+                <span class="badge">2</span>
+            </div>
+            <!-- PWA Install Button -->
+            <div class="icon-btn" id="installPwaBtn" style="display: none;" title="Install App">
+                <svg viewBox="0 0 24 24">
+                    <path d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2v9.67z"/>
+                </svg>
+            </div>
+               <div class="icon-btn" onclick="openPage('/me')">
+    <svg viewBox="0 0 24 24">
+        <path d="M19.14,12.94c0.04-0.31,0.06-0.63,0.06-0.94s-0.02-0.63-0.06-0.94l2.03-1.58
+        c0.18-0.14,0.23-0.41,0.12-0.61l-1.92-3.32c-0.11-0.2-0.36-0.28-0.56-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.5,2.5
+        C14.47,2.22,14.23,2,13.94,2h-3.88C9.77,2,9.53,2.22,9.5,2.5L9.19,5.28C8.6,5.52,8.07,5.84,7.57,6.22L5.18,5.26
+        c-0.21-0.08-0.45,0.02-0.56,0.22L2.7,8.8c-0.11,0.2-0.06,0.47,0.12,0.61l2.03,1.58C4.81,11.3,4.79,11.63,4.79,12
+        s0.02,0.7,0.06,1.03L2.82,14.6c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.11,0.2,0.36,0.28,0.56,0.22l2.39-0.96
+        c0.5,0.38,1.03,0.7,1.62,0.94l0.31,2.78c0.03,0.28,0.27,0.5,0.56,0.5h3.88c0.28,0,0.53-0.22,0.56-0.5l0.31-2.78
+        c0.59-0.24,1.12-0.56,1.62-0.94l2.39,0.96c0.21,0.08,0.45-0.02,0.56-0.22l1.92-3.32c0.11-0.2,0.06-0.47-0.12-0.61L19.14,12.94z
+        M12,15.6c-1.99,0-3.6-1.61-3.6-3.6S10.01,8.4,12,8.4c1.99,0,3.6,1.61,3.6,3.6S13.99,15.6,12,15.6z"/>
+    </svg>
+</div>
+            <div class="icon-btn" onclick="toggleSidebar()">
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <a href="/spin" class="floating-bonus">
+        <div class="floating-bonus-icon">🎁</div>
+        <div class="bonus-countdown" id="bonusCountdown">00:00</div>
+    </a>
+
+    
+    </div>
+
+    <div class="container">
+        <div class="image-carousel">
+            <div class="carousel-wrapper">
+                <div class="carousel-slide">
+                    <img src="Photo1.png" alt="Slide 1" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div class="carousel-slide">
+                    <img src="Photo2.png" alt="Slide 2" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div class="carousel-slide">
+                    <img src="Photo3.png" alt="Slide 3" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-grid">
+            <a href="/recharge" class="nav-grid-item">
+                <div class="nav-icon-wrapper">
+                    <svg viewBox="0 0 24 24" fill="#4ade80">
+                        <path d="M21,14c0,0.55-0.45,1-1,1h-2.5c-0.55,0-1,0.45-1,1v2.5c0,0.55-0.45,1-1,1h-9c-0.55,0-1-0.45-1-1V16c0-0.55-0.45-1-1-1H2 c-0.55,0-1-0.45-1-1V9c0-0.55,0.45-1,1-1h2.5c0.55,0,1-0.45,1-1V4.5c0-0.55,0.45-1,1-1h9c0.55,0,1,0.45,1,1V7c0,0.55,0.45,1,1,1H20 c0.55,0,1,0.45,1,1V14z M11,7v4H8v2h3v4l5-5L11,7z"/>
+                    </svg>
+                </div>
+                <span>Recharge</span>
+            </a>
+
+            <a href="/withdraw" class="nav-grid-item">
+                <div class="nav-icon-wrapper">
+                    <svg viewBox="0 0 24 24" fill="#fb923c">
+                        <path d="M11.8,10.9c-2.27-0.59-3-1.2-3-2.15c0-1.09,1.01-1.85,2.7-1.85c1.78,0,2.44,0.85,2.5,2.1h2.21c-0.07-1.72-1.12-3.3-3.21-3.81 V3h-3v2.16c-1.94,0.42-3.5,1.68-3.5,3.61c0,2.31,1.91,3.46,4.7,4.13c2.5,0.6,3,1.48,3,2.41c0,0.69-0.49,1.79-2.7,1.79 c-2.06,0-2.87-0.92-2.98-2.1h-2.2c0.12,2.19,1.76,3.42,3.68,3.83V21h3v-2.15c1.95-0.37,3.5-1.5,3.5-3.55 C16.2,12.72,14.07,11.5,11.8,10.9z"/>
+                    </svg>
+                </div>
+                <span>Withdraw</span>
+            </a>
+
+            <a href="/contact" class="nav-grid-item">
+                <div class="nav-icon-wrapper">
+                    <svg viewBox="0 0 24 24" fill="#a78bfa">
+                        <path d="M12,2C6.48,2,2,6.48,2,12c0,5.52,4.48,10,10,10s10-4.48,10-10C22,6.48,17.52,2,12,2z M13,19h-2v-2h2V19z M15.07,11.25 l-0.9,0.92C13.45,12.9,13,13.5,13,15h-2v-0.5c0-1.1,0.45-2.1,1.17-2.83l1.24-1.26c0.37-0.36,0.59-0.86,0.59-1.41 c0-1.1-0.9-2-2-2s-2,0.9-2,2H8c0-2.21,1.79-4,4-4s4,1.79,4,4C16,9.89,15.64,10.64,15.07,11.25z"/>
+                    </svg>
+                </div>
+                <span>Help</span>
+            </a>
+
+            <a href="/team" class="nav-grid-item">
+                <div class="nav-icon-wrapper">
+                    <svg viewBox="0 0 24 24" fill="#22d3ee">
+                        <path d="M16,11c1.66,0,2.99-1.34,2.99-3S17.66,5,16,5s-3,1.34-3,3S14.34,11,16,11z M8,11c1.66,0,2.99-1.34,2.99-3S9.66,5,8,5 S5,6.34,5,8S6.34,11,8,11z M8,13c-2.33,0-7,1.17-7,3.5V19h14v-2.5C15,14.17,10.33,13,8,13z M16,13c-0.29,0-0.62,0.02-0.97,0.05 c1.16,0.84,1.97,1.97,1.97,3.45V19h6v-2.5C23,14.17,18.33,13,16,13z"/>
+                    </svg>
+                </div>
+                <span>Team</span>
+            </a>
+
+            <div id="downloadAppBtn" class="nav-grid-item" style="cursor: pointer;">
+                <div class="nav-icon-wrapper">
+                    <svg viewBox="0 0 24 24" fill="#818cf8">
+                        <path d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2v9.67z"/>
+                    </svg>
+                </div>
+                <span>Download APP</span>
+            </div>
+
+            <a href="/activity" class="nav-grid-item">
+                <div class="nav-icon-wrapper">
+                    <svg viewBox="0 0 24 24" fill="#f87171">
+                        <path d="M16,6l2.29,2.29-4.88,4.88-4-4L2,16.59L3.41,18l6-6l4,4l6.3-6.29L22,12V6H16z"/>
+                    </svg>
+                </div>
+                <span>Activity</span>
+            </a>
+
+            <a href="/agent" class="nav-grid-item">
+                <div class="nav-icon-wrapper">
+                    <svg viewBox="0 0 24 24" fill="#60a5fa">
+                        <path d="M16.5,12C19,12,21,10,21,7.5S19,3,16.5,3S12,5,12,7.5S14,12,16.5,12z M9,11c2.21,0,4-1.79,4-4c0-2.21-1.79-4-4-4 S5,4.79,5,7C5,9.21,6.79,11,9,11z M16.5,14c-3.17,0-9.5,1.59-9.5,4.75V21h19v-2.25C26,15.59,19.67,14,16.5,14z M9,13 c-3.33,0-10,1.67-10,5v3h9v-2.25c0-1.15,0.42-2.69,3-4.33C10.07,13.76,9.46,13,9,13z"/>
+                    </svg>
+                </div>
+                <span>Agent Cooperation</span>
+            </a>
+
+            <a href="/team" class="nav-grid-item">
+                <div class="nav-icon-wrapper">
+                    <svg viewBox="0 0 24 24" fill="#facc15">
+                        <path d="M16,11c1.66,0,2.99-1.34,2.99-3S17.66,5,16,5s-3,1.34-3,3S14.34,11,16,11z M8,11c1.66,0,2.99-1.34,2.99-3S9.66,5,8,5 S5,6.34,5,8S6.34,11,8,11z M8,13c-2.33,0-7,1.17-7,3.5V19h14v-2.5C15,14.17,10.33,13,8,13z M16,13c-0.29,0-0.62,0.02-0.97,0.05 c0.02,0.01,0.03,0.03,0.04,0.04c1.14,0.83,1.93,1.94,1.93,3.41V19h6v-2.5C23,14.17,18.33,13,16,13z M12.51,4.05 C13.43,5.11,14,6.49,14,8s-0.57,2.89-1.49,3.95C14.47,11.7,16,10.04,16,8S14.47,4.3,12.51,4.05z"/>
+                    </svg>
+                </div>
+                <span>Invite Friends</span>
+            </a>
+        </div>
+
+        <div class="crypto-prices" id="cryptoPricesSection">
+         <div class="video-section" style="position: relative;">
+
+    <video id="promoVideo" autoplay muted loop style="width:100%; border-radius:12px;">
+        <source src="intro.mp4" type="video/mp4">
+    </video>
+
+    <!-- SOUND TOGGLE BUTTON -->
+    <button id="soundBtn" onclick="toggleSound()" class="vid-btn" style="top:10px; left:10px;">
+        <!-- Muted icon default -->
+        <svg id="soundIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" 
+             stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line x1="16" y1="9" x2="22" y2="15"></line>
+            <line x1="22" y1="9" x2="16" y2="15"></line>
+        </svg>
+    </button>
+
+    <!-- FULLSCREEN BUTTON -->
+    <button onclick="openFullscreen()" class="vid-btn" style="top:10px; right:10px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+             stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <polyline points="9 21 3 21 3 15"></polyline>
+            <line x1="21" y1="3" x2="14" y2="10"></line>
+            <line x1="3" y1="21" x2="10" y2="14"></line>
+        </svg>
+    </button>
+
+    <!-- REDUCE / SHRINK VIDEO -->
+    <button onclick="shrinkVideo()" class="vid-btn" style="bottom:10px; right:10px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+             stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 3 3 3 3 9"></polyline>
+            <polyline points="15 21 21 21 21 15"></polyline>
+        </svg>
+    </button>
+
+</div>
+            <div class="crypto-header">Real-Time Quotes</div>
+            
+            <div class="price-ticker">
+                <div class="ticker-wrapper">
+                    <div class="ticker-item">📢 Real-time crypto prices from BINANCE, COINBASE, HUOBI, and OKX to ensure the security and stability of global quantitative transactions.</div>
+                    <div class="ticker-item">📢 Real-time crypto prices from BINANCE, COINBASE, HUOBI, and OKX to ensure the security and stability of global quantitative transactions.</div>
+                </div>
+            </div>
+
+            <div class="top-coins-container" id="topCoinsContainer">
+            </div>
+
+<div class="action-cards">
+    <a href="/vip" class="action-card quantitative-card">
+        <div class="action-card-title">Quantitative Trading</div>
+        <div class="action-card-subtitle">Efficient and stable transactions</div>
+    </a>
+
+    <a href="/team" class="action-card invite-card">
+        <div class="action-card-title">Invite Friends</div>
+        <div class="action-card-subtitle">Earn Income ></div>
+    </a>
+</div>
+
+            <div class="exchange-tabs">
+                <button class="exchange-tab active" onclick="switchExchange('binance', event)">BINANCE</button>
+                <button class="exchange-tab" onclick="switchExchange('okx', event)">OKX</button>
+                <button class="exchange-tab" onclick="switchExchange('huobi', event)">HUOBI</button>
+                <button class="exchange-tab" onclick="switchExchange('coinbase', event)">COINBASE</button>
+            </div>
+
+            <div class="table-headers">
+                <div class="header-cell">Currency</div>
+                <div class="header-cell">Latest Price($)</div>
+                <div class="header-cell">24h Rise & Down</div>
+            </div>
+
+            <div id="cryptoList"></div>
+        </div>
+
+        <div class="referral-earnings">
+            <div class="referral-earnings-header">
+                <span class="live-indicator"></span>
+                 Ref Earnings
+            </div>
+            <div class="referral-scroll-container">
+                <div class="referral-scroll-wrapper" id="referralScrollWrapper"></div>
+            </div>
+        </div>
+
+        <div class="withdrawal-logs">
+            <div class="withdrawal-header">Recent Withdrawals</div>
+            <div id="withdrawalList"></div>
+        </div>
+
+        <div class="user-welcome" id="userWelcome">
+            <div class="welcome-text">Account</div>
+            <div class="user-email" id="userEmail"></div>
+            <button class="logout-btn" onclick="handleLogout()">Logout</button>
+        </div>
+
+        <!-- Social Tasks Section -->
+        <div class="social-tasks-section" id="socialTasksSection">
+            <div class="social-tasks-header">
+                <span>Earn Welcome Bonus USDT</span>
+                <span style="font-size: 12px; color: #22c55e;">Complete tasks to earn!</span>
+            </div>
+
+            <!-- Telegram Task -->
+            <div class="social-task-card" id="telegramTask">
+                <div class="social-task-left">
+                    <div class="social-task-icon telegram">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="white">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.66-.52.36-1.0.53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.25.38-.51 1.07-.78 4.19-1.82 6.99-3.03 8.38-3.61 3.99-1.66 4.83-1.95 5.37-1.96.12 0 .38.03.55.18.14.12.18.28.2.45-.02.07-.02.19-.05.3z"/>
+                        </svg>
+                    </div>
+                    <div class="social-task-info">
+                        <h4>Join Telegram Channel</h4>
+                        <p>Follow our updates</p>
+                    </div>
+                </div>
+                <div class="social-task-right">
+                    <div class="social-task-reward">+0.50 USDT</div>
+                    <button class="social-task-btn join" id="telegramBtn" onclick="startTask('telegram')">Join</button>
+                </div>
+            </div>
+
+            <!-- WhatsApp Task -->
+            <div class="social-task-card" id="whatsappTask">
+                <div class="social-task-left">
+                    <div class="social-task-icon whatsapp">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="white">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                    </div>
+                    <div class="social-task-info">
+                        <h4>Join WhatsApp Channel</h4>
+                        <p>Get exclusive tips</p>
+                    </div>
+                </div>
+                <div class="social-task-right">
+                    <div class="social-task-reward">+0.50 USDT</div>
+                    <button class="social-task-btn join" id="whatsappBtn" onclick="startTask('whatsapp')">Join</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title">
+            Quantitative Levels
+            <span class="see-all" onclick="openPage('/vip')">See All</span>
+        </div>
+
+        <div class="vip-cards-container">
+            <div class="vip-level-card">
+                <div class="vip-card-header">
+                    <div class="level-header">VIP-1</div>
+                    <a href="/vip" class="unlock-btn-header">Click To Unlock</a>
+                </div>
+                <div class="vip-card-body">
+                    <div class="level-stats-grid">
+                        <div class="level-stat-item">
+                            <div class="stat-icon-circle">
+                                <svg viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1z"/></svg>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value">1</span>
+                                <span class="stat-label">Quantification Times Per Day</span>
+                            </div>
+                        </div>
+                        <div class="level-stat-item">
+                            <div class="stat-icon-circle orange">
+                                <svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value">45.00% ~ 45.00%</span>
+                                <span class="stat-label">Profit Ratio</span>
+                            </div>
+                        </div>
+                        <div class="level-stat-item">
+                            <div class="stat-icon-circle green">
+                                <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value">≥10.00 USDT</span>
+                                <span class="stat-label">Minimum Unlock Amount</span>
+                            </div>
+                        </div>
+                        <div class="level-stat-item">
+                            <div class="stat-icon-circle purple">
+                                <svg viewBox="0 0 24 24"><path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value">120</span>
+                                <span class="stat-label">Quantifiable Number Of Days</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vip-strategy-section">
+                        <div class="vip-strategy-header">VIP Preferred Strategy</div>
+                        <div class="strategy-tag-row">
+                            <span class="popular-tag">Popular</span>
+                            <span class="strategy-name">Multi-factor hedging</span>
+                            <span class="strategy-check">Check></span>
+                        </div>
+                        <div class="strategy-subtitle">Multi-factor hedging</div>
+                        <div class="exchange-logos">
+                            <div class="exchange-logo-item"><span>🟡</span> Huobi</div>
+                            <div class="exchange-logo-item"><span>🟡</span> Binance</div>
+                            <div class="exchange-logo-item"><span>🔵</span> Coinbase</div>
+                            <div class="exchange-logo-item"><span>⬛</span> OKX</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vip-level-card">
+                <div class="vip-card-header">
+                    <div class="level-header">VIP-2</div>
+                    <a href="/vip" class="unlock-btn-header">Click To Unlock</a>
+                </div>
+                <div class="vip-card-body">
+                    <div class="level-stats-grid">
+                        <div class="level-stat-item">
+                            <div class="stat-icon-circle">
+                                <svg viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1z"/></svg>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value">1</span>
+                                <span class="stat-label">Quantification Times Per Day</span>
+                            </div>
+                        </div>
+                        <div class="level-stat-item">
+                            <div class="stat-icon-circle orange">
+                                <svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value">50.00% ~ 50.00%</span>
+                                <span class="stat-label">Profit Ratio</span>
+                            </div>
+                        </div>
+                        <div class="level-stat-item">
+                            <div class="stat-icon-circle green">
+                                <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value">≥100.00 USDT</span>
+                                <span class="stat-label">Minimum Unlock Amount</span>
+                            </div>
+                        </div>
+                        <div class="level-stat-item">
+                            <div class="stat-icon-circle purple">
+                                <svg viewBox="0 0 24 24"><path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value">120</span>
+                                <span class="stat-label">Quantifiable Number Of Days</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vip-strategy-section">
+                        <div class="vip-strategy-header">VIP Preferred Strategy</div>
+                        <div class="strategy-tag-row">
+                            <span class="popular-tag">Popular</span>
+                            <span class="strategy-name">Multi-factor hedging</span>
+                            <span class="strategy-check">Check></span>
+                        </div>
+                        <div class="strategy-subtitle">Multi-factor hedging</div>
+                        <div class="exchange-logos">
+                            <div class="exchange-logo-item"><span>🟡</span> Huobi</div>
+                            <div class="exchange-logo-item"><span>🟡</span> Binance</div>
+                            <div class="exchange-logo-item"><span>🔵</span> Coinbase</div>
+                            <div class="exchange-logo-item"><span>⬛</span> OKX</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vip-level-card">
+                <div class="vip-card-header">
+                    <div class="level-header">VIP-3</div>
+                    <a href="/vip" class="unlock-btn-header">Click To Unlock</a>
+                </div>
+                <div class="vip-card-body">
+                    <div class="level-stats-grid">
+                        <div class="level-stat-item">
+                            <div class="stat-icon-circle">
+                                <svg viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1z"/></svg>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value">1</span>
+                                <span class="stat-label">Quantification Times Per Day</span>
+                            </div>
+                        </div>
+                        <div class="level-stat-item">
+                            <div class="stat-icon-circle orange">
+                                <svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value">51.00% ~ 51.00%</span>
+                                <span class="stat-label">Profit Ratio</span>
+                            </div>
+                        </div>
+                        <div class="level-stat-item">
+                            <div class="stat-icon-circle green">
+                                <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value">≥300.00 USDT</span>
+                                <span class="stat-label">Minimum Unlock Amount</span>
+                            </div>
+                        </div>
+                        <div class="level-stat-item">
+                            <div class="stat-icon-circle purple">
+                                <svg viewBox="0 0 24 24"><path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value">120</span>
+                                <span class="stat-label">Quantifiable Number Of Days</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vip-strategy-section">
+                        <div class="vip-strategy-header">VIP Preferred Strategy</div>
+                        <div class="strategy-tag-row">
+                            <span class="popular-tag">Popular</span>
+                            <span class="strategy-name">Multi-factor hedging</span>
+                            <span class="strategy-check">Check></span>
+                        </div>
+                        <div class="strategy-subtitle">Multi-factor hedging</div>
+                        <div class="exchange-logos">
+                            <div class="exchange-logo-item"><span>🟡</span> Huobi</div>
+                            <div class="exchange-logo-item"><span>🟡</span> Binance</div>
+                            <div class="exchange-logo-item"><span>🔵</span> Coinbase</div>
+                            <div class="exchange-logo-item"><span>⬛</span> OKX</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vip-level-card">
+                <div class="vip-card-header"><div class="level-header">VIP-4</div><a href="/vip" class="unlock-btn-header">Click To Unlock</a></div>
+                <div class="vip-card-body">
+                    <div class="level-stats-grid">
+                        <div class="level-stat-item"><div class="stat-icon-circle"><svg viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1z"/></svg></div><div class="stat-info"><span class="stat-value">1</span><span class="stat-label">Quantification Times Per Day</span></div></div>
+                        <div class="level-stat-item"><div class="stat-icon-circle orange"><svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg></div><div class="stat-info"><span class="stat-value">52.00% ~ 52.00%</span><span class="stat-label">Profit Ratio</span></div></div>
+                        <div class="level-stat-item"><div class="stat-icon-circle green"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div><div class="stat-info"><span class="stat-value">≥600.00 USDT</span><span class="stat-label">Minimum Unlock Amount</span></div></div>
+                        <div class="level-stat-item"><div class="stat-icon-circle purple"><svg viewBox="0 0 24 24"><path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg></div><div class="stat-info"><span class="stat-value">120</span><span class="stat-label">Quantifiable Number Of Days</span></div></div>
+                    </div>
+                    <div class="vip-strategy-section"><div class="vip-strategy-header">VIP Preferred Strategy</div><div class="strategy-tag-row"><span class="popular-tag">Popular</span><span class="strategy-name">Multi-factor hedging</span><span class="strategy-check">Check></span></div><div class="strategy-subtitle">Multi-factor hedging</div><div class="exchange-logos"><div class="exchange-logo-item"><span>🟡</span> Huobi</div><div class="exchange-logo-item"><span>🟡</span> Binance</div><div class="exchange-logo-item"><span>🔵</span> Coinbase</div><div class="exchange-logo-item"><span>⬛</span> OKX</div></div></div>
+                </div>
+            </div>
+
+            <div class="vip-level-card">
+                <div class="vip-card-header"><div class="level-header">VIP-5</div><a href="/vip" class="unlock-btn-header">Click To Unlock</a></div>
+                <div class="vip-card-body">
+                    <div class="level-stats-grid">
+                        <div class="level-stat-item"><div class="stat-icon-circle"><svg viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1z"/></svg></div><div class="stat-info"><span class="stat-value">1</span><span class="stat-label">Quantification Times Per Day</span></div></div>
+                        <div class="level-stat-item"><div class="stat-icon-circle orange"><svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg></div><div class="stat-info"><span class="stat-value">53.00% ~ 53.00%</span><span class="stat-label">Profit Ratio</span></div></div>
+                        <div class="level-stat-item"><div class="stat-icon-circle green"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div><div class="stat-info"><span class="stat-value">≥1200.00 USDT</span><span class="stat-label">Minimum Unlock Amount</span></div></div>
+                        <div class="level-stat-item"><div class="stat-icon-circle purple"><svg viewBox="0 0 24 24"><path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg></div><div class="stat-info"><span class="stat-value">120</span><span class="stat-label">Quantifiable Number Of Days</span></div></div>
+                    </div>
+                    <div class="vip-strategy-section"><div class="vip-strategy-header">VIP Preferred Strategy</div><div class="strategy-tag-row"><span class="popular-tag">Popular</span><span class="strategy-name">Multi-factor hedging</span><span class="strategy-check">Check></span></div><div class="strategy-subtitle">Multi-factor hedging</div><div class="exchange-logos"><div class="exchange-logo-item"><span>🟡</span> Huobi</div><div class="exchange-logo-item"><span>🟡</span> Binance</div><div class="exchange-logo-item"><span>🔵</span> Coinbase</div><div class="exchange-logo-item"><span>⬛</span> OKX</div></div></div>
+                </div>
+            </div>
+
+            <div class="vip-level-card">
+                <div class="vip-card-header"><div class="level-header">VIP-6</div><a href="/vip" class="unlock-btn-header">Click To Unlock</a></div>
+                <div class="vip-card-body">
+                    <div class="level-stats-grid">
+                        <div class="level-stat-item"><div class="stat-icon-circle"><svg viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1z"/></svg></div><div class="stat-info"><span class="stat-value">1</span><span class="stat-label">Quantification Times Per Day</span></div></div>
+                        <div class="level-stat-item"><div class="stat-icon-circle orange"><svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg></div><div class="stat-info"><span class="stat-value">54.00% ~ 54.00%</span><span class="stat-label">Profit Ratio</span></div></div>
+                        <div class="level-stat-item"><div class="stat-icon-circle green"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div><div class="stat-info"><span class="stat-value">≥2400.00 USDT</span><span class="stat-label">Minimum Unlock Amount</span></div></div>
+                        <div class="level-stat-item"><div class="stat-icon-circle purple"><svg viewBox="0 0 24 24"><path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg></div><div class="stat-info"><span class="stat-value">120</span><span class="stat-label">Quantifiable Number Of Days</span></div></div>
+                    </div>
+                    <div class="vip-strategy-section"><div class="vip-strategy-header">VIP Preferred Strategy</div><div class="strategy-tag-row"><span class="popular-tag">Popular</span><span class="strategy-name">Multi-factor hedging</span><span class="strategy-check">Check></span></div><div class="strategy-subtitle">Multi-factor hedging</div><div class="exchange-logos"><div class="exchange-logo-item"><span>🟡</span> Huobi</div><div class="exchange-logo-item"><span>🟡</span> Binance</div><div class="exchange-logo-item"><span>🔵</span> Coinbase</div><div class="exchange-logo-item"><span>⬛</span> OKX</div></div></div>
+                </div>
+            </div>
+
+            <div class="vip-level-card">
+                <div class="vip-card-header"><div class="level-header">VIP-7</div><a href="/vip" class="unlock-btn-header">Click To Unlock</a></div>
+                <div class="vip-card-body">
+                    <div class="level-stats-grid">
+                        <div class="level-stat-item"><div class="stat-icon-circle"><svg viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1z"/></svg></div><div class="stat-info"><span class="stat-value">1</span><span class="stat-label">Quantification Times Per Day</span></div></div>
+                        <div class="level-stat-item"><div class="stat-icon-circle orange"><svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg></div><div class="stat-info"><span class="stat-value">55.00% ~ 55.00%</span><span class="stat-label">Profit Ratio</span></div></div>
+                        <div class="level-stat-item"><div class="stat-icon-circle green"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div><div class="stat-info"><span class="stat-value">≥4800.00 USDT</span><span class="stat-label">Minimum Unlock Amount</span></div></div>
+                        <div class="level-stat-item"><div class="stat-icon-circle purple"><svg viewBox="0 0 24 24"><path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg></div><div class="stat-info"><span class="stat-value">120</span><span class="stat-label">Quantifiable Number Of Days</span></div></div>
+                    </div>
+                    <div class="vip-strategy-section"><div class="vip-strategy-header">VIP Preferred Strategy</div><div class="strategy-tag-row"><span class="popular-tag">Popular</span><span class="strategy-name">Multi-factor hedging</span><span class="strategy-check">Check></span></div><div class="strategy-subtitle">Multi-factor hedging</div><div class="exchange-logos"><div class="exchange-logo-item"><span>🟡</span> Huobi</div><div class="exchange-logo-item"><span>🟡</span> Binance</div><div class="exchange-logo-item"><span>🔵</span> Coinbase</div><div class="exchange-logo-item"><span>⬛</span> OKX</div></div></div>
+                </div>
+            </div>
+
+            <div class="vip-level-card">
+                <div class="vip-card-header"><div class="level-header">VIP-8</div><a href="/vip" class="unlock-btn-header">Click To Unlock</a></div>
+                <div class="vip-card-body">
+                    <div class="level-stats-grid">
+                        <div class="level-stat-item"><div class="stat-icon-circle"><svg viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1z"/></svg></div><div class="stat-info"><span class="stat-value">1</span><span class="stat-label">Quantification Times Per Day</span></div></div>
+                        <div class="level-stat-item"><div class="stat-icon-circle orange"><svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg></div><div class="stat-info"><span class="stat-value">56.00% ~ 56.00%</span><span class="stat-label">Profit Ratio</span></div></div>
+                        <div class="level-stat-item"><div class="stat-icon-circle green"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div><div class="stat-info"><span class="stat-value">≥9600.00 USDT</span><span class="stat-label">Minimum Unlock Amount</span></div></div>
+                        <div class="level-stat-item"><div class="stat-icon-circle purple"><svg viewBox="0 0 24 24"><path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg></div><div class="stat-info"><span class="stat-value">120</span><span class="stat-label">Quantifiable Number Of Days</span></div></div>
+                    </div>
+                    <div class="vip-strategy-section"><div class="vip-strategy-header">VIP Preferred Strategy</div><div class="strategy-tag-row"><span class="popular-tag">Popular</span><span class="strategy-name">Multi-factor hedging</span><span class="strategy-check">Check></span></div><div class="strategy-subtitle">Multi-factor hedging</div><div class="exchange-logos"><div class="exchange-logo-item"><span>🟡</span> Huobi</div><div class="exchange-logo-item"><span>🟡</span> Binance</div><div class="exchange-logo-item"><span>🔵</span> Coinbase</div><div class="exchange-logo-item"><span>⬛</span> OKX</div></div></div>
+                </div>
+            </div>
+
+            <div class="vip-level-card">
+                <div class="vip-card-header"><div class="level-header">VIP-9</div><a href="/vip" class="unlock-btn-header">Click To Unlock</a></div>
+                <div class="vip-card-body">
+                    <div class="level-stats-grid">
+                        <div class="level-stat-item"><div class="stat-icon-circle"><svg viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1z"/></svg></div><div class="stat-info"><span class="stat-value">1</span><span class="stat-label">Quantification Times Per Day</span></div></div>
+                        <div class="level-stat-item"><div class="stat-icon-circle orange"><svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg></div><div class="stat-info"><span class="stat-value">58.00% ~ 58.00%</span><span class="stat-label">Profit Ratio</span></div></div>
+                        <div class="level-stat-item"><div class="stat-icon-circle green"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div><div class="stat-info"><span class="stat-value">≥19200.00 USDT</span><span class="stat-label">Minimum Unlock Amount</span></div></div>
+                        <div class="level-stat-item"><div class="stat-icon-circle purple"><svg viewBox="0 0 24 24"><path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg></div><div class="stat-info"><span class="stat-value">120</span><span class="stat-label">Quantifiable Number Of Days</span></div></div>
+                    </div>
+                    <div class="vip-strategy-section"><div class="vip-strategy-header">VIP Preferred Strategy</div><div class="strategy-tag-row"><span class="popular-tag">Popular</span><span class="strategy-name">Multi-factor hedging</span><span class="strategy-check">Check></span></div><div class="strategy-subtitle">Multi-factor hedging</div><div class="exchange-logos"><div class="exchange-logo-item"><span>🟡</span> Huobi</div><div class="exchange-logo-item"><span>🟡</span> Binance</div><div class="exchange-logo-item"><span>🔵</span> Coinbase</div><div class="exchange-logo-item"><span>⬛</span> OKX</div></div></div>
+                </div>
+            </div>
+
+            <div class="vip-level-card">
+                <div class="vip-card-header"><div class="level-header">VIP-10</div><a href="/vip" class="unlock-btn-header">Click To Unlock</a></div>
+                <div class="vip-card-body">
+                    <div class="level-stats-grid">
+                        <div class="level-stat-item"><div class="stat-icon-circle"><svg viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1z"/></svg></div><div class="stat-info"><span class="stat-value">1</span><span class="stat-label">Quantification Times Per Day</span></div></div>
+                        <div class="level-stat-item"><div class="stat-icon-circle orange"><svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg></div><div class="stat-info"><span class="stat-value">60.00% ~ 60.00%</span><span class="stat-label">Profit Ratio</span></div></div>
+                        <div class="level-stat-item"><div class="stat-icon-circle green"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div><div class="stat-info"><span class="stat-value">≥38400.00 USDT</span><span class="stat-label">Minimum Unlock Amount</span></div></div>
+                        <div class="level-stat-item"><div class="stat-icon-circle purple"><svg viewBox="0 0 24 24"><path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg></div><div class="stat-info"><span class="stat-value">120</span><span class="stat-label">Quantifiable Number Of Days</span></div></div>
+                    </div>
+                    <div class="vip-strategy-section"><div class="vip-strategy-header">VIP Preferred Strategy</div><div class="strategy-tag-row"><span class="popular-tag">Popular</span><span class="strategy-name">Multi-factor hedging</span><span class="strategy-check">Check></span></div><div class="strategy-subtitle">Multi-factor hedging</div><div class="exchange-logos"><div class="exchange-logo-item"><span>🟡</span> Huobi</div><div class="exchange-logo-item"><span>🟡</span> Binance</div><div class="exchange-logo-item"><span>🔵</span> Coinbase</div><div class="exchange-logo-item"><span>⬛</span> OKX</div></div></div>
+                </div>
+            </div>
+        </div>
+           <!-- Exchange Logo Section -->
+<div class="exchange-logos-section">
+    <h2 class="exchange-title">Core Cooperative Financial Institutions</h2>
+
+    <div class="exchange-grid">
+        <div class="exchange-item">
+            <img src="binance.png" alt="Binance">
+        </div>
+        <div class="exchange-item">
+            <img src="kraken.png" alt="Kraken">
+        </div>
+        <div class="exchange-item">
+            <img src="kucoin.png" alt="KuCoin">
+        </div>
+        <div class="exchange-item">
+            <img src="okx.png" alt="OKX">
+        </div>
+        <div class="exchange-item">
+            <img src="coinbase.png" alt="Coinbase">
+        </div>
+        <div class="exchange-item">
+            <img src="bybit.png" alt="Bybit">
+        </div>
+    </div>
+</div>
+
+        <div class="main-footer">
+            <div class="footer-logo">
+                <img src="quantyx.png" alt="Quantyx Intel™" onerror="this.style.display='none'">
+            </div>
+            <div class="footer-text">
+                Quantyx is an artificial intelligence enterprise founded in the Netherlands on June 28, 2019, focusing on developing vector database technology that supports native applications of artificial intelligence. Its core product, Quantyx vector database, is positioned as the core infrastructure of the emerging artificial intelligence ecosystem, which can simplify developers' vector data management processes and support application scenarios such as customized search, recommendation systems and ChatGPT plug-ins. As of April 2023, the company has completed three rounds of financing, of which US$50 million was led by Index Ventures, with a total cumulative financing of US$67.6 million.
+            </div>
+            <div class="footer-links">
+                <a href="/about" class="footer-link">About Us</a>
+                <a href="terms" class="footer-link">Terms of Service</a>
+                <a href="/privacy" class="footer-link">Privacy Policy</a>
+                <a href="/contact" class="footer-link">Contact</a>
+            </div>
+             
+           <div class="stats-row">
+    <div class="stats-item">
+        <div class="stats-title">Safe Operation</div>
+        <div class="stats-value">1793 Day</div>
+    </div>
+
+    <div class="stats-item">
+        <div class="stats-title">Cumulative Income</div>
+        <div class="stats-value">261072015 USD</div>
+    </div>
+</div>
+
+            <div class="footer-copyright">
+                © 2025 Quantyx. All Rights Reserved. | Secure Trading Platform
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-nav">
+        <div class="nav-item active" onclick="openPage('/index')">
+            <svg viewBox="0 0 24 24">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+            <span class="nav-label">Home</span>
+        </div>
+        <div class="nav-item" onclick="openPage('/tasks')">
+            <svg viewBox="0 0 24 24">
+                <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+            </svg>
+            <span class="nav-label">Tasks</span>
+        </div>
+        <div class="nav-item" onclick="openPage('/invest')">
+    <svg viewBox="0 0 24 24">
+        <path d="M3 17h2v-7H3v7zm4 0h2V7H7v10zm4 0h2v-4h-2v4zm4 0h2V4h-2v13zm4 0h2v-9h-2v9z"/>
+    </svg>
+    <span class="nav-label">Invest</span>
+</div>
+        <div class="nav-item" onclick="openPage('/team')">
+            <svg viewBox="0 0 24 24">
+                <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+            </svg>
+            
+            <span class="nav-label">Team</span>
+        </div>
+        <div class="nav-item" onclick="openPage('/me')">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+            </svg>
+            <span class="nav-label">Profile</span>
+        </div>
+    </div>
+
+    <script>
+        function checkAuth() {
+            const userData = localStorage.getItem('luxeEarnUser');
+            
+            if (!userData) {
+                window.location.href = './register';
+                return false;
+            }
+
+            try {
+                const user = JSON.parse(userData);
+                const loginTime = user.loginTime || user.registrationDate;
+                
+                if (!loginTime) {
+                    window.location.href = '/register';
+                    return false;
+                }
+
+                const currentTime = new Date().getTime();
+                const loginTimestamp = new Date(loginTime).getTime();
+                const hoursPassed = (currentTime - loginTimestamp) / (1000 * 60 * 60);
+                
+                if (hoursPassed >= 24) {
+                    localStorage.removeItem('luxeEarnUser');
+                    localStorage.removeItem('rememberMe');
+                    localStorage.removeItem('luxeearn_popup_seen');
+                    window.location.href = '/register';
+                    return false;
+                }
+
+                const userEmailEl = document.getElementById('userEmail');
+                if (userEmailEl && user.email) {
+                    userEmailEl.textContent = user.email;
+                }
+
+                return true;
+            } catch (e) {
+                window.location.href = '/register';
+                return false;
+            }
+        }
+
+        checkAuth();
+
+        const cryptoConfig = [
+            { id: 'bitcoin', symbol: 'BTC', pair: 'BTC/USDT', icon: 'https://assets.coingecko.com/coins/images/1/small/bitcoin.png', basePrice: 92000 },
+            { id: 'ethereum', symbol: 'ETH', pair: 'ETH/USDT', icon: 'https://assets.coingecko.com/coins/images/279/small/ethereum.png', basePrice: 3100 },
+            { id: 'binancecoin', symbol: 'BNB', pair: 'BNB/USDT', icon: 'https://assets.coingecko.com/coins/images/825/small/bnb-icon2_2x.png', basePrice: 620 },
+            { id: 'ripple', symbol: 'XRP', pair: 'XRP/USDT', icon: 'https://assets.coingecko.com/coins/images/44/small/xrp-symbol-white-128.png', basePrice: 1.10 },
+            { id: 'cardano', symbol: 'ADA', pair: 'ADA/USDT', icon: 'https://assets.coingecko.com/coins/images/975/small/cardano.png', basePrice: 0.78 },
+            { id: 'solana', symbol: 'SOL', pair: 'SOL/USDT', icon: 'https://assets.coingecko.com/coins/images/4128/small/solana.png', basePrice: 237 },
+            { id: 'dogecoin', symbol: 'DOGE', pair: 'DOGE/USDT', icon: 'https://assets.coingecko.com/coins/images/5/small/dogecoin.png', basePrice: 0.38 },
+            { id: 'polkadot', symbol: 'DOT', pair: 'DOT/USDT', icon: 'https://assets.coingecko.com/coins/images/12171/small/polkadot.png', basePrice: 6.85 },
+            { id: 'litecoin', symbol: 'LTC', pair: 'LTC/USDT', icon: 'https://assets.coingecko.com/coins/images/2/small/litecoin.png', basePrice: 88 },
+            { id: 'tron', symbol: 'TRX', pair: 'TRX/USDT', icon: 'https://assets.coingecko.com/coins/images/1094/small/tron-logo.png', basePrice: 0.20 },
+            { id: 'shiba-inu', symbol: 'SHIB', pair: 'SHIB/USDT', icon: 'https://assets.coingecko.com/coins/images/11939/small/shiba.png', basePrice: 0.000024 },
+            { id: 'avalanche-2', symbol: 'AVAX', pair: 'AVAX/USDT', icon: 'https://assets.coingecko.com/coins/images/12559/small/Avalanche_Circle_RedWhite_Trans.png', basePrice: 38 }
+        ];
+
+        let cryptoData = {};
+        let fakeGreenCoins = [];
+        let fakeGreenStartTime = 0;
+        let lastApiData = {};
+
+        const withdrawalNames = [
+    'james***123', 'michael****89', 'robert***45', 'john*****67', 'david***234',
+    'william****901', 'richard***567', 'joseph****890', 'thomas***345', 'charles****678',
+    'daniel***234', 'matthew****789', 'anthony***456', 'mark****123', 'donald***890',
+    'steven****512', 'paul***743', 'andrew****256', 'joshua***891', 'kenneth****634',
+    'kevin***178', 'brian****429', 'george***765', 'timothy****983', 'ronald***341',
+    'edward****827', 'jason***194', 'jeffrey****658', 'ryan***923', 'jacob****405',
+    'gary***572', 'nicholas****938', 'eric***264', 'jonathan****791', 'stephen***436',
+    'larry****805', 'justin***129', 'scott****683', 'brandon***947', 'benjamin****215',
+    'samuel***594', 'raymond****862', 'gregory***437', 'frank****701', 'alexander***968',
+    'patrick****324', 'jack***789', 'dennis****156', 'jerry***623', 'tyler****491',
+    'aaron***857', 'jose****214', 'adam***679', 'nathan****932', 'henry***385',
+    'douglas****741', 'zachary***508', 'peter****876', 'kyle***243', 'noah****619',
+    'ethan***984', 'jeremy****352', 'walter***726', 'christian****193', 'keith***561',
+    'roger****829', 'terry***407', 'austin****785', 'sean***142', 'gerald****518',
+    'carl***973', 'harold****236', 'dylan***694', 'arthur****851', 'joe***429',
+    'victor****705', 'albert***183', 'lawrence****649', 'mason***916', 'logan****274',
+    'willie***532', 'jordan****898', 'jesse***365', 'ralph****721', 'russell***147',
+    'roy****594', 'louis***862', 'philip****239', 'randy***617', 'howard****983',
+    'eugene***451', 'carlos****728', 'bobby***196', 'johnny****574', 'phillip***842',
+    'martin****319', 'antonio***685', 'marcus****951', 'vincent***428', 'hunter****796'
+];
+
+
+        const referralNames = [
+    'Alex***45', 'Sarah****89', 'Mike***23', 'Emma****67', 'Oliver***12',
+    'Lisa****90', 'Liam***34', 'Anna****56', 'Noah***78', 'Maria****01',
+    'Lucas***43', 'Lucy****87', 'Mason***65', 'Kate****21', 'Ethan***98',
+    'Nina****76', 'Aiden***54', 'Mia****32', 'Elijah***10', 'Eva****48',
+    'Carter***92', 'Grace****15', 'Owen***73', 'Chloe****36', 'Wyatt***59',
+    'Zoe****84', 'Grayson***27', 'Lily****61', 'Leo***05', 'Sophia****93',
+    'Julian***38', 'Ella****72', 'Isaac***46', 'Ava****19', 'Hudson***81',
+    'Harper****53', 'Luke***26', 'Amelia****68', 'Henry***94', 'Emily****37',
+    'Sebastian***60', 'Aria****02', 'Lincoln***75', 'Scarlett****49', 'Levi***83',
+    'Madison****17', 'Gabriel***51', 'Layla****96', 'Jaxon***24', 'Abigail****58',
+    'Mateo***91', 'Riley****33', 'Connor***66', 'Bella****08', 'Asher***42',
+    'Ellie****77', 'Austin***14', 'Nora****50', 'Maverick***86', 'Camila****29',
+    'Ezra***63', 'Hazel****95', 'Landon***31', 'Luna****69', 'Hunter***04',
+    'Stella****97', 'Adrian***40', 'Penelope****18', 'Caleb***74', 'Violet****52',
+    'Josiah***88', 'Aurora****25', 'Miles***55', 'Hannah****99', 'Theo***22',
+    'Maya****62', 'Kayden***35', 'Addison****07', 'Colton***70', 'Natalie****44',
+    'Nolan***82', 'Elena****16', 'Eli***57', 'Savannah****90', 'Ryan***28',
+    'Brooklyn****64', 'Ian***39', 'Audrey****03', 'Dominic***71', 'Claire****98',
+    'Waylon***13', 'Skylar****47', 'Cooper***80', 'Leah****21', 'Jameson***54',
+    'Zoey****85', 'Cameron***30', 'Aaliyah****67', 'Angel***41', 'Madelyn****79'
+];
+
+        let currentExchange = 'binance';
+
+        function initializeCryptoData() {
+            cryptoConfig.forEach(coin => {
+                const randomChange = (Math.random() - 0.5) * 10;
+                const priceVariation = coin.basePrice * (1 + (Math.random() - 0.5) * 0.02);
+                
+                cryptoData[coin.symbol] = {
+                    price: priceVariation,
+                    change24h: randomChange,
+                    basePrice: coin.basePrice,
+                    ...coin
+                };
+                lastApiData[coin.symbol] = {
+                    price: priceVariation,
+                    change24h: randomChange
+                };
+            });
+            updateDisplay();
+        }
+
+        async function fetchCryptoPrices() {
+            try {
+                const ids = cryptoConfig.map(c => c.id).join(',');
+                const response = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd&include_24hr_change=true`);
+                const data = await response.json();
+                
+                cryptoConfig.forEach(coin => {
+                    if (data[coin.id]) {
+                        lastApiData[coin.symbol] = {
+                            price: data[coin.id].usd,
+                            change24h: data[coin.id].usd_24h_change || 0
+                        };
+                    }
+                });
+            } catch (error) {
+                console.log('Using simulated prices');
+            }
+        }
+
+        function simulatePriceChanges() {
+            const now = Date.now();
+            const shouldShowFakeGreen = fakeGreenCoins.length > 0 && (now - fakeGreenStartTime) < 60000;
+            
+            Object.keys(cryptoData).forEach(symbol => {
+                const coin = cryptoData[symbol];
+                const oldPrice = coin.price;
+                const oldChange = coin.change24h;
+                
+                if (shouldShowFakeGreen && fakeGreenCoins.includes(symbol)) {
+                    const fakeIncrease = 3 + Math.random() * 4;
+                    coin.change24h = fakeIncrease;
+                    coin.price = coin.basePrice * (1 + fakeIncrease / 100);
+                } else {
+                    if (lastApiData[symbol]) {
+                        coin.price = lastApiData[symbol].price * (1 + (Math.random() - 0.5) * 0.003);
+                        coin.change24h = lastApiData[symbol].change24h + (Math.random() - 0.5) * 0.5;
+                    } else {
+                        const priceChange = (Math.random() - 0.5) * 0.005;
+                        coin.price = coin.price * (1 + priceChange);
+                        coin.change24h = coin.change24h + (Math.random() - 0.5) * 0.3;
+                    }
+                }
+                
+                if (Math.abs(coin.price - oldPrice) > 0.001 || Math.abs(coin.change24h - oldChange) > 0.01) {
+                    animatePriceChange(symbol, coin.price > oldPrice);
+                }
+            });
+            
+            updateDisplay();
+        }
+
+        function activateFakeGreen() {
+            const now = Date.now();
+            
+            if (fakeGreenCoins.length === 0 || (now - fakeGreenStartTime) > 240000) {
+                const allSymbols = Object.keys(cryptoData);
+                fakeGreenCoins = allSymbols.sort(() => 0.5 - Math.random()).slice(0, 3);
+                fakeGreenStartTime = now;
+                console.log('Fake green activated for:', fakeGreenCoins);
+            }
+            
+            if ((now - fakeGreenStartTime) > 60000 && (now - fakeGreenStartTime) < 240000) {
+                fakeGreenCoins = [];
+            }
+        }
+
+        function animatePriceChange(symbol, isUp) {
+            const priceElement = document.getElementById(`price-${symbol}`);
+            const changeElement = document.getElementById(`change-${symbol}`);
+            
+            if (priceElement) {
+                priceElement.classList.remove('flash-up', 'flash-down');
+                setTimeout(() => {
+                    priceElement.classList.add(isUp ? 'flash-up' : 'flash-down');
+                    setTimeout(() => {
+                        priceElement.classList.remove('flash-up', 'flash-down');
+                    }, 500);
+                }, 10);
+            }
+            
+            if (changeElement) {
+                changeElement.classList.remove('flash-up', 'flash-down');
+                setTimeout(() => {
+                    changeElement.classList.add(isUp ? 'flash-up' : 'flash-down');
+                    setTimeout(() => {
+                        changeElement.classList.remove('flash-up', 'flash-down');
+                    }, 500);
+                }, 10);
+            }
+        }
+
+        function updateDisplay() {
+            updateTopCoins();
+            updateCryptoList();
+        }
+
+        function updateTopCoins() {
+            const container = document.getElementById('topCoinsContainer');
+            const topCoins = ['BTC', 'TRX', 'ETH'];
+            
+            let html = '';
+            topCoins.forEach(symbol => {
+                const coin = cryptoData[symbol];
+                if (coin) {
+                    const changeClass = coin.change24h >= 0 ? 'positive' : 'negative';
+                    const changeSymbol = coin.change24h >= 0 ? '+' : '';
+                    
+                    html += `
+                        <div class="top-coin-card">
+                            <div class="top-coin-pair">${coin.pair}</div>
+                            <div class="top-coin-change ${changeClass}">${changeSymbol}${coin.change24h.toFixed(2)}%</div>
+                            <div class="top-coin-price">$${coin.price.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: coin.price < 1 ? 6 : 2})}</div>
+                        </div>
+                    `;
+                }
+            });
+            
+            container.innerHTML = html;
+        }
+
+        function updateCryptoList() {
+            const container = document.getElementById('cryptoList');
+            
+            let html = '';
+            Object.values(cryptoData).forEach(coin => {
+                const changeClass = coin.change24h >= 0 ? 'positive' : 'negative';
+                const changeSymbol = coin.change24h >= 0 ? '+' : '';
+                
+                html += `
+                    <div class="crypto-item">
+                        <div class="crypto-left">
+                            <div class="crypto-icon">
+                                <img src="${coin.icon}" alt="${coin.symbol}" onerror="this.src='https://via.placeholder.com/32'">
+                            </div>
+                            <div class="crypto-name">
+                                <div class="crypto-symbol">${coin.symbol}</div>
+                                <div class="crypto-pair">${coin.pair}</div>
+                            </div>
+                        </div>
+                        <div class="crypto-price" id="price-${coin.symbol}">${coin.price.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: coin.price < 1 ? 6 : 2})}</div>
+                        <div class="crypto-change ${changeClass}" id="change-${coin.symbol}">${changeSymbol}${Math.abs(coin.change24h).toFixed(2)}%</div>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+
+        function switchExchange(exchange, event) {
+            if (event) event.preventDefault();
+            
+            currentExchange = exchange;
+            const tabs = document.querySelectorAll('.exchange-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            updateCryptoList();
+        }
+
+        function initializeReferralScroll() {
+            const referralScrollWrapper = document.getElementById('referralScrollWrapper');
+            let referralHTML = '';
+            
+            const actions = [
+    'Referred user', 'Earned commission', 'Team bonus', 'Referral reward',
+    'Level up bonus', 'Achievement unlocked', 'Daily reward claimed', 'Weekly milestone',
+    'New member joined', 'Withdrawal processed', 'Deposit received', 'Investment profit',
+    'Trading bonus', 'Cashback earned', 'VIP reward', 'Loyalty bonus',
+    'Signup bonus', 'First deposit bonus', 'Recharge completed', 'Task completed',
+    'Mission accomplished', 'Streak bonus', 'Rank promotion', 'Team milestone'
+];            
+            for (let i = 0; i < 15; i++) {
+                const name = referralNames[Math.floor(Math.random() * referralNames.length)];
+                const action = actions[Math.floor(Math.random() * actions.length)];
+                const amount = (Math.random() * 50 + 5).toFixed(2);
+                
+                referralHTML += `
+                    <div class="referral-item">
+                        <div class="referral-user">${name}</div>
+                        <div class="referral-action">${action}</div>
+                        <div class="referral-amount">+$${amount}</div>
+                    </div>
+                `;
+            }
+            
+            referralScrollWrapper.innerHTML = referralHTML + referralHTML;
+        }
+
+        function generateWithdrawal() {
+            const withdrawalList = document.getElementById('withdrawalList');
+            const name = withdrawalNames[Math.floor(Math.random() * withdrawalNames.length)];
+            const amount = (Math.random() * 5000 + 50).toFixed(2);
+            
+            const withdrawalItem = document.createElement('div');
+            withdrawalItem.className = 'withdrawal-item';
+            withdrawalItem.innerHTML = `
+                <div class="withdrawal-user">${name}</div>
+                <div class="withdrawal-amount">$${amount}</div>
+            `;
+            
+            withdrawalList.insertBefore(withdrawalItem, withdrawalList.firstChild);
+            
+            if (withdrawalList.children.length > 5) {
+                withdrawalList.removeChild(withdrawalList.lastChild);
+            }
+        }
+
+        function updateBonusCountdown() {
+            const now = new Date();
+            const hours = 23 - now.getHours();
+            const minutes = 59 - now.getMinutes();
+            
+            const countdownEl = document.getElementById('bonusCountdown');
+            if (countdownEl) {
+                countdownEl.textContent = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
+            }
+        }
+
+        let currentAnnouncementIndex = 0;
+        const totalAnnouncements = 15;
+
+        function showPopupOnce() {
+            setTimeout(() => {
+                const popup = document.getElementById('popupAnnouncement');
+                popup.classList.add('show');
+                updateAnnouncementButtons();
+            }, 500);
+        }
+
+        function closePopup() {
+            const popup = document.getElementById('popupAnnouncement');
+            popup.classList.add('hide');
+            
+            setTimeout(() => {
+                popup.classList.remove('show', 'hide');
+                popup.style.visibility = 'hidden';
+            }, 500);
+        }
+
+        function nextAnnouncement() {
+            if (currentAnnouncementIndex < totalAnnouncements - 1) {
+                const announcements = document.querySelectorAll('.announcement-item');
+                announcements[currentAnnouncementIndex].classList.remove('active');
+                currentAnnouncementIndex++;
+                announcements[currentAnnouncementIndex].classList.add('active');
+                updateAnnouncementButtons();
+                
+                const scrollContainer = document.querySelector('.popup-announcement-scroll');
+                scrollContainer.scrollTop = 0;
+            }
+        }
+
+        function previousAnnouncement() {
+            if (currentAnnouncementIndex > 0) {
+                const announcements = document.querySelectorAll('.announcement-item');
+                announcements[currentAnnouncementIndex].classList.remove('active');
+                currentAnnouncementIndex--;
+                announcements[currentAnnouncementIndex].classList.add('active');
+                updateAnnouncementButtons();
+                
+                const scrollContainer = document.querySelector('.popup-announcement-scroll');
+                scrollContainer.scrollTop = 0;
+            }
+        }
+
+        function updateAnnouncementButtons() {
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const counter = document.getElementById('announcementCounter');
+            
+            prevBtn.disabled = currentAnnouncementIndex === 0;
+            nextBtn.disabled = currentAnnouncementIndex === totalAnnouncements - 1;
+            counter.textContent = `${currentAnnouncementIndex + 1} / ${totalAnnouncements}`;
+        }
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            sidebar.classList.toggle('active');
+            overlay.style.display = sidebar.classList.contains('active') ? 'block' : 'none';
+        }
+
+        function closeSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            sidebar.classList.remove('active');
+            overlay.style.display = 'none';
+        }
+
+        function openPage(url) {
+            window.location.href = url;
+        }
+
+        function copyCode() {
+            const code = document.getElementById('inviteCode').innerText;
+            navigator.clipboard.writeText(code);
+            showNotification('Success', 'Invite code copied!');
+        }
+
+        function copyLink() {
+            const link = document.getElementById('inviteLink').innerText;
+            navigator.clipboard.writeText(link);
+            showNotification('Success', 'Invite link copied!');
+        }
+
+        function shareOn(platform) {
+            const link = document.getElementById('inviteLink').innerText;
+            const text = 'Join Quantyx and start earning with crypto trading!';
+            let shareUrl = '';
+            
+            switch(platform) {
+                case 'twitter':
+                    shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(link)}`;
+                    break;
+                case 'facebook':
+                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(link)}`;
+                    break;
+                case 'telegram':
+                    shareUrl = `https://t.me/share/url?url=${encodeURIComponent(link)}&text=${encodeURIComponent(text)}`;
+                    break;
+                case 'whatsapp':
+                    shareUrl = `https://wa.me/?text=${encodeURIComponent(text + ' ' + link)}`;
+                    break;
+                case 'linkedin':
+                    shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(link)}`;
+                    break;
+                case 'instagram':
+                    showNotification('Info', 'Copy the link and share on Instagram!');
+                    copyLink();
+                    return;
+            }
+            
+            window.open(shareUrl, '_blank');
+        }
+
+        function showNotification(title, message) {
+            const notification = document.getElementById('notification');
+            notification.innerHTML = `
+                <div class="notification-title">${title}</div>
+                <div class="notification-message">${message}</div>
+            `;
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+                notification.classList.add('hide');
+                setTimeout(() => {
+                    notification.classList.remove('hide');
+                }, 500);
+            }, 3000);
+        }
+
+        function handleLogout() {
+            localStorage.removeItem('luxeEarnUser');
+            localStorage.removeItem('rememberMe');
+            localStorage.removeItem('luxeearn_popup_seen');
+            window.location.href = '/register';
+        }
+
+        initializeCryptoData();
+        fetchCryptoPrices();
+        
+        setInterval(fetchCryptoPrices, 60000);
+        setInterval(simulatePriceChanges, 2000);
+        setInterval(activateFakeGreen, 10000);
+        
+        initializeReferralScroll();
+        
+        generateWithdrawal();
+        setInterval(generateWithdrawal, 5000);
+
+        updateBonusCountdown();
+        setInterval(updateBonusCountdown, 1000);
+
+        showPopupOnce();
+        
+
+const video = document.getElementById("promoVideo");
+const soundIcon = document.getElementById("soundIcon");
+
+// Toggle sound
+function toggleSound() {
+    video.muted = !video.muted;
+
+    // Change icon
+    if (video.muted) {
+        soundIcon.innerHTML = `
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line x1="16" y1="9" x2="22" y2="15"></line>
+            <line x1="22" y1="9" x2="16" y2="15"></line>
+        `;
+    } else {
+        soundIcon.innerHTML = `
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M16 8a5 5 0 0 1 0 8"></path>
+            <path d="M19 5a9 9 0 0 1 0 14"></path>
+        `;
+    }
+}
+
+// Fullscreen
+function openFullscreen() {
+    if (video.requestFullscreen) {
+        video.requestFullscreen();
+    } else if (video.webkitRequestFullscreen) {
+        video.webkitRequestFullscreen();
+    }
+}
+
+// Shrink / reduce video size
+function shrinkVideo() {
+    const vs = document.querySelector(".video-section");
+    if (vs.style.transform === "scale(0.7)") {
+        vs.style.transform = "scale(1)";
+    } else {
+        vs.style.transform = "scale(0.7)";
+    }
+    vs.style.transition = "0.3s ease";
+}
+
+// ==================== VIP AUTO-SCROLL ====================
+function initVipAutoScroll() {
+    const container = document.querySelector('.vip-cards-container');
+    if (!container) return;
+    
+    const cards = container.querySelectorAll('.vip-level-card');
+    if (cards.length < 2) return;
+    
+    let isUserScrolling = false;
+    let scrollTimeout;
+    
+    // Get current index from scroll position
+    function getCurrentIndex() {
+        const cardWidth = cards[0].offsetWidth + 12; // card width + gap
+        return Math.round(container.scrollLeft / cardWidth);
+    }
+    
+    // Detect user scroll
+    container.addEventListener('scroll', () => {
+        isUserScrolling = true;
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            isUserScrolling = false;
+        }, 5000); // Resume auto-scroll after 5s of inactivity
+    });
+    
+    // Auto-scroll every 3 seconds
+    setInterval(() => {
+        if (isUserScrolling) return;
+        
+        let currentIndex = getCurrentIndex();
+        currentIndex++;
+        
+        if (currentIndex >= cards.length) {
+            currentIndex = 0;
+            container.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+            const cardWidth = cards[0].offsetWidth + 12; // card width + gap
+            container.scrollTo({ left: cardWidth * currentIndex, behavior: 'smooth' });
+        }
+    }, 3000);
+}
+
+// ==================== SOCIAL TASKS ====================
+const BACKEND_URL = 'https://quantyx-intel-ref.onrender.com';
+const TASK_LINKS = {
+    telegram: 'https://t.me/AGENTLUNAFOREX',
+    whatsapp: 'https://wa.me/message/LXZAFZJNXN4LN1'
+};
+
+const TASK_REWARD = 0.50;
+
+function getUserEmail() {
+    try {
+        const userData = localStorage.getItem('luxeEarnUser');
+        if (userData) {
+            const user = JSON.parse(userData);
+            return user.email || null;
+        }
+    } catch (e) {
+        console.error('Error getting user email:', e);
+    }
+    return null;
+}
+
+function getWalletBalance() {
+    return parseFloat(localStorage.getItem('LUXE_WALLET_BALANCE') || '0');
+}
+
+function setWalletBalance(amount) {
+    localStorage.setItem('LUXE_WALLET_BALANCE', amount.toFixed(2));
+}
+
+function getLocalTaskState(taskId) {
+    const state = localStorage.getItem(`luxe_task_${taskId}`);
+    return state ? JSON.parse(state) : { started: false, claimed: false, countdown: null };
+}
+
+function setLocalTaskState(taskId, state) {
+    localStorage.setItem(`luxe_task_${taskId}`, JSON.stringify(state));
+}
+
+function updateTaskButton(taskId, state) {
+    const btn = document.getElementById(`${taskId}Btn`);
+    if (!btn) return;
+    
+    if (state.claimed) {
+        btn.className = 'social-task-btn claimed';
+        btn.textContent = 'Claimed';
+        btn.disabled = true;
+        btn.onclick = null;
+    } else if (state.countdown) {
+        btn.className = 'social-task-btn countdown';
+        btn.textContent = `${state.countdown}s`;
+        btn.disabled = true;
+    } else if (state.started) {
+        btn.className = 'social-task-btn claim';
+        btn.textContent = 'Claim';
+        btn.disabled = false;
+        btn.onclick = () => claimTask(taskId);
+    } else {
+        btn.className = 'social-task-btn join';
+        btn.textContent = 'Join';
+        btn.disabled = false;
+        btn.onclick = () => startTask(taskId);
+    }
+}
+
+async function checkClaimStatusFromServer() {
+    const email = getUserEmail();
+    if (!email) return;
+
+    for (const taskId of ['telegram', 'whatsapp']) {
+        try {
+            const response = await fetch(
+                `${BACKEND_URL}/api/social-bonus/check`,
+                {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email: email,
+                        bonusType: taskId
+                    })
+                }
+            );
+
+            const data = await response.json();
+
+            if (response.ok && data.claimed) {
+                const state = getLocalTaskState(taskId);
+                state.claimed = true;
+                state.started = true;
+                setLocalTaskState(taskId, state);
+                updateTaskButton(taskId, state);
+            }
+        } catch (err) {
+            console.error(`Error checking ${taskId} claim status`, err);
+        }
+    }
+}
+
+function startTask(taskId) {
+    const state = getLocalTaskState(taskId);
+    if (state.claimed) return;
+    
+    const email = getUserEmail();
+    if (!email) {
+        showNotification('Error', 'Please login first to claim bonus!');
+        return;
+    }
+    
+    window.open(TASK_LINKS[taskId], '_blank');
+    
+    let countdown = 5;
+    state.started = true;
+    state.countdown = countdown;
+    setLocalTaskState(taskId, state);
+    updateTaskButton(taskId, state);
+    
+    const interval = setInterval(() => {
+        countdown--;
+        if (countdown <= 0) {
+            clearInterval(interval);
+            state.countdown = null;
+            setLocalTaskState(taskId, state);
+            updateTaskButton(taskId, state);
+        } else {
+            state.countdown = countdown;
+            setLocalTaskState(taskId, state);
+            updateTaskButton(taskId, state);
+        }
+    }, 1000);
+}
+
+  async function claimTask(taskId) {
+    const state = getLocalTaskState(taskId);
+    if (state.claimed || !state.started) return;
+
+    const email = getUserEmail();
+    if (!email) {
+        showNotification('Error', 'Please login first to claim bonus!');
+        return;
+    }
+
+    const btn = document.getElementById(`${taskId}Btn`);
+    if (btn) {
+        btn.disabled = true;
+        btn.textContent = 'Processing...';
+    }
+
+    try {
+        const response = await fetch(
+            `${BACKEND_URL}/api/social-bonus/claim`,
+            {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    email: email,
+                    bonusType: taskId
+                })
+            }
+        );
+
+        const data = await response.json();
+
+        if (response.ok && data.success) {
+            const currentBalance = getWalletBalance();
+            setWalletBalance(currentBalance + data.amount);
+
+            state.claimed = true;
+            setLocalTaskState(taskId, state);
+            updateTaskButton(taskId, state);
+
+            showNotification(
+                'Reward Claimed!',
+                `+${data.amount} USDT added to your wallet!`
+            );
+        } else {
+            showNotification(
+                'Claim Failed',
+                data.message || 'Bonus already claimed'
+            );
+
+            if (data.message?.includes('already')) {
+                state.claimed = true;
+                setLocalTaskState(taskId, state);
+                updateTaskButton(taskId, state);
+            }
+        }
+    } catch (error) {
+        console.error('Error claiming bonus:', error);
+        showNotification('Error', 'Bonus successfully claimed. bonus will reflect in your account within 24 hours  due to traffic.');
+        updateTaskButton(taskId, state);
+    } finally {
+        const btn = document.getElementById(`${taskId}Btn`);
+        if (btn && !state.claimed) {
+            btn.disabled = false;
+            btn.textContent = 'Claim';
+        }
+    }
+}
+async function initSocialTasks() {
+    ['telegram', 'whatsapp'].forEach(taskId => {
+        const state = getLocalTaskState(taskId);
+        if (state.countdown) {
+            state.countdown = null;
+            setLocalTaskState(taskId, state);
+        }
+        updateTaskButton(taskId, state);
+    });
+    
+    await checkClaimStatusFromServer();
+}
+
+// ==================== CORNER POPUP ====================
+function showCornerPopup() {
+    const popupSeen = localStorage.getItem('luxe_corner_popup_seen');
+    if (popupSeen) return;
+    
+    const popup = document.getElementById('cornerPopup');
+    if (popup) {
+        setTimeout(() => {
+            popup.classList.add('show');
+        }, 2000); // Show after 2 seconds
+    }
+}
+
+function closeCornerPopup(event) {
+    event.stopPropagation();
+    const popup = document.getElementById('cornerPopup');
+    if (popup) {
+        popup.classList.remove('show');
+        localStorage.setItem('luxe_corner_popup_seen', 'true');
+    }
+}
+
+function scrollToTasks() {
+    const tasksSection = document.getElementById('socialTasksSection');
+    if (tasksSection) {
+        tasksSection.scrollIntoView({ behavior: 'smooth' });
+    }
+    closeCornerPopup({ stopPropagation: () => {} });
+}
+
+// ==================== INITIALIZE ====================
+document.addEventListener('DOMContentLoaded', () => {
+    initVipAutoScroll();
+    initSocialTasks();
+    showCornerPopup();
+});
+
+// ==================== PWA INSTALLATION ====================
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+        .then(function(registration) {
+            console.log('Service Worker registered:', registration);
+        })
+        .catch(function(error) {
+            console.log('Service Worker registration failed:', error);
+        });
+}
+
+let deferredPrompt;
+const installBtn = document.getElementById('installPwaBtn');
+const downloadAppBtn = document.getElementById('downloadAppBtn');
+
+window.addEventListener('beforeinstallprompt', function(e) {
+    e.preventDefault();
+    deferredPrompt = e;
+    if (installBtn) {
+        installBtn.style.display = 'flex';
+    }
+});
+
+async function triggerPwaInstall() {
+    if (!deferredPrompt) {
+        alert('To install: Use your browser menu and select "Add to Home Screen" or "Install App"  using the down arrow ⬇️ at the top if not installed');
+        return;
+    }
+    deferredPrompt.prompt();
+    const result = await deferredPrompt.userChoice;
+    if (result.outcome === 'accepted') {
+        if (installBtn) installBtn.style.display = 'none';
+    }
+    deferredPrompt = null;
+}
+
+if (installBtn) {
+    installBtn.addEventListener('click', triggerPwaInstall);
+}
+
+if (downloadAppBtn) {
+    downloadAppBtn.addEventListener('click', triggerPwaInstall);
+}
+
+window.addEventListener('appinstalled', function() {
+    if (installBtn) {
+        installBtn.style.display = 'none';
+    }
+    deferredPrompt = null;
+});
+</script>
+
+    <!-- Telegram Floating Button -->
+    <div class="floating-telegram" onclick="openTelegramPopup()">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.692-1.653-1.123-2.678-1.799-1.185-.781-.417-1.21.258-1.911.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.139-5.062 3.345-.479.329-.913.489-1.302.481-.428-.008-1.252-.241-1.865-.44-.751-.244-1.349-.374-1.297-.789.027-.216.324-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.477-1.635.099-.002.321.023.465.141.119.098.152.228.166.319.014.096.015.193.015.296z" fill="#fff"/>
+        </svg>
+    </div>
+
+    <!-- Telegram Popup -->
+    <div id="telegramPopup" class="popup-overlay" style="display: none;" onclick="if(event.target === this) closeTelegramPopup()">
+        <div class="popup-content telegram-popup-content">
+            <div class="popup-header">
+                <h3>Online Service</h3>
+                <button class="close-popup-btn" onclick="closeTelegramPopup()">&times;</button>
+            </div>
+            <div class="popup-body">
+                <p class="popup-desc">Choose your preferred online customer service contact method</p>
+                
+                <div class="telegram-option" onclick="window.open('https://t.me/AGENTLUNAFOREX', '_blank')">
+                    <div class="telegram-icon-large">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.692-1.653-1.123-2.678-1.799-1.185-.781-.417-1.21.258-1.911.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.139-5.062 3.345-.479.329-.913.489-1.302.481-.428-.008-1.252-.241-1.865-.44-.751-.244-1.349-.374-1.297-.789.027-.216.324-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.477-1.635.099-.002.321.023.465.141.119.098.152.228.166.319.014.096.015.193.015.296z" fill="#fff"/>
+                        </svg>
+                    </div>
+                    <div class="telegram-text">
+                        <span class="telegram-title">Official Customer Service</span>
+                        <span class="telegram-arrow">&rsaquo;</span>
+                    </div>
+                </div>
+
+                <div class="telegram-option" onclick="window.open('https://t.me/AGENTLUNAFOREX', '_blank')">
+                    <div class="telegram-icon-large">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.692-1.653-1.123-2.678-1.799-1.185-.781-.417-1.21.258-1.911.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.139-5.062 3.345-.479.329-.913.489-1.302.481-.428-.008-1.252-.241-1.865-.44-.751-.244-1.349-.374-1.297-.789.027-.216.324-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.477-1.635.099-.002.321.023.465.141.119.098.152.228.166.319.014.096.015.193.015.296z" fill="#fff"/>
+                        </svg>
+                    </div>
+                    <div class="telegram-text">
+                        <span class="telegram-title">Official Channel</span>
+                        <span class="telegram-arrow">&rsaquo;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function openTelegramPopup() {
+            const popup = document.getElementById('telegramPopup');
+            popup.style.display = 'flex';
+        }
+
+        function closeTelegramPopup() {
+            const popup = document.getElementById('telegramPopup');
+            popup.style.display = 'none';
+        }
+    </script>
+
+    <script>
+        // --- LuxeEarn PWA Notification System ---
+        // Notifications appear like normal phone messages with action buttons
+        
+        function initNotificationSystem() {
+            if (!('Notification' in window)) {
+                console.log('This browser does not support notifications');
+                return;
+            }
+
+            if (Notification.permission === 'granted') {
+                runNotificationSchedule();
+            } else if (Notification.permission !== 'denied') {
+                Notification.requestPermission().then(function(permission) {
+                    if (permission === 'granted') {
+                        showWelcomeNotification();
+                        localStorage.setItem('luxe_has_visited', 'true');
+                    }
+                });
+            }
+        }
+
+        function runNotificationSchedule() {
+            const hasVisited = localStorage.getItem('luxe_has_visited');
+            
+            if (!hasVisited) {
+                showWelcomeNotification();
+                localStorage.setItem('luxe_has_visited', 'true');
+            } else {
+                setTimeout(() => {
+                    showBonusNotification();
+                }, 10000);
+            }
+        }
+
+        function showWelcomeNotification() {
+            const title = 'Welcome to LuxeEarn!';
+            const options = {
+                body: 'Start earning with crypto trading today. Tap to get started!',
+                icon: 'quantyx.png',
+                badge: 'quantyx.png',
+                vibrate: [200, 100, 200],
+                tag: 'welcome-notification',
+                renotify: true,
+                requireInteraction: true,
+                data: { url: '/notifications' },
+                actions: [
+                    { action: 'visit', title: 'Visit' },
+                    { action: 'mark-read', title: 'Mark as read' }
+                ]
+            };
+            
+            sendNotification(title, options);
+        }
+
+        function showBonusNotification() {
+            const title = '100% Deposit Bonus!';
+            const options = {
+                body: 'Get bonus of up to 500 USDT when you deposit now! Click to claim.',
+                icon: 'quantyx.png',
+                badge: 'quantyx.png',
+                vibrate: [500, 200, 500],
+                tag: 'bonus-notification',
+                renotify: true,
+                requireInteraction: true,
+                data: { url: '/recharge' },
+                actions: [
+                    { action: 'get-bonus', title: 'Get Bonus' },
+                    { action: 'mark-read', title: 'Mark as read' }
+                ]
+            };
+
+            sendNotification(title, options);
+        }
+
+        function sendNotification(title, options) {
+            if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
+                navigator.serviceWorker.ready.then(function(registration) {
+                    registration.showNotification(title, options);
+                });
+            } else {
+                const n = new Notification(title, options);
+                n.onclick = function(event) {
+                    event.preventDefault();
+                    window.focus();
+                    if (options.data && options.data.url) {
+                        window.location.href = options.data.url;
+                    }
+                    n.close();
+                };
+            }
+            
+            try {
+                const audio = new Audio('https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3');
+                audio.play().catch(e => {});
+            } catch (e) {}
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const btns = document.querySelectorAll('button, a, .action-card');
+            btns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    if (Notification.permission === 'default') {
+                        initNotificationSystem();
+                    }
+                }, { once: true });
+            });
+
+            if (Notification.permission === 'granted') {
+                runNotificationSchedule();
+            }
+            
+            const installBtn = document.getElementById('installPwaBtn');
+            if (installBtn) {
+                installBtn.addEventListener('click', function() {
+                    if (Notification.permission === 'default') {
+                        initNotificationSystem();
+                    }
+                });
+            }
+            
+            const downloadBtn = document.getElementById('downloadAppBtn');
+            if (downloadBtn) {
+                downloadBtn.addEventListener('click', function() {
+                    if (Notification.permission === 'default') {
+                        initNotificationSystem();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
